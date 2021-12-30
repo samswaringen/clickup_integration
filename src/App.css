@@ -7,4 +7,12 @@
   pointer-events: none;
 }
 
+.input{
+  display:flex;
+  flex-direction:column;
+}
+.textarea{
+  height: 15vh;
+}
+
 

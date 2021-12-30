@@ -32,8 +32,7 @@ const TicketForm = (props) => {
     if(showModal){
       props.client.interface.trigger("showModal", {
         title: "Click up Integration",
-        template: "index.html",
-  
+        template: "index.html"
       }).then(function(data) {
       // data - success message
       }).catch(function(error) {
@@ -146,37 +145,37 @@ const TicketForm = (props) => {
           initialValues={initialValues}
         >
           <Form>
-            <div style={{display:"flex", flexDirection:"column"}}>
+            <div className="input">
               <label>TicketID:</label>
               <Field name="ticketID"/>
             </div>
-            <div>
+            <div className="input">
               <label>Title:</label><br/>
-              <Field name="title" />
+              <Field name="title" type="text" />
             </div>
-            <div>
+            <div className="input">
               {/* dropdown field for Assignees. Need everyones clickup id number */}
               <label>Assignee:</label><br/>
               <Field as="select" name="assignees" multiple="multiple">
                 {assigneeArr.map((item, i)=><option value={item.id}>{item.name}</option>)}
               </Field>
             </div>
-            <div>
-              <label>Description:</label>
-              <Field as="textarea" name="description"/>
+            <div className="input">
+              <label>Description:</label><br/>
+              <Field as="textarea" name="description" className="textarea"/>
             </div>
-            <div>
-            <label>Additional Notes:</label>
-              <Field as="textarea" name="notes"/>
+            <div className="input">
+            <label>Additional Notes:</label><br/>
+              <Field as="textarea" name="notes" className="textarea"/>
             </div>
-            <div>
+            <div className="input">
               {/* dropdown field for requesting customer */}
-              <label>Requesting Customer:</label>
+              <label>Requesting Customer:</label><br/>
               <Field as="select" name="reqCustomer" >
                 {requestingArr.map((item, i)=><option value={item}>{item}</option>)}
               </Field>
             </div>
-            <div>
+            <div className="input">
               {/* dropdown field for Priority */}
               <label>Priority:</label><br/>
               <Field as="select" name="priority" >
@@ -186,10 +185,10 @@ const TicketForm = (props) => {
                 <option value="4">Urgent</option>
               </Field>
             </div>
-            <div>
+            <div className="input">
               {/* multi-select input field */}
               <label>Tags:</label><br/>
-              <Field id="tags" name="tags" as="select" multiple="multiple">
+              <Field id="tags" name="tags" as="select" multiple="multiple" className="textarea">
                 {tagList.map((tag, i)=><option value={tag}>{tag}</option>)}
               </Field>
             </div><br/>

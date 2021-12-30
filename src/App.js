@@ -7,6 +7,8 @@ const App = () => {
   const [loaded, setLoaded] = useState(false);
   const [child, setChild] = useState(<h3>App is loading</h3>)
 
+
+
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://static.freshdev.io/fdk/2.0/assets/fresh_client.js';
@@ -21,6 +23,7 @@ const App = () => {
       setChild((<TicketForm client={client} />))
     })
   }, [loaded])
+
 
   return (
     <div>
