@@ -111,6 +111,22 @@ var TicketForm = function TicketForm(props) {
       loading = _useState4[0],
       setLoading = _useState4[1];
 
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      showModal = _useState6[0],
+      setShowModal = _useState6[1];
+
+  var propertyChangeCallback = function propertyChangeCallback(event) // code to be executed when the status of the ticket is changed.
+  {
+    var event_data = event.helper.getData();
+    console.log(event.type + " changed from " + event_data.old + " to " + event_data["new"]);
+
+    if (event_data["new"] === 8) {
+      setShowModal(true);
+    }
+  };
+
+  props.client.events.on("ticket.statusChanged", propertyChangeCallback);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     props.client.data.get('ticket').then(function (data) {
       setTicket(data.ticket);
@@ -118,6 +134,16 @@ var TicketForm = function TicketForm(props) {
       setLoading(true);
     });
   }, []);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (showModal) {
+      props.client["interface"].trigger("showModal", {
+        title: "Click up Integration",
+        template: "index.html"
+      }).then(function (data) {// data - success message
+      })["catch"](function (error) {// error - error object
+      });
+    }
+  }, [showModal]);
   var tagList = ["aap", "address/name issue", "all customer", "atd", "audit/watcher", "back end", "back-end", "blue green", "blue team", "bug", "bugs", "cd", "ci", "contract(s)", "core", "cx", "data engineering", "design", "devs", "dispatching issue", "door dash", "duplicate", "edi", "engineering", "epic", "escalation", "eta", "extra", "feature-enhancement", "feratureflags", "fedex", "filter/sort issue", "front end", "front-end", "global", "green", "green team", "high-impact", "holiday", "hotfix", "impl", "imple", "implementation", "insert", "integrations", "limestone", "logistics", "lp portal", "lp pricing", "menard", "menards", "milton cat", "miltoncat", "mobile", "not a bug", "notifications", "ops", "ord", "order status", "pepsi", "petpeople", "plugin", "pod issue", "qa", "red", "red team", "rel-team", "reporting", "returns", "revoke", "risk", "risk-mit", "routing issue", "scaling", "skullcandy", "staging", "support", "synthetic events", "tbc", "tech debt", "technical design", "test(s)"];
   var requestingArr = ["AAP", "TSC", "Menard's", "PetPeople", "TBC", "ATD", "MiltonCat", "Skullcandy", "Pepsi", "OneRail"];
   var assigneeArr = [{
@@ -182,7 +208,7 @@ var TicketForm = function TicketForm(props) {
         "id": "dd085afd-fdda-45c9-bd7e-7888e7d1ecac",
         "value": values.assignees[0]
       }, {
-        /* description... use it to list freshdesk ticket? */
+        /* description... use it to list freshdesk ticket ID? */
         "id": "5418bbd8-47f5-479c-8b07-88dded5b0540",
         "value": values.ticketID
       }]
@@ -338,7 +364,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n\tmargin: 0;\r\n\tfont-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\",\r\n\t\t\"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\",\r\n\t\tsans-serif;\r\n\t-webkit-font-smoothing: antialiased;\r\n\t-moz-osx-font-smoothing: grayscale;\r\n}\r\n\r\ncode {\r\n\tfont-family: source-code-pro, Menlo, Monaco, Consolas, \"Courier New\",\r\n\t\tmonospace;\r\n}\r\n", "",{"version":3,"sources":["webpack://src/index.css"],"names":[],"mappings":"AAAA;CACC,SAAS;CACT;;YAEW;CACX,mCAAmC;CACnC,kCAAkC;AACnC;;AAEA;CACC;WACU;AACX","sourcesContent":["body {\r\n\tmargin: 0;\r\n\tfont-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\",\r\n\t\t\"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\",\r\n\t\tsans-serif;\r\n\t-webkit-font-smoothing: antialiased;\r\n\t-moz-osx-font-smoothing: grayscale;\r\n}\r\n\r\ncode {\r\n\tfont-family: source-code-pro, Menlo, Monaco, Consolas, \"Courier New\",\r\n\t\tmonospace;\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n\tmargin: 0;\r\n\tfont-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\",\r\n\t\t\"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\",\r\n\t\tsans-serif;\r\n\t-webkit-font-smoothing: antialiased;\r\n\t-moz-osx-font-smoothing: grayscale;\r\n\theight:200%;\r\n}\r\n\r\ncode {\r\n\tfont-family: source-code-pro, Menlo, Monaco, Consolas, \"Courier New\",\r\n\t\tmonospace;\r\n}\r\n", "",{"version":3,"sources":["webpack://src/index.css"],"names":[],"mappings":"AAAA;CACC,SAAS;CACT;;YAEW;CACX,mCAAmC;CACnC,kCAAkC;CAClC,WAAW;AACZ;;AAEA;CACC;WACU;AACX","sourcesContent":["body {\r\n\tmargin: 0;\r\n\tfont-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\",\r\n\t\t\"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\",\r\n\t\tsans-serif;\r\n\t-webkit-font-smoothing: antialiased;\r\n\t-moz-osx-font-smoothing: grayscale;\r\n\theight:200%;\r\n}\r\n\r\ncode {\r\n\tfont-family: source-code-pro, Menlo, Monaco, Consolas, \"Courier New\",\r\n\t\tmonospace;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -408,4 +434,4 @@ module.exports = content.locals || {};
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.f8f6472f.js.map
+//# sourceMappingURL=main.7aa58d65.js.map

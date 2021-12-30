@@ -7,6 +7,18 @@ import axios from 'axios';
 const TicketForm = (props) => {
   const [ticket, setTicket] = useState({})
   const [loading, setLoading] = useState(false)
+  const [showModal, setShowModal] = useState(false)
+
+  var propertyChangeCallback = function (event)
+    // code to be executed when the status of the ticket is changed.
+    {
+        var event_data = event.helper.getData();
+        console.log(event.type + " changed from " + event_data.old + " to " +  event_data.new);
+        if(event_data.new === 8){
+          setShowModal(true)
+        }
+    };
+  props.client.events.on("ticket.statusChanged", propertyChangeCallback);
 
   useEffect(()=>{
     props.client.data.get('ticket').then((data) => {
@@ -15,6 +27,20 @@ const TicketForm = (props) => {
       setLoading(true)
     })
   },[])
+
+  useEffect(()=>{
+    if(showModal){
+      props.client.interface.trigger("showModal", {
+        title: "Click up Integration",
+        template: "index.html",
+  
+      }).then(function(data) {
+      // data - success message
+      }).catch(function(error) {
+      // error - error object
+      });
+    }
+  },[showModal])
 
 
   const tagList=["aap","address/name issue", "all customer","atd", "audit/watcher","back end",
@@ -78,7 +104,7 @@ const TicketForm = (props) => {
           "value": values.assignees[0]
         },
         {
-          /* description... use it to list freshdesk ticket? */
+          /* description... use it to list freshdesk ticket ID? */
           "id":"5418bbd8-47f5-479c-8b07-88dded5b0540",
           "value": values.ticketID
         }
