@@ -14,5 +14,9 @@
 .textarea{
   height: 15vh;
 }
+label{
+  font-weight: 900;
+  margin-bottom:0.5vh;
+}
 
 

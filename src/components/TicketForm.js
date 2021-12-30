@@ -137,7 +137,6 @@ const TicketForm = (props) => {
 
   return (
     <div>
-      <h3>Ticket {ticket.id},</h3>
       {loading && 
         <Formik
           onSubmit={onSubmit}
@@ -148,46 +147,46 @@ const TicketForm = (props) => {
             <div className="input">
               <label>TicketID:</label>
               <Field name="ticketID"/>
-            </div>
+            </div><br/>
             <div className="input">
-              <label>Title:</label><br/>
+              <label>Title:</label>
               <Field name="title" type="text" />
-            </div>
+            </div><br/>
             <div className="input">
               {/* dropdown field for Assignees. Need everyones clickup id number */}
-              <label>Assignee:</label><br/>
+              <label>Assignee:</label>
               <Field as="select" name="assignees" multiple="multiple">
                 {assigneeArr.map((item, i)=><option value={item.id}>{item.name}</option>)}
               </Field>
-            </div>
+            </div><br/>
             <div className="input">
-              <label>Description:</label><br/>
+              <label>Description:</label>
               <Field as="textarea" name="description" className="textarea"/>
-            </div>
+            </div><br/>
             <div className="input">
-            <label>Additional Notes:</label><br/>
+            <label>Additional Notes:</label>
               <Field as="textarea" name="notes" className="textarea"/>
-            </div>
+            </div><br/>
             <div className="input">
               {/* dropdown field for requesting customer */}
-              <label>Requesting Customer:</label><br/>
+              <label>Requesting Customer:</label>
               <Field as="select" name="reqCustomer" >
                 {requestingArr.map((item, i)=><option value={item}>{item}</option>)}
               </Field>
-            </div>
+            </div><br/>
             <div className="input">
               {/* dropdown field for Priority */}
-              <label>Priority:</label><br/>
+              <label>Priority:</label>
               <Field as="select" name="priority" >
                 <option value="1">Low</option>
                 <option value="2">Medium</option>
                 <option value="3">High</option>
                 <option value="4">Urgent</option>
               </Field>
-            </div>
+            </div><br/>
             <div className="input">
               {/* multi-select input field */}
-              <label>Tags:</label><br/>
+              <label>Tags:</label>
               <Field id="tags" name="tags" as="select" multiple="multiple" className="textarea">
                 {tagList.map((tag, i)=><option value={tag}>{tag}</option>)}
               </Field>
