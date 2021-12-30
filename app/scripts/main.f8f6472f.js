@@ -174,8 +174,17 @@ var TicketForm = function TicketForm(props) {
       "links_to": null,
       "check_required_custom_fields": true,
       "custom_fields": [{
+        /* requesting customer */
         "id": "693b7b05-8c30-4e7b-be39-295245333faf",
         "value": values.reqCustomer
+      }, {
+        /* point of contact */
+        "id": "dd085afd-fdda-45c9-bd7e-7888e7d1ecac",
+        "value": values.assignees[0]
+      }, {
+        /* description... use it to list freshdesk ticket? */
+        "id": "5418bbd8-47f5-479c-8b07-88dded5b0540",
+        "value": values.ticketID
       }]
     };
     console.log("paylod", payload); // var config = {
@@ -399,4 +408,4 @@ module.exports = content.locals || {};
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.302ee774.js.map
+//# sourceMappingURL=main.f8f6472f.js.map

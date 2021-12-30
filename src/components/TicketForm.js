@@ -68,8 +68,19 @@ const TicketForm = (props) => {
       "check_required_custom_fields": true,
       "custom_fields": [
         {
+          /* requesting customer */
           "id":"693b7b05-8c30-4e7b-be39-295245333faf",
           "value": values.reqCustomer
+        },
+        {
+          /* point of contact */
+          "id":"dd085afd-fdda-45c9-bd7e-7888e7d1ecac",
+          "value": values.assignees[0]
+        },
+        {
+          /* description... use it to list freshdesk ticket? */
+          "id":"5418bbd8-47f5-479c-8b07-88dded5b0540",
+          "value": values.ticketID
         }
       ]
     }
@@ -143,7 +154,7 @@ const TicketForm = (props) => {
               {/* dropdown field for Priority */}
               <label>Priority:</label><br/>
               <Field as="select" name="priority" >
-                <option value= "1" >Low</option>
+                <option value="1">Low</option>
                 <option value="2">Medium</option>
                 <option value="3">High</option>
                 <option value="4">Urgent</option>
