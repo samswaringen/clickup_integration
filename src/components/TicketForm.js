@@ -66,7 +66,7 @@ const TicketForm = (props) => {
         'Authorization': '"access token"', 
         'Content-Type': 'application/json'
       },
-      data : data
+      data : payload
     };
 
     axios(config)
