@@ -120,6 +120,22 @@ var TicketForm = function TicketForm(props) {
   }, []);
   var tagList = ["aap", "address/name issue", "all customer", "atd", "audit/watcher", "back end", "back-end", "blue green", "blue team", "bug", "bugs", "cd", "ci", "contract(s)", "core", "cx", "data engineering", "design", "devs", "dispatching issue", "door dash", "duplicate", "edi", "engineering", "epic", "escalation", "eta", "extra", "feature-enhancement", "feratureflags", "fedex", "filter/sort issue", "front end", "front-end", "global", "green", "green team", "high-impact", "holiday", "hotfix", "impl", "imple", "implementation", "insert", "integrations", "limestone", "logistics", "lp portal", "lp pricing", "menard", "menards", "milton cat", "miltoncat", "mobile", "not a bug", "notifications", "ops", "ord", "order status", "pepsi", "petpeople", "plugin", "pod issue", "qa", "red", "red team", "rel-team", "reporting", "returns", "revoke", "risk", "risk-mit", "routing issue", "scaling", "skullcandy", "staging", "support", "synthetic events", "tbc", "tech debt", "technical design", "test(s)"];
   var requestingArr = ["AAP", "TSC", "Menard's", "PetPeople", "TBC", "ATD", "MiltonCat", "Skullcandy", "Pepsi", "OneRail"];
+  var assigneeArr = [{
+    id: 1,
+    name: "Adam"
+  }, {
+    id: 2,
+    name: "Chelsea"
+  }, {
+    id: 3,
+    name: "Corrie"
+  }, {
+    id: 4,
+    name: "Marissa"
+  }, {
+    id: 26300173,
+    name: "Sam"
+  }];
   var initialValues = {
     ticketID: ticket.id,
     title: ticket.subject,
@@ -202,17 +218,11 @@ var TicketForm = function TicketForm(props) {
     as: "select",
     name: "assignees",
     multiple: "multiple"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "1"
-  }, "Adam"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "2"
-  }, "Chelsea"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "3"
-  }, "Corrie"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "4"
-  }, "Marissa"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "26300173"
-  }, "Sam"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Description:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
+  }, assigneeArr.map(function (item, i) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+      value: item.id
+    }, item.name);
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Description:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
     as: "textarea",
     name: "description"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Additional Notes:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
@@ -389,4 +399,4 @@ module.exports = content.locals || {};
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.7aa52306.js.map
+//# sourceMappingURL=main.302ee774.js.map

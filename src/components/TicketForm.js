@@ -29,6 +29,14 @@ const TicketForm = (props) => {
 
   const requestingArr = ["AAP","TSC","Menard's","PetPeople","TBC","ATD","MiltonCat","Skullcandy","Pepsi","OneRail"]
 
+  const assigneeArr = [
+    {id:1, name:"Adam"},
+    {id:2, name:"Chelsea"},
+    {id:3, name:"Corrie"},
+    {id:4, name:"Marissa"},
+    {id:26300173, name:"Sam"}
+  ]
+
   const initialValues = { 
     ticketID: ticket.id,
     title: ticket.subject,
@@ -113,11 +121,7 @@ const TicketForm = (props) => {
               {/* dropdown field for Assignees. Need everyones clickup id number */}
               <label>Assignee:</label><br/>
               <Field as="select" name="assignees" multiple="multiple">
-                <option value= "1" >Adam</option>
-                <option value= "2" >Chelsea</option>
-                <option value="3">Corrie</option>
-                <option value="4">Marissa</option>
-                <option value="26300173">Sam</option>
+                {assigneeArr.map((item, i)=><option value={item.id}>{item.name}</option>)}
               </Field>
             </div>
             <div>
