@@ -119,6 +119,7 @@ var TicketForm = function TicketForm(props) {
     });
   }, []);
   var tagList = ["aap", "address/name issue", "all customer", "atd", "audit/watcher", "back end", "back-end", "blue green", "blue team", "bug", "bugs", "cd", "ci", "contract(s)", "core", "cx", "data engineering", "design", "devs", "dispatching issue", "door dash", "duplicate", "edi", "engineering", "epic", "escalation", "eta", "extra", "feature-enhancement", "feratureflags", "fedex", "filter/sort issue", "front end", "front-end", "global", "green", "green team", "high-impact", "holiday", "hotfix", "impl", "imple", "implementation", "insert", "integrations", "limestone", "logistics", "lp portal", "lp pricing", "menard", "menards", "milton cat", "miltoncat", "mobile", "not a bug", "notifications", "ops", "ord", "order status", "pepsi", "petpeople", "plugin", "pod issue", "qa", "red", "red team", "rel-team", "reporting", "returns", "revoke", "risk", "risk-mit", "routing issue", "scaling", "skullcandy", "staging", "support", "synthetic events", "tbc", "tech debt", "technical design", "test(s)"];
+  var requestingArr = ["AAP", "TSC", "Menard's", "PetPeople", "TBC", "ATD", "MiltonCat", "Skullcandy", "Pepsi", "OneRail"];
   var initialValues = {
     ticketID: ticket.id,
     title: ticket.subject,
@@ -220,27 +221,11 @@ var TicketForm = function TicketForm(props) {
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Requesting Customer:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
     as: "select",
     name: "reqCustomer"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "aap"
-  }, "AAP"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "tsc"
-  }, "TSC"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "menards"
-  }, "Menard's"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "petpeople"
-  }, "PetPeople"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "tbc"
-  }, "TBC"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "atd"
-  }, "ATD"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "miltoncat"
-  }, "MiltonCat"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "skullcandy"
-  }, "Skullcandy"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "pepsi"
-  }, "Petpsi"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "onerail"
-  }, "OneRail"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Priority:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
+  }, requestingArr.map(function (item, i) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+      value: item
+    }, item);
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Priority:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
     as: "select",
     name: "priority"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
@@ -404,4 +389,4 @@ module.exports = content.locals || {};
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.852d5320.js.map
+//# sourceMappingURL=main.7aa52306.js.map

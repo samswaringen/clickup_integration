@@ -27,6 +27,7 @@ const TicketForm = (props) => {
     "risk-mit","routing issue", "scaling","skullcandy","staging","support","synthetic events","tbc","tech debt", "technical design",
     "test(s)"]
 
+  const requestingArr = ["AAP","TSC","Menard's","PetPeople","TBC","ATD","MiltonCat","Skullcandy","Pepsi","OneRail"]
 
   const initialValues = { 
     ticketID: ticket.id,
@@ -131,16 +132,7 @@ const TicketForm = (props) => {
               {/* dropdown field for requesting customer */}
               <label>Requesting Customer:</label>
               <Field as="select" name="reqCustomer" >
-                <option value="aap">AAP</option>
-                <option value="tsc">TSC</option>
-                <option value="menards">Menard's</option>
-                <option value="petpeople">PetPeople</option>
-                <option value="tbc">TBC</option>
-                <option value="atd">ATD</option>
-                <option value="miltoncat">MiltonCat</option>
-                <option value="skullcandy">Skullcandy</option>
-                <option value="pepsi">Petpsi</option>
-                <option value="onerail">OneRail</option>
+                {requestingArr.map((item, i)=><option value={item}>{item}</option>)}
               </Field>
             </div>
             <div>
