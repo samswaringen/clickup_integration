@@ -33,17 +33,18 @@ const TicketForm = (props) => {
     title: ticket.subject,
     description: ticket.description_text,
     notes: "",
+    reqCustomer:"",
     assignees:[],
     tags:[],
     priority:0
   }
 
   const onSubmit = (values)=>{
-    console.log("values",values)
+    let assignees = values.assignees.map((item)=>Number(item))
     const payload = {
       "name": values.title,
-      "description": `Ticket:${values.description} ${<br/>}  Notes:${values.notes}`,
-      "assignees": values.assignees,
+      "description": `Ticket:${values.description} | Notes:${values.notes}`,
+      "assignees": assignees,
       "tags": values.tags,
       "status": "Open",
       "priority": Number(values.priority),
@@ -56,26 +57,32 @@ const TicketForm = (props) => {
       "parent": null,
       "links_to": null,
       "check_required_custom_fields": true,
-      "custom_fields": []
+      "custom_fields": [
+        {
+          "id":"693b7b05-8c30-4e7b-be39-295245333faf",
+          "value": values.reqCustomer
+        }
+      ]
     }
-    var config = {
-      method: 'post',
-      url: 'https://api.clickup.com/api/v2/list/list_id/task',
-      headers: { 
-        /*GET API KEY*/
-        'Authorization': '"access token"', 
-        'Content-Type': 'application/json'
-      },
-      data : payload
-    };
+    console.log("paylod",payload)
+    // var config = {
+    //   method: 'post',
+    //   url: 'https://api.clickup.com/api/v2/list/list_id/task',
+    //   headers: { 
+    //     /*GET API KEY*/
+    //     'Authorization': '"access token"', 
+    //     'Content-Type': 'application/json'
+    //   },
+    //   data : payload
+    // };
 
-    axios(config)
-    .then(function (response) {
-      console.log(JSON.stringify(response.data));
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    // axios(config)
+    // .then(function (response) {
+    //   console.log(JSON.stringify(response.data));
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    // });
 
   }
 
@@ -102,14 +109,14 @@ const TicketForm = (props) => {
               <Field name="title" />
             </div>
             <div>
-              {/* dropdown field for Priority */}
+              {/* dropdown field for Assignees. Need everyones clickup id number */}
               <label>Assignee:</label><br/>
-              <Field as="select" name="priority" >
-                <option value= "Adam" >Adam</option>
-                <option value= "Chelsea" >Chelsea</option>
-                <option value="Corrie">Corrie</option>
-                <option value="Marissa">Marissa</option>
-                <option value="Sam">Sam</option>
+              <Field as="select" name="assignees" multiple="multiple">
+                <option value= "1" >Adam</option>
+                <option value= "2" >Chelsea</option>
+                <option value="3">Corrie</option>
+                <option value="4">Marissa</option>
+                <option value="26300173">Sam</option>
               </Field>
             </div>
             <div>
