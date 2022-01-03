@@ -2,57 +2,19 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Form, Formik, Field } from 'formik';
 import axios from 'axios';
+import Select from 'react-select'
+import { tagList } from './tagList';
 
 
 const TicketForm = (props) => {
-  const [ticket, setTicket] = useState({})
+  const {ticket} = props
+  console.log("ticket in ticketform",ticket)
   const [loading, setLoading] = useState(false)
-  const [showModal, setShowModal] = useState(false)
-
-  var propertyChangeCallback = function (event)
-    // code to be executed when the status of the ticket is changed.
-    {
-        var event_data = event.helper.getData();
-        console.log(event.type + " changed from " + event_data.old + " to " +  event_data.new);
-        if(event_data.new === 8){
-          setShowModal(true)
-        }
-    };
-  props.client.events.on("ticket.statusChanged", propertyChangeCallback);
-
-  useEffect(()=>{
-    props.client.data.get('ticket').then((data) => {
-      setTicket(data.ticket)
-      console.log("ticket",data.ticket)
-      setLoading(true)
-    })
-  },[])
-
-  useEffect(()=>{
-    if(showModal){
-      props.client.interface.trigger("showModal", {
-        title: "Click up Integration",
-        template: "index.html"
-      }).then(function(data) {
-      // data - success message
-      }).catch(function(error) {
-      // error - error object
-      });
-    }
-  },[showModal])
+  const [tags, setTags] = useState([])
 
 
-  const tagList=["aap","address/name issue", "all customer","atd", "audit/watcher","back end",
-    "back-end", "blue green", "blue team", "bug","bugs","cd","ci","contract(s)","core","cx","data engineering",
-    "design","devs","dispatching issue","door dash", "duplicate", "edi","engineering","epic","escalation","eta",
-    "extra","feature-enhancement","feratureflags", "fedex", "filter/sort issue","front end","front-end","global","green","green team",
-    "high-impact","holiday","hotfix","impl","imple","implementation","insert","integrations", "limestone","logistics", "lp portal",
-    "lp pricing","menard","menards","milton cat","miltoncat", "mobile","not a bug", "notifications", "ops","ord","order status",
-    "pepsi", "petpeople", "plugin", "pod issue", "qa", "red", "red team", "rel-team", "reporting", "returns", "revoke", "risk", 
-    "risk-mit","routing issue", "scaling","skullcandy","staging","support","synthetic events","tbc","tech debt", "technical design",
-    "test(s)"]
 
-  const requestingArr = ["AAP","TSC","Menard's","PetPeople","TBC","ATD","MiltonCat","Skullcandy","Pepsi","OneRail"]
+  const requestingArr = ["Who is Requesting?","AAP","TSC","Menard's","PetPeople","TBC","ATD","MiltonCat","Skullcandy","Pepsi","OneRail"]
 
   const assigneeArr = [
     {id:1, name:"Adam"},
@@ -73,13 +35,19 @@ const TicketForm = (props) => {
     priority:0
   }
 
+  const tagChange= (e)=>{
+    console.log(e)
+    e.map((item)=>setTags([...tags,item.value]))
+    console.log("tags",tags)
+  }
+
   const onSubmit = (values)=>{
     let assignees = values.assignees.map((item)=>Number(item))
     const payload = {
       "name": values.title,
       "description": `Ticket:${values.description} | Notes:${values.notes}`,
       "assignees": assignees,
-      "tags": values.tags,
+      "tags": tags,
       "status": "Open",
       "priority": Number(values.priority),
       "due_date": "" /* i dont know */,
@@ -106,10 +74,16 @@ const TicketForm = (props) => {
           /* description... use it to list freshdesk ticket ID? */
           "id":"5418bbd8-47f5-479c-8b07-88dded5b0540",
           "value": values.ticketID
+        },
+        {
+          /* Requested Due Date */
+          "id":"b27c4ef5-a843-4c29-a3d4-e613bafcbad1",
+          "value": dueDate
         }
       ]
     }
     console.log("paylod",payload)
+    console.log("form", this.Form)
     // var config = {
     //   method: 'post',
     //   url: 'https://api.clickup.com/api/v2/list/list_id/task',
@@ -137,7 +111,6 @@ const TicketForm = (props) => {
 
   return (
     <div>
-      {loading && 
         <Formik
           onSubmit={onSubmit}
           validate={validate}
@@ -178,6 +151,7 @@ const TicketForm = (props) => {
               {/* dropdown field for Priority */}
               <label>Priority:</label>
               <Field as="select" name="priority" >
+                <option value="0">Choose Priority</option>
                 <option value="1">Low</option>
                 <option value="2">Medium</option>
                 <option value="3">High</option>
@@ -187,14 +161,11 @@ const TicketForm = (props) => {
             <div className="input">
               {/* multi-select input field */}
               <label>Tags:</label>
-              <Field id="tags" name="tags" as="select" multiple="multiple" className="textarea">
-                {tagList.map((tag, i)=><option value={tag}>{tag}</option>)}
-              </Field>
+              <Select id="tags" name="tags" options={tagList} isMulti classNamePrefix="select" closeMenuOnSelect={false} onChange={tagChange} />
             </div><br/>
             <button type="submit">Make Click-up Ticket</button>
           </Form>
         </Formik>
-      }
     </div>
   )
 }
@@ -202,4 +173,6 @@ const TicketForm = (props) => {
 TicketForm.propTypes = {
   client: PropTypes.object
 }
+
 export default TicketForm
+
