@@ -44,15 +44,10 @@ var App = function App() {
       child = _useState4[0],
       setChild = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState6 = _slicedToArray(_useState5, 2),
-      ticket = _useState6[0],
-      setTicket = _useState6[1];
-
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-      _useState8 = _slicedToArray(_useState7, 2),
-      showModal = _useState8[0],
-      setShowModal = _useState8[1];
+      showModal = _useState6[0],
+      setShowModal = _useState6[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var script = document.createElement('script');
@@ -63,17 +58,19 @@ var App = function App() {
     script.defer = true;
     document.head.appendChild(script);
   }, []);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {}, [showModal]);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (!loaded && !showModal) return;
     app.initialized().then(function (client) {
-      client.events.on("app.activated", onAppActivated);
-      client.events.on("app.deactivated", onAppDeactivated);
       client.data.get('ticket').then(function (data) {
-        setTicket(data.ticket);
         setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TicketForm__WEBPACK_IMPORTED_MODULE_3__["default"], {
           ticket: data.ticket
         }));
+        client.events.on("app.activated", function () {
+          return onAppActivated(data.ticket);
+        });
+        client.events.on("app.deactivated", function () {
+          return onAppDeactivated(data.ticket);
+        });
       });
 
       var propertyChangeCallback = function propertyChangeCallback(event) // code to be executed when the status of the ticket is changed.
@@ -101,14 +98,15 @@ var App = function App() {
     }
   }, [loaded, showModal]);
 
-  var onAppActivated = function onAppActivated() {
-    setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_ClickUpButton__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+  var onAppActivated = function onAppActivated(ticket) {
+    setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_ClickUpButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      ticket: ticket
+    }));
   };
 
-  var onAppDeactivated = function onAppDeactivated() {
-    console.log("client", client);
+  var onAppDeactivated = function onAppDeactivated(ticket) {
     setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TicketForm__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      client: client
+      ticket: ticket
     }));
   };
 
@@ -133,8 +131,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 67294);
 
 
-function ClickUpButton() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", null, "Get Click-Up Ticket Info"));
+function ClickUpButton(props) {
+  var ticket = props.ticket;
+
+  var getClickUp = function getClickUp() {
+    console.log("click up ticket associated is", ticket.custom_fields.cf_clickup_ticket);
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    onClick: getClickUp
+  }, "Get Click-Up Ticket Info"));
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ClickUpButton);
@@ -160,8 +166,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-select */ 23157);
 /* harmony import */ var _tagList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tagList */ 6519);
-var _this = undefined;
-
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -191,7 +195,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var TicketForm = function TicketForm(props) {
   var ticket = props.ticket;
-  console.log("ticket in ticketform", ticket);
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -228,15 +231,14 @@ var TicketForm = function TicketForm(props) {
     reqCustomer: "",
     assignees: [],
     tags: [],
-    priority: 0
+    priority: 0,
+    reqDueDate: 0
   };
 
   var tagChange = function tagChange(e) {
-    console.log(e);
     e.map(function (item) {
       return setTags([].concat(_toConsumableArray(tags), [item.value]));
     });
-    console.log("tags", tags);
   };
 
   var onSubmit = function onSubmit(values) {
@@ -280,11 +282,10 @@ var TicketForm = function TicketForm(props) {
       }, {
         /* Requested Due Date */
         "id": "b27c4ef5-a843-4c29-a3d4-e613bafcbad1",
-        "value": dueDate
+        "value": values.reqDueDate
       }]
     };
-    console.log("paylod", payload);
-    console.log("form", _this.Form); // var config = {
+    console.log("paylod", payload); // var config = {
     //   method: 'post',
     //   url: 'https://api.clickup.com/api/v2/list/list_id/task',
     //   headers: { 
@@ -297,6 +298,7 @@ var TicketForm = function TicketForm(props) {
     // axios(config)
     // .then(function (response) {
     //   console.log(JSON.stringify(response.data));
+    //   /* set Click up ticket field to returned click up ticket */
     // })
     // .catch(function (error) {
     //   console.log(error);
@@ -328,6 +330,7 @@ var TicketForm = function TicketForm(props) {
     multiple: "multiple"
   }, assigneeArr.map(function (item, i) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+      key: i,
       value: item.id
     }, item.name);
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -344,11 +347,17 @@ var TicketForm = function TicketForm(props) {
     className: "textarea"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "input"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Requested Due Date:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
+    type: "date",
+    name: "reqDueDate"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "input"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Requesting Customer:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
     as: "select",
     name: "reqCustomer"
   }, requestingArr.map(function (item, i) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+      key: i,
       value: item
     }, item);
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -359,13 +368,13 @@ var TicketForm = function TicketForm(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
     value: "0"
   }, "Choose Priority"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "1"
-  }, "Low"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "2"
-  }, "Medium"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "3"
-  }, "High"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
     value: "4"
+  }, "Low"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+    value: "3"
+  }, "Medium"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+    value: "2"
+  }, "High"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+    value: "1"
   }, "Urgent"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "input"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Tags:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_select__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -682,7 +691,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".App {\r\n  text-align: center;\r\n}\r\n\r\n.App-logo {\r\n  height: 40vmin;\r\n  pointer-events: none;\r\n}\r\n\r\n.input{\r\n  display:flex;\r\n  flex-direction:column;\r\n}\r\n.textarea{\r\n  height: 14vh;\r\n}\r\nlabel{\r\n  font-weight: 900;\r\n  margin-bottom:0.5vh;\r\n}\r\n\r\n\r\n", "",{"version":3,"sources":["webpack://src/App.css"],"names":[],"mappings":"AAAA;EACE,kBAAkB;AACpB;;AAEA;EACE,cAAc;EACd,oBAAoB;AACtB;;AAEA;EACE,YAAY;EACZ,qBAAqB;AACvB;AACA;EACE,YAAY;AACd;AACA;EACE,gBAAgB;EAChB,mBAAmB;AACrB","sourcesContent":[".App {\r\n  text-align: center;\r\n}\r\n\r\n.App-logo {\r\n  height: 40vmin;\r\n  pointer-events: none;\r\n}\r\n\r\n.input{\r\n  display:flex;\r\n  flex-direction:column;\r\n}\r\n.textarea{\r\n  height: 14vh;\r\n}\r\nlabel{\r\n  font-weight: 900;\r\n  margin-bottom:0.5vh;\r\n}\r\n\r\n\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".App {\r\n  text-align: center;\r\n}\r\n\r\n.App-logo {\r\n  height: 40vmin;\r\n  pointer-events: none;\r\n}\r\n\r\n.input{\r\n  display:flex;\r\n  flex-direction:column;\r\n  margin-bottom: -1vh;\r\n}\r\n.textarea{\r\n  height: 14vh;\r\n}\r\nlabel{\r\n  font-weight: 900;\r\n  margin-bottom:0.5vh;\r\n}\r\n\r\n\r\n", "",{"version":3,"sources":["webpack://src/App.css"],"names":[],"mappings":"AAAA;EACE,kBAAkB;AACpB;;AAEA;EACE,cAAc;EACd,oBAAoB;AACtB;;AAEA;EACE,YAAY;EACZ,qBAAqB;EACrB,mBAAmB;AACrB;AACA;EACE,YAAY;AACd;AACA;EACE,gBAAgB;EAChB,mBAAmB;AACrB","sourcesContent":[".App {\r\n  text-align: center;\r\n}\r\n\r\n.App-logo {\r\n  height: 40vmin;\r\n  pointer-events: none;\r\n}\r\n\r\n.input{\r\n  display:flex;\r\n  flex-direction:column;\r\n  margin-bottom: -1vh;\r\n}\r\n.textarea{\r\n  height: 14vh;\r\n}\r\nlabel{\r\n  font-weight: 900;\r\n  margin-bottom:0.5vh;\r\n}\r\n\r\n\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -776,4 +785,4 @@ module.exports = content.locals || {};
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.6fc4b443.js.map
+//# sourceMappingURL=main.755b6df4.js.map

@@ -8,7 +8,6 @@ import { tagList } from './tagList';
 
 const TicketForm = (props) => {
   const {ticket} = props
-  console.log("ticket in ticketform",ticket)
   const [loading, setLoading] = useState(false)
   const [tags, setTags] = useState([])
 
@@ -32,14 +31,14 @@ const TicketForm = (props) => {
     reqCustomer:"",
     assignees:[],
     tags:[],
-    priority:0
+    priority:0,
+    reqDueDate:0
   }
 
   const tagChange= (e)=>{
-    console.log(e)
     e.map((item)=>setTags([...tags,item.value]))
-    console.log("tags",tags)
   }
+
 
   const onSubmit = (values)=>{
     let assignees = values.assignees.map((item)=>Number(item))
@@ -78,12 +77,11 @@ const TicketForm = (props) => {
         {
           /* Requested Due Date */
           "id":"b27c4ef5-a843-4c29-a3d4-e613bafcbad1",
-          "value": dueDate
+          "value": values.reqDueDate
         }
       ]
     }
     console.log("paylod",payload)
-    console.log("form", this.Form)
     // var config = {
     //   method: 'post',
     //   url: 'https://api.clickup.com/api/v2/list/list_id/task',
@@ -98,6 +96,7 @@ const TicketForm = (props) => {
     // axios(config)
     // .then(function (response) {
     //   console.log(JSON.stringify(response.data));
+    //   /* set Click up ticket field to returned click up ticket */
     // })
     // .catch(function (error) {
     //   console.log(error);
@@ -129,7 +128,7 @@ const TicketForm = (props) => {
               {/* dropdown field for Assignees. Need everyones clickup id number */}
               <label>Assignee:</label>
               <Field as="select" name="assignees" multiple="multiple">
-                {assigneeArr.map((item, i)=><option value={item.id}>{item.name}</option>)}
+                {assigneeArr.map((item, i)=><option key={i} value={item.id}>{item.name}</option>)}
               </Field>
             </div><br/>
             <div className="input">
@@ -142,9 +141,14 @@ const TicketForm = (props) => {
             </div><br/>
             <div className="input">
               {/* dropdown field for requesting customer */}
+              <label>Requested Due Date:</label>
+              <Field type="date" name="reqDueDate" />
+            </div><br/>
+            <div className="input">
+              {/* dropdown field for requesting customer */}
               <label>Requesting Customer:</label>
               <Field as="select" name="reqCustomer" >
-                {requestingArr.map((item, i)=><option value={item}>{item}</option>)}
+                {requestingArr.map((item, i)=><option key={i} value={item}>{item}</option>)}
               </Field>
             </div><br/>
             <div className="input">
@@ -152,10 +156,10 @@ const TicketForm = (props) => {
               <label>Priority:</label>
               <Field as="select" name="priority" >
                 <option value="0">Choose Priority</option>
-                <option value="1">Low</option>
-                <option value="2">Medium</option>
-                <option value="3">High</option>
-                <option value="4">Urgent</option>
+                <option value="4">Low</option>
+                <option value="3">Medium</option>
+                <option value="2">High</option>
+                <option value="1">Urgent</option>
               </Field>
             </div><br/>
             <div className="input">

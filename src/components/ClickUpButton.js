@@ -1,9 +1,15 @@
 import React from 'react'
 
-function ClickUpButton() {
+function ClickUpButton(props) {
+    const {ticket} = props
+
+    const getClickUp=()=>{
+        console.log("click up ticket associated is", ticket.custom_fields.cf_clickup_ticket)
+    }
+    
     return (
         <div>
-            <button>Get Click-Up Ticket Info</button>
+            <button onClick={getClickUp}>Get Click-Up Ticket Info</button>
         </div>
     )
 }
