@@ -241,6 +241,28 @@ var TicketForm = function TicketForm(props) {
     });
   };
 
+  var updateFreshdeskWithClickup = function updateFreshdeskWithClickup(res) {
+    var data = {
+      custom_fields: {
+        /* figure out proper object property path for click up custom id looks like REQ-XXXX */
+        cf_clickup_ticket: res.data
+      }
+    };
+    var config = {
+      method: 'put',
+      url: "https://onerail.freshdesk.com/api/v2/tickets/".concat(ticket.id),
+      headers: {
+        'Authorization': "Basic /* Insert Freshdesk API Here */ "
+      },
+      data: data
+    };
+    axios__WEBPACK_IMPORTED_MODULE_2___default()(config).then(function (response) {
+      console.log(JSON.stringify(response.data));
+    })["catch"](function (error) {
+      console.log(error);
+    });
+  };
+
   var onSubmit = function onSubmit(values) {
     var assignees = values.assignees.map(function (item) {
       return Number(item);
@@ -299,6 +321,7 @@ var TicketForm = function TicketForm(props) {
     // .then(function (response) {
     //   console.log(JSON.stringify(response.data));
     //   /* set Click up ticket field to returned click up ticket */
+    //   updateFreshdeskWithClickup(response)
     // })
     // .catch(function (error) {
     //   console.log(error);
@@ -785,4 +808,4 @@ module.exports = content.locals || {};
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.755b6df4.js.map
+//# sourceMappingURL=main.3b456fea.js.map

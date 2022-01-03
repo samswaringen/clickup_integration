@@ -39,6 +39,30 @@ const TicketForm = (props) => {
     e.map((item)=>setTags([...tags,item.value]))
   }
 
+  const updateFreshdeskWithClickup =(res)=>{
+    let data = {
+      custom_fields:{
+        /* figure out proper object property path for click up custom id looks like REQ-XXXX */
+        cf_clickup_ticket:res.data
+      }
+    }
+    var config = {
+      method: 'put',
+      url: `https://onerail.freshdesk.com/api/v2/tickets/${ticket.id}`,
+      headers: { 
+        'Authorization': `Basic /* Insert Freshdesk API Here */ `
+      },
+      data:data
+    };
+    axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
 
   const onSubmit = (values)=>{
     let assignees = values.assignees.map((item)=>Number(item))
@@ -97,6 +121,7 @@ const TicketForm = (props) => {
     // .then(function (response) {
     //   console.log(JSON.stringify(response.data));
     //   /* set Click up ticket field to returned click up ticket */
+    //   updateFreshdeskWithClickup(response)
     // })
     // .catch(function (error) {
     //   console.log(error);
