@@ -15,6 +15,7 @@ const TicketForm = (props) => {
 
   const requestingArr = ["Who is Requesting?","AAP","TSC","Menard's","PetPeople","TBC","ATD","MiltonCat","Skullcandy","Pepsi","OneRail"]
 
+  /* Get ids from everyone */
   const assigneeArr = [
     {id:1, name:"Adam"},
     {id:2, name:"Chelsea"},

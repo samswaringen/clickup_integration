@@ -135,6 +135,7 @@ function ClickUpButton(props) {
   var ticket = props.ticket;
 
   var getClickUp = function getClickUp() {
+    console.log("ticket", ticket);
     console.log("click up ticket associated is", ticket.custom_fields.cf_clickup_ticket);
   };
 
@@ -207,6 +208,8 @@ var TicketForm = function TicketForm(props) {
       setTags = _useState4[1];
 
   var requestingArr = ["Who is Requesting?", "AAP", "TSC", "Menard's", "PetPeople", "TBC", "ATD", "MiltonCat", "Skullcandy", "Pepsi", "OneRail"];
+  /* Get ids from everyone */
+
   var assigneeArr = [{
     id: 1,
     name: "Adam"
@@ -808,4 +811,4 @@ module.exports = content.locals || {};
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.3b456fea.js.map
+//# sourceMappingURL=main.9c62f0c7.js.map

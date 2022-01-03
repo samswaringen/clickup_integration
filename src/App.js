@@ -22,6 +22,7 @@ const App = () => {
     if (!loaded && !showModal) return
       app.initialized().then((client) => {
         client.data.get('ticket').then((data) => {
+          
           setChild((<TicketForm ticket={data.ticket} />))
           client.events.on("app.activated", ()=>onAppActivated(data.ticket));
           client.events.on("app.deactivated", ()=>onAppDeactivated(data.ticket)); 
