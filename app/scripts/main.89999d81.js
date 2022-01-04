@@ -14,8 +14,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 67294);
 /* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.css */ 95722);
 /* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_ClickUpButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/ClickUpButton */ 61054);
-/* harmony import */ var _components_TicketForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/TicketForm */ 60282);
+Object(function webpackMissingModule() { var e = new Error("Cannot find module './components/ClickUpButton'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _components_ClickUpStatus__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/ClickUpStatus */ 731);
+/* harmony import */ var _components_TicketForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/TicketForm */ 60282);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -27,6 +28,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -50,19 +52,10 @@ var App = function App() {
       setShowModal = _useState6[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    var script = document.createElement('script');
-    script.src = 'https://static.freshdev.io/fdk/2.0/assets/fresh_client.js';
-    script.addEventListener('load', function () {
-      return setLoaded(true);
-    });
-    script.defer = true;
-    document.head.appendChild(script);
-  }, []);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (!loaded && !showModal) return;
     app.initialized().then(function (client) {
       client.data.get('ticket').then(function (data) {
-        setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TicketForm__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TicketForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
           ticket: data.ticket
         }));
         client.events.on("app.activated", function () {
@@ -99,13 +92,13 @@ var App = function App() {
   }, [loaded, showModal]);
 
   var onAppActivated = function onAppActivated(ticket) {
-    setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_ClickUpButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_ClickUpStatus__WEBPACK_IMPORTED_MODULE_3__["default"], {
       ticket: ticket
     }));
   };
 
   var onAppDeactivated = function onAppDeactivated(ticket) {
-    setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TicketForm__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TicketForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
       ticket: ticket
     }));
   };
@@ -117,9 +110,9 @@ var App = function App() {
 
 /***/ }),
 
-/***/ 61054:
+/***/ 731:
 /*!*****************************************!*\
-  !*** ./src/components/ClickUpButton.js ***!
+  !*** ./src/components/ClickUpStatus.js ***!
   \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -129,22 +122,47 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 67294);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
-function ClickUpButton(props) {
+
+function ClickUpStatus(props) {
   var ticket = props.ticket;
 
-  var getClickUp = function getClickUp() {
-    console.log("ticket", ticket);
-    console.log("click up ticket associated is", ticket.custom_fields.cf_clickup_ticket);
-  };
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      clickTick = _useState2[0],
+      setClickTick = _useState2[1];
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-    onClick: getClickUp
-  }, "Get Click-Up Ticket Info"));
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+      _useState4 = _slicedToArray(_useState3, 2),
+      clickUpExists = _useState4[0],
+      setClickUpExists = _useState4[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    setClickTick(ticket.custom_fields.cf_clickup_ticket);
+  }, []);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    console.log(clickTick);
+
+    if (clickTick === null) {
+      setClickUpExists(false);
+    }
+  }, [clickTick]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, clickUpExists && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "click up ticket number is ", clickTick), !clickUpExists && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Click up ticket doesn't exist"));
 }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ClickUpButton);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ClickUpStatus);
 
 /***/ }),
 
@@ -811,4 +829,4 @@ module.exports = content.locals || {};
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.9c62f0c7.js.map
+//# sourceMappingURL=main.89999d81.js.map

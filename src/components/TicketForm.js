@@ -8,7 +8,6 @@ import { tagList } from './tagList';
 
 const TicketForm = (props) => {
   const {ticket} = props
-  const [loading, setLoading] = useState(false)
   const [tags, setTags] = useState([])
 
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import ClickUpButton from './components/ClickUpButton';
+import ClickUpStatus from './components/ClickUpStatus';
 import TicketForm from './components/TicketForm'
 
 const App = () => {
@@ -22,8 +22,9 @@ const App = () => {
     if (!loaded && !showModal) return
       app.initialized().then((client) => {
         client.data.get('ticket').then((data) => {
-          
+          /* set initial component to clickup ticket maker */
           setChild((<TicketForm ticket={data.ticket} />))
+          /* set app activate and deactivate events and callbacks and pass retrieved ticket data*/
           client.events.on("app.activated", ()=>onAppActivated(data.ticket));
           client.events.on("app.deactivated", ()=>onAppDeactivated(data.ticket)); 
         })
@@ -41,6 +42,7 @@ const App = () => {
         
       })
       if(showModal){
+        /*initialize client to pull modal */
         app.initialized().then((client) => {
           client.interface.trigger("showModal", {
             title: "Click up Integration",
@@ -55,7 +57,7 @@ const App = () => {
   }, [loaded,showModal])
 
   const onAppActivated =(ticket)=>{
-    setChild((<ClickUpButton ticket={ticket} />))
+    setChild((<ClickUpStatus ticket={ticket} />))
   }
 
   const onAppDeactivated = (ticket)=>{
