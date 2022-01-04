@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 import './App.css';
 import ClickUpStatus from './components/ClickUpStatus';
 import TicketForm from './components/TicketForm'
+
+export const TicketObj = createContext()
 
 const App = () => {
 
@@ -66,9 +68,11 @@ const App = () => {
 
 
   return (
-    <div>
-      {child}
-    </div>
+    <TicketObj.Provider value={{setChild:setChild}}>
+      <div>
+          {child}
+      </div>
+    </TicketObj.Provider>
   )
 }
 

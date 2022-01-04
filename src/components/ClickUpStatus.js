@@ -1,8 +1,12 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useContext} from 'react'
 import axios from 'axios'
+import {TicketObj} from '../App'
 
 function ClickUpStatus(props) {
   const {ticket} = props
+  const ticketContext = useContext(TicketObj)
+  const {setChild} = ticketContext
+  console.log("context",ticketContext)
 
   const [customID, setCustomID] = useState("")
   const [taskID, setTaskID] = useState("")
@@ -16,7 +20,7 @@ function ClickUpStatus(props) {
   },[])
 
   useEffect(()=>{
-    console.log(clickTick)
+    console.log(customID)
     if(customID === null){
       setClickUpExists(false)
     }else{
@@ -37,7 +41,7 @@ function ClickUpStatus(props) {
       //   console.log(error);
       // });
     }
-  },[clickTick])
+  },[customID])
 
   return (
     <div>
