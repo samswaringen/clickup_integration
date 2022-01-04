@@ -1,14 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import PropTypes from 'prop-types'
 import { Form, Formik, Field } from 'formik';
 import axios from 'axios';
 import Select from 'react-select'
 import { tagList } from './tagList';
+import {TicketObj} from '../App'
+import ClickUpStatus from './ClickUpStatus';
 
 
 const TicketForm = (props) => {
-  const {ticket} = props
+  const {ticket, client} = props
+  const ticketContext = useContext(TicketObj)
+  const {setShowModal} = ticketContext
+
   const [tags, setTags] = useState([])
+  const [successful, setSuccessful] = useState(false)
 
 
 
@@ -122,11 +128,13 @@ const TicketForm = (props) => {
     //   console.log(JSON.stringify(response.data));
     //   /* set Click up ticket field to returned click up ticket */
     //   updateFreshdeskWithClickup(response)
+    //   
     // })
     // .catch(function (error) {
     //   console.log(error);
     // });
-
+    setSuccessful(true)
+    setChild(<ClickUpStatus ticket={ticket} client={client} />)
   }
 
   const validate = (values)=>{
@@ -135,66 +143,73 @@ const TicketForm = (props) => {
 
   return (
     <div>
+       {!successful &&  
         <Formik
-          onSubmit={onSubmit}
-          validate={validate}
-          initialValues={initialValues}
-        >
-          <Form>
-            <div className="input">
-              <label>TicketID:</label>
-              <Field name="ticketID"/>
-            </div><br/>
-            <div className="input">
-              <label>Title:</label>
-              <Field name="title" type="text" />
-            </div><br/>
-            <div className="input">
-              {/* dropdown field for Assignees. Need everyones clickup id number */}
-              <label>Assignee:</label>
-              <Field as="select" name="assignees" multiple="multiple">
-                {assigneeArr.map((item, i)=><option key={i} value={item.id}>{item.name}</option>)}
-              </Field>
-            </div><br/>
-            <div className="input">
-              <label>Description:</label>
-              <Field as="textarea" name="description" className="textarea"/>
-            </div><br/>
-            <div className="input">
-            <label>Additional Notes:</label>
-              <Field as="textarea" name="notes" className="textarea"/>
-            </div><br/>
-            <div className="input">
-              {/* dropdown field for requesting customer */}
-              <label>Requested Due Date:</label>
-              <Field type="date" name="reqDueDate" />
-            </div><br/>
-            <div className="input">
-              {/* dropdown field for requesting customer */}
-              <label>Requesting Customer:</label>
-              <Field as="select" name="reqCustomer" >
-                {requestingArr.map((item, i)=><option key={i} value={item}>{item}</option>)}
-              </Field>
-            </div><br/>
-            <div className="input">
-              {/* dropdown field for Priority */}
-              <label>Priority:</label>
-              <Field as="select" name="priority" >
-                <option value="0">Choose Priority</option>
-                <option value="4">Low</option>
-                <option value="3">Medium</option>
-                <option value="2">High</option>
-                <option value="1">Urgent</option>
-              </Field>
-            </div><br/>
-            <div className="input">
-              {/* multi-select input field */}
-              <label>Tags:</label>
-              <Select id="tags" name="tags" options={tagList} isMulti classNamePrefix="select" closeMenuOnSelect={false} onChange={tagChange} />
-            </div><br/>
-            <button type="submit">Make Click-up Ticket</button>
-          </Form>
-        </Formik>
+            onSubmit={onSubmit}
+            validate={validate}
+            initialValues={initialValues}
+          >
+            <Form>
+              <div className="input">
+                <label>TicketID:</label>
+                <Field name="ticketID"/>
+              </div><br/>
+              <div className="input">
+                <label>Title:</label>
+                <Field name="title" type="text" />
+              </div><br/>
+              <div className="input">
+                {/* dropdown field for Assignees. Need everyones clickup id number */}
+                <label>Assignee:</label>
+                <Field as="select" name="assignees" multiple="multiple">
+                  {assigneeArr.map((item, i)=><option key={i} value={item.id}>{item.name}</option>)}
+                </Field>
+              </div><br/>
+              <div className="input">
+                <label>Description:</label>
+                <Field as="textarea" name="description" className="textarea"/>
+              </div><br/>
+              <div className="input">
+              <label>Additional Notes:</label>
+                <Field as="textarea" name="notes" className="textarea"/>
+              </div><br/>
+              <div className="input">
+                {/* dropdown field for requesting customer */}
+                <label>Requested Due Date:</label>
+                <Field type="date" name="reqDueDate" />
+              </div><br/>
+              <div className="input">
+                {/* dropdown field for requesting customer */}
+                <label>Requesting Customer:</label>
+                <Field as="select" name="reqCustomer" >
+                  {requestingArr.map((item, i)=><option key={i} value={item}>{item}</option>)}
+                </Field>
+              </div><br/>
+              <div className="input">
+                {/* dropdown field for Priority */}
+                <label>Priority:</label>
+                <Field as="select" name="priority" >
+                  <option value="0">Choose Priority</option>
+                  <option value="4">Low</option>
+                  <option value="3">Medium</option>
+                  <option value="2">High</option>
+                  <option value="1">Urgent</option>
+                </Field>
+              </div><br/>
+              <div className="input">
+                {/* multi-select input field */}
+                <label>Tags:</label>
+                <Select id="tags" name="tags" options={tagList} isMulti classNamePrefix="select" closeMenuOnSelect={false} onChange={tagChange} />
+              </div><br/>
+              <button type="submit">Make Click-up Ticket</button>
+            </Form>
+          </Formik>
+        }
+
+        {successful && 
+          <div>
+            Click up Ticket sent and Freshdesk ticket updated successfully. You can close this window.
+          </div>}
     </div>
   )
 }

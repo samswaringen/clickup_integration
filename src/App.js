@@ -25,10 +25,10 @@ const App = () => {
       app.initialized().then((client) => {
         client.data.get('ticket').then((data) => {
           /* set initial component to clickup ticket maker */
-          setChild((<TicketForm ticket={data.ticket} />))
+          setChild((<TicketForm ticket={data.ticket} client={client} />))
           /* set app activate and deactivate events and callbacks and pass retrieved ticket data*/
-          client.events.on("app.activated", ()=>onAppActivated(data.ticket));
-          client.events.on("app.deactivated", ()=>onAppDeactivated(data.ticket)); 
+          client.events.on("app.activated", ()=>onAppActivated(data.ticket, client));
+          client.events.on("app.deactivated", ()=>onAppDeactivated(data.ticket, client)); 
         })
         var propertyChangeCallback = function (event)
         // code to be executed when the status of the ticket is changed.
@@ -58,17 +58,17 @@ const App = () => {
     }
   }, [loaded,showModal])
 
-  const onAppActivated =(ticket)=>{
-    setChild((<ClickUpStatus ticket={ticket} />))
+  const onAppActivated =(ticket, client)=>{
+    setChild((<ClickUpStatus ticket={ticket} client={client} />))
   }
 
-  const onAppDeactivated = (ticket)=>{
-    setChild((<TicketForm ticket={ticket} />))
+  const onAppDeactivated = (ticket, client)=>{
+    setChild((<TicketForm ticket={ticket} client={client} />))
   }
 
 
   return (
-    <TicketObj.Provider value={{setChild:setChild}}>
+    <TicketObj.Provider value={{setChild:setChild, setShowModal:setShowModal}}>
       <div>
           {child}
       </div>

@@ -3,7 +3,7 @@ import axios from 'axios'
 import {TicketObj} from '../App'
 
 function ClickUpStatus(props) {
-  const {ticket} = props
+  const {ticket, client} = props
   const ticketContext = useContext(TicketObj)
   const {setChild} = ticketContext
   console.log("context",ticketContext)

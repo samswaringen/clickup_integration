@@ -66,15 +66,16 @@ var App = function App() {
       client.data.get('ticket').then(function (data) {
         /* set initial component to clickup ticket maker */
         setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TicketForm__WEBPACK_IMPORTED_MODULE_3__["default"], {
-          ticket: data.ticket
+          ticket: data.ticket,
+          client: client
         }));
         /* set app activate and deactivate events and callbacks and pass retrieved ticket data*/
 
         client.events.on("app.activated", function () {
-          return onAppActivated(data.ticket);
+          return onAppActivated(data.ticket, client);
         });
         client.events.on("app.deactivated", function () {
-          return onAppDeactivated(data.ticket);
+          return onAppDeactivated(data.ticket, client);
         });
       });
 
@@ -104,21 +105,24 @@ var App = function App() {
     }
   }, [loaded, showModal]);
 
-  var onAppActivated = function onAppActivated(ticket) {
+  var onAppActivated = function onAppActivated(ticket, client) {
     setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_ClickUpStatus__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      ticket: ticket
+      ticket: ticket,
+      client: client
     }));
   };
 
-  var onAppDeactivated = function onAppDeactivated(ticket) {
+  var onAppDeactivated = function onAppDeactivated(ticket, client) {
     setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TicketForm__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      ticket: ticket
+      ticket: ticket,
+      client: client
     }));
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(TicketObj.Provider, {
     value: {
-      setChild: setChild
+      setChild: setChild,
+      setShowModal: setShowModal
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, child));
 };
@@ -159,7 +163,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function ClickUpStatus(props) {
-  var ticket = props.ticket;
+  var ticket = props.ticket,
+      client = props.client;
   var ticketContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_App__WEBPACK_IMPORTED_MODULE_2__.TicketObj);
   var setChild = ticketContext.setChild;
   console.log("context", ticketContext);
@@ -222,525 +227,9 @@ function ClickUpStatus(props) {
 /*!**************************************!*\
   !*** ./src/components/TicketForm.js ***!
   \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 67294);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! prop-types */ 45697);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! formik */ 62598);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ 9669);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-select */ 23157);
-/* harmony import */ var _tagList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tagList */ 6519);
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-
-
-
-
-var TicketForm = function TicketForm(props) {
-  var ticket = props.ticket;
-
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
-      _useState2 = _slicedToArray(_useState, 2),
-      tags = _useState2[0],
-      setTags = _useState2[1];
-
-  var requestingArr = ["Who is Requesting?", "AAP", "TSC", "Menard's", "PetPeople", "TBC", "ATD", "MiltonCat", "Skullcandy", "Pepsi", "OneRail"];
-  /* Get ids from everyone */
-
-  var assigneeArr = [{
-    id: 1,
-    name: "Adam"
-  }, {
-    id: 2,
-    name: "Chelsea"
-  }, {
-    id: 3,
-    name: "Corrie"
-  }, {
-    id: 4,
-    name: "Marissa"
-  }, {
-    id: 26300173,
-    name: "Sam"
-  }];
-  var initialValues = {
-    ticketID: ticket.id,
-    title: ticket.subject,
-    description: ticket.description_text,
-    notes: "",
-    reqCustomer: "",
-    assignees: [],
-    tags: [],
-    priority: 0,
-    reqDueDate: 0
-  };
-
-  var tagChange = function tagChange(e) {
-    e.map(function (item) {
-      return setTags([].concat(_toConsumableArray(tags), [item.value]));
-    });
-  };
-
-  var updateFreshdeskWithClickup = function updateFreshdeskWithClickup(res) {
-    var data = {
-      custom_fields: {
-        /* figure out proper object property path for click up custom id looks like REQ-XXXX */
-        cf_clickup_ticket: res.data
-      }
-    };
-    var config = {
-      method: 'put',
-      url: "https://onerail.freshdesk.com/api/v2/tickets/".concat(ticket.id),
-      headers: {
-        'Authorization': "Basic /* Insert Freshdesk API Here */ "
-      },
-      data: data
-    };
-    axios__WEBPACK_IMPORTED_MODULE_2___default()(config).then(function (response) {
-      console.log(JSON.stringify(response.data));
-    })["catch"](function (error) {
-      console.log(error);
-    });
-  };
-
-  var onSubmit = function onSubmit(values) {
-    var assignees = values.assignees.map(function (item) {
-      return Number(item);
-    });
-    var payload = {
-      "name": values.title,
-      "description": "Ticket:".concat(values.description, " | Notes:").concat(values.notes),
-      "assignees": assignees,
-      "tags": tags,
-      "status": "Open",
-      "priority": Number(values.priority),
-      "due_date": ""
-      /* i dont know */
-      ,
-      "due_date_time": false,
-      "time_estimate": ""
-      /* i dont know */
-      ,
-      "start_date": ""
-      /* i dont know */
-      ,
-      "start_date_time": false,
-      "notify_all": true,
-      "parent": null,
-      "links_to": null,
-      "check_required_custom_fields": true,
-      "custom_fields": [{
-        /* requesting customer */
-        "id": "693b7b05-8c30-4e7b-be39-295245333faf",
-        "value": values.reqCustomer
-      }, {
-        /* point of contact */
-        "id": "dd085afd-fdda-45c9-bd7e-7888e7d1ecac",
-        "value": values.assignees[0]
-      }, {
-        /* description... use it to list freshdesk ticket ID? */
-        "id": "5418bbd8-47f5-479c-8b07-88dded5b0540",
-        "value": values.ticketID
-      }, {
-        /* Requested Due Date */
-        "id": "b27c4ef5-a843-4c29-a3d4-e613bafcbad1",
-        "value": values.reqDueDate
-      }]
-    };
-    console.log("paylod", payload); // var config = {
-    //   method: 'post',
-    //   url: 'https://api.clickup.com/api/v2/list/list_id/task',
-    //   headers: { 
-    //     /*GET API KEY*/
-    //     'Authorization': '"access token"', 
-    //     'Content-Type': 'application/json'
-    //   },
-    //   data : payload
-    // };
-    // axios(config)
-    // .then(function (response) {
-    //   console.log(JSON.stringify(response.data));
-    //   /* set Click up ticket field to returned click up ticket */
-    //   updateFreshdeskWithClickup(response)
-    // })
-    // .catch(function (error) {
-    //   console.log(error);
-    // });
-  };
-
-  var validate = function validate(values) {
-    var errors = {};
-  };
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Formik, {
-    onSubmit: onSubmit,
-    validate: validate,
-    initialValues: initialValues
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Form, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "input"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "TicketID:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
-    name: "ticketID"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "input"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Title:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
-    name: "title",
-    type: "text"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "input"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Assignee:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
-    as: "select",
-    name: "assignees",
-    multiple: "multiple"
-  }, assigneeArr.map(function (item, i) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-      key: i,
-      value: item.id
-    }, item.name);
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "input"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Description:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
-    as: "textarea",
-    name: "description",
-    className: "textarea"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "input"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Additional Notes:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
-    as: "textarea",
-    name: "notes",
-    className: "textarea"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "input"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Requested Due Date:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
-    type: "date",
-    name: "reqDueDate"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "input"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Requesting Customer:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
-    as: "select",
-    name: "reqCustomer"
-  }, requestingArr.map(function (item, i) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-      key: i,
-      value: item
-    }, item);
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "input"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Priority:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
-    as: "select",
-    name: "priority"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "0"
-  }, "Choose Priority"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "4"
-  }, "Low"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "3"
-  }, "Medium"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "2"
-  }, "High"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "1"
-  }, "Urgent"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "input"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Tags:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_select__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    id: "tags",
-    name: "tags",
-    options: _tagList__WEBPACK_IMPORTED_MODULE_3__.tagList,
-    isMulti: true,
-    classNamePrefix: "select",
-    closeMenuOnSelect: false,
-    onChange: tagChange
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-    type: "submit"
-  }, "Make Click-up Ticket"))));
-};
-
-TicketForm.propTypes = {
-  client: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().object)
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TicketForm);
-
-/***/ }),
-
-/***/ 6519:
-/*!***********************************!*\
-  !*** ./src/components/tagList.js ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "tagList": () => (/* binding */ tagList)
-/* harmony export */ });
-var tagList = [{
-  value: "aap",
-  label: "aap"
-}, {
-  value: "address/name issue",
-  label: "address/name issue"
-}, {
-  value: "all customer",
-  label: "all customer"
-}, {
-  value: "atd",
-  label: "atd"
-}, {
-  value: "audit/watcher",
-  label: "audit/watcher"
-}, {
-  value: "back end",
-  label: "back end"
-}, {
-  value: "back-end",
-  label: "back-end"
-}, {
-  value: "blue green",
-  label: "blue green"
-}, {
-  value: "blue team",
-  label: "blue team"
-}, {
-  value: "bug",
-  label: "bug"
-}, {
-  value: "bugs",
-  label: "bugs"
-}, {
-  value: "cd",
-  label: "cd"
-}, {
-  value: "ci",
-  label: "ci"
-}, {
-  value: "contract(s)",
-  label: "contract(s)"
-}, {
-  value: "core",
-  label: "core"
-}, {
-  value: "cx",
-  label: "cx"
-}, {
-  value: "data engineering",
-  label: "data engineering"
-}, {
-  value: "design",
-  label: "design"
-}, {
-  value: "devs",
-  label: "devs"
-}, {
-  value: "dispatching issue",
-  label: "dispatching issue"
-}, {
-  value: "door dash",
-  label: "door dash"
-}, {
-  value: "duplicate",
-  label: "duplicate"
-}, {
-  value: "edi",
-  label: "edi"
-}, {
-  value: "engineering",
-  label: "engineering"
-}, {
-  value: "epic",
-  label: "epic"
-}, {
-  value: "escalation",
-  label: "escalation"
-}, {
-  value: "eta",
-  label: "eta"
-}, {
-  value: "extra",
-  label: "extra"
-}, {
-  value: "feature-enhancement",
-  label: "feature-enhancement"
-}, {
-  value: "featureflags",
-  label: "featureflags"
-}, {
-  value: "fedex",
-  label: "fedex"
-}, {
-  value: "filter/sort issue",
-  label: "filter/sort issue"
-}, {
-  value: "front end",
-  label: "front end"
-}, {
-  value: "front-end",
-  label: "front-end"
-}, {
-  value: "global",
-  label: "global"
-}, {
-  value: "green",
-  label: "green"
-}, {
-  value: "green team",
-  label: "green team"
-}, {
-  value: "high-impact",
-  label: "high-impact"
-}, {
-  value: "holiday",
-  label: "holiday"
-}, {
-  value: "hotfix",
-  label: "hotfix"
-}, {
-  value: "implementation",
-  label: "implementation"
-}, {
-  value: "insert",
-  label: "insert"
-}, {
-  value: "integrations",
-  label: "integrations"
-}, {
-  value: "limestone",
-  label: "limestone"
-}, {
-  value: "logistics",
-  label: "logistics"
-}, {
-  value: "lp portal",
-  label: "lp portal"
-}, {
-  value: "lp pricing",
-  label: "lp pricing"
-}, {
-  value: "menard",
-  label: "menard"
-}, {
-  value: "menards",
-  label: "menards"
-}, {
-  value: "milton cat",
-  label: "milton cat"
-}, {
-  value: "miltoncat",
-  label: "miltoncat"
-}, {
-  value: "mobile",
-  label: "mobile"
-}, {
-  value: "not a bug",
-  label: "not a bug"
-}, {
-  value: "notifications",
-  label: "notifications"
-}, {
-  value: "ops",
-  label: "ops"
-}, {
-  value: "ord",
-  label: "ord"
-}, {
-  value: "order status",
-  label: "order status"
-}, {
-  value: "pepsi",
-  label: "pepsi"
-}, {
-  value: "petpeople",
-  label: "petpeople"
-}, {
-  value: "plugin",
-  label: "plugin"
-}, {
-  value: "pod issue",
-  label: "pod issue"
-}, {
-  value: "qa",
-  label: "qa"
-}, {
-  value: "red",
-  label: "red"
-}, {
-  value: "red team",
-  label: "red team"
-}, {
-  value: "rel-team",
-  label: "rel-team"
-}, {
-  value: "reporting",
-  label: "reporting"
-}, {
-  value: "returns",
-  label: "returns"
-}, {
-  value: "revoke",
-  label: "revoke"
-}, {
-  value: "risk",
-  label: "risk"
-}, {
-  value: "risk-mit",
-  label: "risk-mit"
-}, {
-  value: "routing issue",
-  label: "routing issue"
-}, {
-  value: "scaling",
-  label: "scaling"
-}, {
-  value: "skullcandy",
-  label: "skullcandy"
-}, {
-  value: "staging",
-  label: "staging"
-}, {
-  value: "support",
-  label: "support"
-}, {
-  value: "synthetic events",
-  label: "synthetic events"
-}, {
-  value: "tbc",
-  label: "tbc"
-}, {
-  value: "tech debt",
-  label: "tech debt"
-}, {
-  value: "technical design",
-  label: "technical design"
-}, {
-  value: "test(s)",
-  label: "test(s)"
-}];
-
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\src\\components\\TicketForm.js: Unexpected token, expected \",\" (137:2)\n\n  135 |       client.interface.close()\n  136 |     }\n> 137 |   }\n      |   ^\n  138 |\n  139 |   const validate = (values)=>{\n  140 |     const errors = {}\n    at Object._raise (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:569:17)\n    at Object.raiseWithData (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:562:17)\n    at Object.raise (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:523:17)\n    at Object.unexpected (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:3601:16)\n    at Object.expect (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:3575:28)\n    at Object.parseCallExpressionArguments (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:11848:14)\n    at Object.parseCoverCallAndAsyncArrowHead (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:11771:29)\n    at Object.parseSubscript (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:11702:19)\n    at Object.parseSubscripts (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:11671:19)\n    at Object.parseExprSubscripts (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:11660:17)\n    at Object.parseUpdate (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:11634:21)\n    at Object.parseMaybeUnary (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:11609:23)\n    at Object.parseMaybeUnaryOrPrivate (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:11421:61)\n    at Object.parseExprOps (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:11428:23)\n    at Object.parseMaybeConditional (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:11398:23)\n    at Object.parseMaybeAssign (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:11358:21)");
 
 /***/ }),
 
@@ -876,4 +365,4 @@ module.exports = content.locals || {};
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.87ee914c.js.map
+//# sourceMappingURL=main.88a65a46.js.map
