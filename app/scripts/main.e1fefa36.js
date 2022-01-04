@@ -14,9 +14,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 67294);
 /* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.css */ 95722);
 /* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_1__);
-Object(function webpackMissingModule() { var e = new Error("Cannot find module './components/ClickUpButton'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-/* harmony import */ var _components_ClickUpStatus__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/ClickUpStatus */ 731);
-/* harmony import */ var _components_TicketForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/TicketForm */ 60282);
+/* harmony import */ var _components_ClickUpStatus__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/ClickUpStatus */ 39731);
+/* harmony import */ var _components_TicketForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/TicketForm */ 60282);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -28,7 +27,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
 
 
 
@@ -52,12 +50,24 @@ var App = function App() {
       setShowModal = _useState6[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var script = document.createElement('script');
+    script.src = 'https://static.freshdev.io/fdk/2.0/assets/fresh_client.js';
+    script.addEventListener('load', function () {
+      return setLoaded(true);
+    });
+    script.defer = true;
+    document.head.appendChild(script);
+  }, []);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (!loaded && !showModal) return;
     app.initialized().then(function (client) {
       client.data.get('ticket').then(function (data) {
-        setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TicketForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        /* set initial component to clickup ticket maker */
+        setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TicketForm__WEBPACK_IMPORTED_MODULE_3__["default"], {
           ticket: data.ticket
         }));
+        /* set app activate and deactivate events and callbacks and pass retrieved ticket data*/
+
         client.events.on("app.activated", function () {
           return onAppActivated(data.ticket);
         });
@@ -80,6 +90,7 @@ var App = function App() {
     });
 
     if (showModal) {
+      /*initialize client to pull modal */
       app.initialized().then(function (client) {
         client["interface"].trigger("showModal", {
           title: "Click up Integration",
@@ -92,13 +103,13 @@ var App = function App() {
   }, [loaded, showModal]);
 
   var onAppActivated = function onAppActivated(ticket) {
-    setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_ClickUpStatus__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_ClickUpStatus__WEBPACK_IMPORTED_MODULE_2__["default"], {
       ticket: ticket
     }));
   };
 
   var onAppDeactivated = function onAppDeactivated(ticket) {
-    setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TicketForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TicketForm__WEBPACK_IMPORTED_MODULE_3__["default"], {
       ticket: ticket
     }));
   };
@@ -110,7 +121,7 @@ var App = function App() {
 
 /***/ }),
 
-/***/ 731:
+/***/ 39731:
 /*!*****************************************!*\
   !*** ./src/components/ClickUpStatus.js ***!
   \*****************************************/
@@ -122,6 +133,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 67294);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ 9669);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -136,30 +149,58 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function ClickUpStatus(props) {
   var ticket = props.ticket;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
       _useState2 = _slicedToArray(_useState, 2),
-      clickTick = _useState2[0],
-      setClickTick = _useState2[1];
+      customID = _useState2[0],
+      setCustomID = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
       _useState4 = _slicedToArray(_useState3, 2),
-      clickUpExists = _useState4[0],
-      setClickUpExists = _useState4[1];
+      taskID = _useState4[0],
+      setTaskID = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+      _useState6 = _slicedToArray(_useState5, 2),
+      clickUpExists = _useState6[0],
+      setClickUpExists = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+      _useState8 = _slicedToArray(_useState7, 2),
+      clickTick = _useState8[0],
+      setClickTick = _useState8[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    setClickTick(ticket.custom_fields.cf_clickup_ticket);
+    setCustomID(ticket.custom_fields.cf_clickup_ticket); // need to make new field in freshdesk and then change this to find that value
+
+    setTaskID(ticket.custom_fields.cf_clickup_ticket);
   }, []);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     console.log(clickTick);
 
-    if (clickTick === null) {
+    if (customID === null) {
       setClickUpExists(false);
+    } else {// var config = {
+      //   method: 'get',
+      //   url: `https://api.clickup.com/api/v2/task/${taskID}/?custom_task_ids=${customID}`,
+      //   headers: { 
+      //     'Authorization': '"access_token"'
+      //   }
+      // };
+      // axios(config)
+      // .then(function (response) {
+      //   console.log(JSON.stringify(response.data));
+      //   setClickTick(response.data)
+      // })
+      // .catch(function (error) {
+      //   console.log(error);
+      // });
     }
   }, [clickTick]);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, clickUpExists && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "click up ticket number is ", clickTick), !clickUpExists && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Click up ticket doesn't exist"));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, clickUpExists && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "click up ticket number is ", customID), !clickUpExists && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Click up ticket doesn't exist"));
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ClickUpStatus);
@@ -215,15 +256,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var TicketForm = function TicketForm(props) {
   var ticket = props.ticket;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
-      loading = _useState2[0],
-      setLoading = _useState2[1];
-
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
-      _useState4 = _slicedToArray(_useState3, 2),
-      tags = _useState4[0],
-      setTags = _useState4[1];
+      tags = _useState2[0],
+      setTags = _useState2[1];
 
   var requestingArr = ["Who is Requesting?", "AAP", "TSC", "Menard's", "PetPeople", "TBC", "ATD", "MiltonCat", "Skullcandy", "Pepsi", "OneRail"];
   /* Get ids from everyone */
@@ -829,4 +865,4 @@ module.exports = content.locals || {};
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.89999d81.js.map
+//# sourceMappingURL=main.e1fefa36.js.map

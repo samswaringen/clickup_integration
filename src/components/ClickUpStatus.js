@@ -43,7 +43,7 @@ function ClickUpStatus(props) {
     <div>
       {clickUpExists &&
         <div>
-          click up ticket number is {clickTick}
+          click up ticket number is {customID}
           {/*here we will get click up ticket and post pertanent information*/}
         </div>
       }
