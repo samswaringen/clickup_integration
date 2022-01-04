@@ -111,7 +111,7 @@ const TicketForm = (props) => {
         }
       ]
     }
-    console.log("paylod",payload)
+    console.log("payload",payload)
     // var config = {
     //   method: 'post',
     //   url: 'https://api.clickup.com/api/v2/list/list_id/task',
@@ -134,7 +134,6 @@ const TicketForm = (props) => {
     //   console.log(error);
     // });
     setSuccessful(true)
-    setChild(<ClickUpStatus ticket={ticket} client={client} />)
   }
 
   const validate = (values)=>{

@@ -392,7 +392,7 @@ var TicketForm = function TicketForm(props) {
         "value": values.reqDueDate
       }]
     };
-    console.log("paylod", payload); // var config = {
+    console.log("payload", payload); // var config = {
     //   method: 'post',
     //   url: 'https://api.clickup.com/api/v2/list/list_id/task',
     //   headers: { 
@@ -414,10 +414,6 @@ var TicketForm = function TicketForm(props) {
     // });
 
     setSuccessful(true);
-    setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ClickUpStatus__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      ticket: ticket,
-      client: client
-    }));
   };
 
   var validate = function validate(values) {
@@ -900,4 +896,4 @@ module.exports = content.locals || {};
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.280ed7ef.js.map
+//# sourceMappingURL=main.c4d8bc82.js.map
