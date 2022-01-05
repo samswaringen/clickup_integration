@@ -126,6 +126,98 @@ function ModalForm() {
     e.map((item)=>setAssignees([...assignees,item.value]))
   }
 
+  const updateFreshdeskWithClickup =(res)=>{
+    let data = {
+      custom_fields:{
+        /* figure out proper object property path for click up custom id looks like REQ-XXXX */
+        cf_clickup_ticket:res.data
+      }
+    }
+    var config = {
+      method: 'put',
+      url: `https://onerail.freshdesk.com/api/v2/tickets/${ticket.id}`,
+      headers: { 
+        'Authorization': `Basic /* Insert Freshdesk API Here */ `
+      },
+      data:data
+    };
+    axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
+
+  const onSubmit = (values)=>{
+    const payload = {
+      "name": values.title,
+      "markdown_description": <div><p>Freshdesk Ticket:{values.description}</p><p>Additional Notes:{values.notes}</p></div>,
+      "assignees": assignees,
+      "tags": tags,
+      "status": "Open",
+      "priority": Number(values.priority),
+      "due_date": "" /* i dont know */,
+      "due_date_time": false,
+      "time_estimate": "" /* i dont know */,
+      "start_date": "" /* i dont know */,
+      "start_date_time": false,
+      "notify_all": true,
+      "parent": null,
+      "links_to": null,
+      "check_required_custom_fields": true,
+      "custom_fields": [
+        {
+          /* requesting customer */
+          "id":"693b7b05-8c30-4e7b-be39-295245333faf",
+          "value": values.reqCustomer
+        },
+        {
+          /* point of contact */
+          "id":"dd085afd-fdda-45c9-bd7e-7888e7d1ecac",
+          "value": assignees[0]
+        },
+        {
+          /* description... use it to list freshdesk ticket ID? */
+          "id":"5418bbd8-47f5-479c-8b07-88dded5b0540",
+          "value": values.ticketID
+        },
+        {
+          /* Requested Due Date */
+          "id":"b27c4ef5-a843-4c29-a3d4-e613bafcbad1",
+          "value": values.reqDueDate
+        }
+      ]
+    }
+    console.log("payload",payload)
+    // var config = {
+    //   method: 'post',
+    //   url: 'https://api.clickup.com/api/v2/list/6-71601233-1/task',
+    //   headers: { 
+    //     /*GET API KEY*/
+    //     'Authorization': '"access token"', 
+    //     'Content-Type': 'application/json'
+    //   },
+    //   data : payload
+    // };
+
+    // axios(config)
+    // .then(function (response) {
+    //   console.log(JSON.stringify(response.data));
+    //   /* set Click up ticket field to returned click up ticket */
+    //   updateFreshdeskWithClickup(response)
+    //   
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    // });
+    /* put this in updateFreshdeskWithClickup and make loading component.  update success with returned clickup information */
+
+
+  }
+
   return (
     <div>
       Modal form will show here
@@ -183,7 +275,7 @@ function ModalForm() {
                 {tagList.map((tag, i)=><option key={i} value={tag.value}>{tag.label}</option>)}
               </select>
               </div><br/>
-              <button type="submit">Make Click-up Ticket</button>
+              <button type="submit" onClick={onSubmit}>Make Click-up Ticket</button>
             </form>}
     </div>
   )
