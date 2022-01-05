@@ -1,6 +1,7 @@
 import React, { useState, useEffect, createContext } from 'react';
 import './App.css';
 import ClickUpStatus from './components/ClickUpStatus';
+import Success from './components/Success';
 import TicketForm from './components/TicketForm'
 
 export const TicketObj = createContext()
@@ -34,6 +35,7 @@ const App = () => {
         // code to be executed when the status of the ticket is changed.
         {
             var event_data = event.helper.getData();
+            client.instance.close()
             console.log(event.type + " changed from " + event_data.old + " to " +  event_data.new);
             if(event_data.new === 8){
               setShowModal(true)

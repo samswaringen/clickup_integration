@@ -5,16 +5,17 @@ import axios from 'axios';
 import Select from 'react-select'
 import { tagList } from './tagList';
 import {TicketObj} from '../App'
-import ClickUpStatus from './ClickUpStatus';
+import Success from './Success';
 
 
 const TicketForm = (props) => {
   const {ticket, client} = props
   const ticketContext = useContext(TicketObj)
-  const {setShowModal} = ticketContext
+  const {setChild} = ticketContext
 
   const [tags, setTags] = useState([])
-  const [successful, setSuccessful] = useState(false)
+  const [assignees, setAssignees] = useState([])
+
 
 
 
@@ -22,11 +23,11 @@ const TicketForm = (props) => {
 
   /* Get ids from everyone */
   const assigneeArr = [
-    {id:1, name:"Adam"},
-    {id:2, name:"Chelsea"},
-    {id:3, name:"Corrie"},
-    {id:4, name:"Marissa"},
-    {id:26300173, name:"Sam"}
+    {value:1, label:"Adam"},
+    {value:2, label:"Chelsea"},
+    {value:3, label:"Corrie"},
+    {value:4, label:"Marissa"},
+    {value:26300173, label:"Sam"}
   ]
 
   const initialValues = { 
@@ -35,7 +36,6 @@ const TicketForm = (props) => {
     description: ticket.description_text,
     notes: "",
     reqCustomer:"",
-    assignees:[],
     tags:[],
     priority:0,
     reqDueDate:0
@@ -43,6 +43,10 @@ const TicketForm = (props) => {
 
   const tagChange= (e)=>{
     e.map((item)=>setTags([...tags,item.value]))
+  }
+
+  const assigneeChange = (e)=>{
+    e.map((item)=>setAssignees([...tags,item.value]))
   }
 
   const updateFreshdeskWithClickup =(res)=>{
@@ -70,11 +74,11 @@ const TicketForm = (props) => {
   }
 
 
+
   const onSubmit = (values)=>{
-    let assignees = values.assignees.map((item)=>Number(item))
     const payload = {
       "name": values.title,
-      "description": `Ticket:${values.description} | Notes:${values.notes}`,
+      "markdown_description": <><p>Freshdesk Ticket:{values.description}</p><p>Additional Notes:{values.notes}</p></>,
       "assignees": assignees,
       "tags": tags,
       "status": "Open",
@@ -114,7 +118,7 @@ const TicketForm = (props) => {
     console.log("payload",payload)
     // var config = {
     //   method: 'post',
-    //   url: 'https://api.clickup.com/api/v2/list/list_id/task',
+    //   url: 'https://api.clickup.com/api/v2/list/6-71601233-1/task',
     //   headers: { 
     //     /*GET API KEY*/
     //     'Authorization': '"access token"', 
@@ -133,7 +137,8 @@ const TicketForm = (props) => {
     // .catch(function (error) {
     //   console.log(error);
     // });
-    setSuccessful(true)
+    /* put this in updateFreshdeskWithClickup and make loading component.  update success with returned clickup information */ 
+    setChild((<Success />))
   }
 
   const validate = (values)=>{
@@ -142,52 +147,49 @@ const TicketForm = (props) => {
 
   return (
     <div>
-       {!successful &&  
         <Formik
             onSubmit={onSubmit}
             validate={validate}
             initialValues={initialValues}
           >
             <Form>
-              <div className="input">
+              <div className="input-div">
                 <label>TicketID:</label>
-                <Field name="ticketID"/>
+                <Field name="ticketID" className="input"/>
               </div><br/>
-              <div className="input">
+              <div className="input-div">
                 <label>Title:</label>
-                <Field name="title" type="text" />
+                <Field name="title" type="text" className="input" />
               </div><br/>
-              <div className="input">
+              <div className="input-div">
                 {/* dropdown field for Assignees. Need everyones clickup id number */}
                 <label>Assignee:</label>
-                <Field as="select" name="assignees" multiple="multiple">
-                  {assigneeArr.map((item, i)=><option key={i} value={item.id}>{item.name}</option>)}
-                </Field>
+                <Select id="assignees" name="assignees" options={assigneeArr} isMulti classNamePrefix="select" closeMenuOnSelect={false} onChange={assigneeChange} />
               </div><br/>
-              <div className="input">
+              <div className="input-div">
                 <label>Description:</label>
                 <Field as="textarea" name="description" className="textarea"/>
               </div><br/>
-              <div className="input">
+              <div className="input-div">
               <label>Additional Notes:</label>
                 <Field as="textarea" name="notes" className="textarea"/>
               </div><br/>
-              <div className="input">
+              <div className="input-div">
                 {/* dropdown field for requesting customer */}
                 <label>Requested Due Date:</label>
-                <Field type="date" name="reqDueDate" />
+                <Field type="date" name="reqDueDate" className="input" />
               </div><br/>
-              <div className="input">
+              <div className="input-div">
                 {/* dropdown field for requesting customer */}
                 <label>Requesting Customer:</label>
-                <Field as="select" name="reqCustomer" >
+                <Field as="select" name="reqCustomer" className="input">
                   {requestingArr.map((item, i)=><option key={i} value={item}>{item}</option>)}
                 </Field>
               </div><br/>
-              <div className="input">
+              <div className="input-div">
                 {/* dropdown field for Priority */}
                 <label>Priority:</label>
-                <Field as="select" name="priority" >
+                <Field as="select" name="priority" className="input">
                   <option value="0">Choose Priority</option>
                   <option value="4">Low</option>
                   <option value="3">Medium</option>
@@ -195,7 +197,7 @@ const TicketForm = (props) => {
                   <option value="1">Urgent</option>
                 </Field>
               </div><br/>
-              <div className="input">
+              <div className="input-div">
                 {/* multi-select input field */}
                 <label>Tags:</label>
                 <Select id="tags" name="tags" options={tagList} isMulti classNamePrefix="select" closeMenuOnSelect={false} onChange={tagChange} />
@@ -203,12 +205,7 @@ const TicketForm = (props) => {
               <button type="submit">Make Click-up Ticket</button>
             </Form>
           </Formik>
-        }
 
-        {successful && 
-          <div>
-            Click up Ticket sent and Freshdesk ticket updated successfully. You can close this window.
-          </div>}
     </div>
   )
 }

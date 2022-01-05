@@ -16,7 +16,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.css */ 95722);
 /* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_ClickUpStatus__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/ClickUpStatus */ 39731);
-/* harmony import */ var _components_TicketForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/TicketForm */ 60282);
+/* harmony import */ var _components_Success__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Success */ 48122);
+/* harmony import */ var _components_TicketForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/TicketForm */ 60282);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -28,6 +29,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -65,7 +67,7 @@ var App = function App() {
     app.initialized().then(function (client) {
       client.data.get('ticket').then(function (data) {
         /* set initial component to clickup ticket maker */
-        setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TicketForm__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TicketForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
           ticket: data.ticket,
           client: client
         }));
@@ -82,6 +84,7 @@ var App = function App() {
       var propertyChangeCallback = function propertyChangeCallback(event) // code to be executed when the status of the ticket is changed.
       {
         var event_data = event.helper.getData();
+        client.instance.close();
         console.log(event.type + " changed from " + event_data.old + " to " + event_data["new"]);
 
         if (event_data["new"] === 8) {
@@ -113,7 +116,7 @@ var App = function App() {
   };
 
   var onAppDeactivated = function onAppDeactivated(ticket, client) {
-    setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TicketForm__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TicketForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
       ticket: ticket,
       client: client
     }));
@@ -216,10 +219,38 @@ function ClickUpStatus(props) {
       // });
     }
   }, [customID]);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, clickUpExists && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "click up ticket number is ", customID), !clickUpExists && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Click up ticket doesn't exist"));
+
+  var openClickUpModal = function openClickUpModal() {};
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, clickUpExists && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "click up ticket number is ", customID, "Status: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    onClick: openClickUpModal
+  }, "More Detailed View")), !clickUpExists && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Click up ticket doesn't exist"));
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ClickUpStatus);
+
+/***/ }),
+
+/***/ 48122:
+/*!***********************************!*\
+  !*** ./src/components/Success.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 67294);
+
+
+function Success(props) {
+  var clickCustID = props.clickCustID;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Click up Ticket sent, ticket created ", clickCustID, " and Freshdesk ticket updated successfully. You can close this window.");
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Success);
 
 /***/ }),
 
@@ -243,7 +274,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-select */ 23157);
 /* harmony import */ var _tagList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tagList */ 6519);
 /* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../App */ 48187);
-/* harmony import */ var _ClickUpStatus__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ClickUpStatus */ 39731);
+/* harmony import */ var _Success__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Success */ 48122);
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -277,36 +308,36 @@ var TicketForm = function TicketForm(props) {
   var ticket = props.ticket,
       client = props.client;
   var ticketContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_App__WEBPACK_IMPORTED_MODULE_4__.TicketObj);
-  var setShowModal = ticketContext.setShowModal;
+  var setChild = ticketContext.setChild;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
       tags = _useState2[0],
       setTags = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
       _useState4 = _slicedToArray(_useState3, 2),
-      successful = _useState4[0],
-      setSuccessful = _useState4[1];
+      assignees = _useState4[0],
+      setAssignees = _useState4[1];
 
   var requestingArr = ["Who is Requesting?", "AAP", "TSC", "Menard's", "PetPeople", "TBC", "ATD", "MiltonCat", "Skullcandy", "Pepsi", "OneRail"];
   /* Get ids from everyone */
 
   var assigneeArr = [{
-    id: 1,
-    name: "Adam"
+    value: 1,
+    label: "Adam"
   }, {
-    id: 2,
-    name: "Chelsea"
+    value: 2,
+    label: "Chelsea"
   }, {
-    id: 3,
-    name: "Corrie"
+    value: 3,
+    label: "Corrie"
   }, {
-    id: 4,
-    name: "Marissa"
+    value: 4,
+    label: "Marissa"
   }, {
-    id: 26300173,
-    name: "Sam"
+    value: 26300173,
+    label: "Sam"
   }];
   var initialValues = {
     ticketID: ticket.id,
@@ -314,7 +345,6 @@ var TicketForm = function TicketForm(props) {
     description: ticket.description_text,
     notes: "",
     reqCustomer: "",
-    assignees: [],
     tags: [],
     priority: 0,
     reqDueDate: 0
@@ -323,6 +353,12 @@ var TicketForm = function TicketForm(props) {
   var tagChange = function tagChange(e) {
     e.map(function (item) {
       return setTags([].concat(_toConsumableArray(tags), [item.value]));
+    });
+  };
+
+  var assigneeChange = function assigneeChange(e) {
+    e.map(function (item) {
+      return setAssignees([].concat(_toConsumableArray(tags), [item.value]));
     });
   };
 
@@ -349,12 +385,9 @@ var TicketForm = function TicketForm(props) {
   };
 
   var onSubmit = function onSubmit(values) {
-    var assignees = values.assignees.map(function (item) {
-      return Number(item);
-    });
     var payload = {
       "name": values.title,
-      "description": "Ticket:".concat(values.description, " | Notes:").concat(values.notes),
+      "markdown_description": /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Freshdesk Ticket:", values.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Additional Notes:", values.notes)),
       "assignees": assignees,
       "tags": tags,
       "status": "Open",
@@ -394,7 +427,7 @@ var TicketForm = function TicketForm(props) {
     };
     console.log("payload", payload); // var config = {
     //   method: 'post',
-    //   url: 'https://api.clickup.com/api/v2/list/list_id/task',
+    //   url: 'https://api.clickup.com/api/v2/list/6-71601233-1/task',
     //   headers: { 
     //     /*GET API KEY*/
     //     'Authorization': '"access token"', 
@@ -413,69 +446,75 @@ var TicketForm = function TicketForm(props) {
     //   console.log(error);
     // });
 
-    setSuccessful(true);
+    /* put this in updateFreshdeskWithClickup and make loading component.  update success with returned clickup information */
+
+    setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Success__WEBPACK_IMPORTED_MODULE_5__["default"], null));
   };
 
   var validate = function validate(values) {
     var errors = {};
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, !successful && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Formik, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Formik, {
     onSubmit: onSubmit,
     validate: validate,
     initialValues: initialValues
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Form, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "input"
+    className: "input-div"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "TicketID:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
-    name: "ticketID"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    name: "ticketID",
     className: "input"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "input-div"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Title:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
     name: "title",
-    type: "text"
+    type: "text",
+    className: "input"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "input"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Assignee:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
-    as: "select",
+    className: "input-div"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Assignee:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_select__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    id: "assignees",
     name: "assignees",
-    multiple: "multiple"
-  }, assigneeArr.map(function (item, i) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-      key: i,
-      value: item.id
-    }, item.name);
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "input"
+    options: assigneeArr,
+    isMulti: true,
+    classNamePrefix: "select",
+    closeMenuOnSelect: false,
+    onChange: assigneeChange
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "input-div"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Description:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
     as: "textarea",
     name: "description",
     className: "textarea"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "input"
+    className: "input-div"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Additional Notes:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
     as: "textarea",
     name: "notes",
     className: "textarea"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "input"
+    className: "input-div"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Requested Due Date:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
     type: "date",
-    name: "reqDueDate"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    name: "reqDueDate",
     className: "input"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "input-div"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Requesting Customer:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
     as: "select",
-    name: "reqCustomer"
+    name: "reqCustomer",
+    className: "input"
   }, requestingArr.map(function (item, i) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
       key: i,
       value: item
     }, item);
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "input"
+    className: "input-div"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Priority:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
     as: "select",
-    name: "priority"
+    name: "priority",
+    className: "input"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
     value: "0"
   }, "Choose Priority"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
@@ -487,7 +526,7 @@ var TicketForm = function TicketForm(props) {
   }, "High"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
     value: "1"
   }, "Urgent"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "input"
+    className: "input-div"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Tags:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_select__WEBPACK_IMPORTED_MODULE_6__["default"], {
     id: "tags",
     name: "tags",
@@ -498,7 +537,7 @@ var TicketForm = function TicketForm(props) {
     onChange: tagChange
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     type: "submit"
-  }, "Make Click-up Ticket"))), successful && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Click up Ticket sent and Freshdesk ticket updated successfully. You can close this window."));
+  }, "Make Click-up Ticket"))));
 };
 
 TicketForm.propTypes = {
@@ -801,8 +840,9 @@ __webpack_require__.r(__webpack_exports__);
 // Imports
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Inter&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".App {\r\n  text-align: center;\r\n}\r\n\r\n.App-logo {\r\n  height: 40vmin;\r\n  pointer-events: none;\r\n}\r\n\r\n.input{\r\n  display:flex;\r\n  flex-direction:column;\r\n  margin-bottom: -1vh;\r\n}\r\n.textarea{\r\n  height: 14vh;\r\n}\r\nlabel{\r\n  font-weight: 900;\r\n  margin-bottom:0.5vh;\r\n}\r\n\r\n\r\n", "",{"version":3,"sources":["webpack://src/App.css"],"names":[],"mappings":"AAAA;EACE,kBAAkB;AACpB;;AAEA;EACE,cAAc;EACd,oBAAoB;AACtB;;AAEA;EACE,YAAY;EACZ,qBAAqB;EACrB,mBAAmB;AACrB;AACA;EACE,YAAY;AACd;AACA;EACE,gBAAgB;EAChB,mBAAmB;AACrB","sourcesContent":[".App {\r\n  text-align: center;\r\n}\r\n\r\n.App-logo {\r\n  height: 40vmin;\r\n  pointer-events: none;\r\n}\r\n\r\n.input{\r\n  display:flex;\r\n  flex-direction:column;\r\n  margin-bottom: -1vh;\r\n}\r\n.textarea{\r\n  height: 14vh;\r\n}\r\nlabel{\r\n  font-weight: 900;\r\n  margin-bottom:0.5vh;\r\n}\r\n\r\n\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".App {\r\n  text-align: center;\r\n}\r\n\r\n.App-logo {\r\n  height: 40vmin;\r\n  pointer-events: none;\r\n}\r\n\r\n.input-div{\r\n  display:flex;\r\n  flex-direction:column;\r\n  margin-bottom: -2vh;\r\n}\r\n.input{\r\n  border-radius: 5px;\r\n  height: 4vh;\r\n  font-size: 2vh;\r\n  padding-left: 1vw;\r\n  font-family:\"Inter\"\r\n}\r\n.textarea{\r\n  height: 14vh;\r\n  border: 1px solid grey;\r\n  border-radius: 5px;\r\n  font-family:\"Inter\"\r\n}\r\nlabel{\r\n  font-weight: 900;\r\n  margin-bottom:0.5vh;\r\n}\r\n\r\n\r\n", "",{"version":3,"sources":["webpack://src/App.css"],"names":[],"mappings":"AAEA;EACE,kBAAkB;AACpB;;AAEA;EACE,cAAc;EACd,oBAAoB;AACtB;;AAEA;EACE,YAAY;EACZ,qBAAqB;EACrB,mBAAmB;AACrB;AACA;EACE,kBAAkB;EAClB,WAAW;EACX,cAAc;EACd,iBAAiB;EACjB;AACF;AACA;EACE,YAAY;EACZ,sBAAsB;EACtB,kBAAkB;EAClB;AACF;AACA;EACE,gBAAgB;EAChB,mBAAmB;AACrB","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');\r\n\r\n.App {\r\n  text-align: center;\r\n}\r\n\r\n.App-logo {\r\n  height: 40vmin;\r\n  pointer-events: none;\r\n}\r\n\r\n.input-div{\r\n  display:flex;\r\n  flex-direction:column;\r\n  margin-bottom: -2vh;\r\n}\r\n.input{\r\n  border-radius: 5px;\r\n  height: 4vh;\r\n  font-size: 2vh;\r\n  padding-left: 1vw;\r\n  font-family:\"Inter\"\r\n}\r\n.textarea{\r\n  height: 14vh;\r\n  border: 1px solid grey;\r\n  border-radius: 5px;\r\n  font-family:\"Inter\"\r\n}\r\nlabel{\r\n  font-weight: 900;\r\n  margin-bottom:0.5vh;\r\n}\r\n\r\n\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -896,4 +936,4 @@ module.exports = content.locals || {};
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.c4d8bc82.js.map
+//# sourceMappingURL=main.068f69b6.js.map

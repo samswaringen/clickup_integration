@@ -43,12 +43,18 @@ function ClickUpStatus(props) {
     }
   },[customID])
 
+  const openClickUpModal = ()=>{
+
+  }
+
   return (
     <div>
       {clickUpExists &&
         <div>
           click up ticket number is {customID}
           {/*here we will get click up ticket and post pertanent information*/}
+          Status: <br/>
+          <button onClick={openClickUpModal}>More Detailed View</button>
         </div>
       }
       {!clickUpExists &&
