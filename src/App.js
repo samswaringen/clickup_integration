@@ -2,7 +2,9 @@ import React, { useState, useEffect, createContext } from 'react';
 import './App.css';
 import ClickUpStatus from './components/ClickUpStatus';
 import Success from './components/Success';
-import TicketForm from './components/TicketForm'
+import TicketForm from './components/TicketForm';
+
+
 
 export const TicketObj = createContext()
 
@@ -11,6 +13,7 @@ const App = () => {
   const [loaded, setLoaded] = useState(false);
   const [child, setChild] = useState(<h3>App is loading</h3>)
   const [showModal, setShowModal] = useState(false)
+  const [ticket, setTicket] = useState({})
 
 
   useEffect(() => {
@@ -25,8 +28,9 @@ const App = () => {
     if (!loaded && !showModal) return
       app.initialized().then((client) => {
         client.data.get('ticket').then((data) => {
+          setTicket(data.ticket)
           /* set initial component to clickup ticket maker */
-          setChild((<TicketForm ticket={data.ticket} client={client} />))
+         //setChild((<TicketForm ticket={data.ticket} client={client} />))
           /* set app activate and deactivate events and callbacks and pass retrieved ticket data*/
           client.events.on("app.activated", ()=>onAppActivated(data.ticket, client));
           client.events.on("app.deactivated", ()=>onAppDeactivated(data.ticket, client)); 
@@ -50,9 +54,13 @@ const App = () => {
         app.initialized().then((client) => {
           client.interface.trigger("showModal", {
             title: "Click up Integration",
-            template: "index.html"
+            template: "modal.html",
+            data: ticket
           }).then(function(data) {
           // data - success message
+          document.querySelectorAll('[aria-label="Close"]').addEventListener("onClick", ()=>{
+            console.log("modal closed")
+          })
           }).catch(function(error) {
           // error - error object
           });
@@ -65,7 +73,7 @@ const App = () => {
   }
 
   const onAppDeactivated = (ticket, client)=>{
-    setChild((<TicketForm ticket={ticket} client={client} />))
+   // setChild((<TicketForm ticket={ticket} client={client} />))
   }
 
 

@@ -1,0 +1,22 @@
+.input-div{
+  display:flex;
+  flex-direction:column;
+  margin-bottom: -2vh;
+}
+.input{
+  border-radius: 5px;
+  height: 4vh;
+  font-size: 2vh;
+  padding-left: 1vw;
+  font-family:"Inter"
+}
+.textarea{
+  height: 14vh;
+  border: 1px solid grey;
+  border-radius: 5px;
+  font-family:"Inter"
+}
+label{
+  font-weight: 900;
+  margin-bottom:0.5vh;
+}

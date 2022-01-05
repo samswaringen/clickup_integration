@@ -9,14 +9,12 @@ function ClickUpStatus(props) {
   console.log("context",ticketContext)
 
   const [customID, setCustomID] = useState("")
-  const [taskID, setTaskID] = useState("")
   const [clickUpExists, setClickUpExists] = useState(true)
   const [clickTick, setClickTick] = useState({})
 
   useEffect(()=>{
     setCustomID(ticket.custom_fields.cf_clickup_ticket)
     // need to make new field in freshdesk and then change this to find that value
-    setTaskID(ticket.custom_fields.cf_clickup_ticket)
   },[])
 
   useEffect(()=>{
@@ -26,7 +24,7 @@ function ClickUpStatus(props) {
     }else{
       // var config = {
       //   method: 'get',
-      //   url: `https://api.clickup.com/api/v2/task/${taskID}/?custom_task_ids=${customID}`,
+      //   url: `https://api.clickup.com/api/v2/task/${customID}/?custom_task_ids=true`,
       //   headers: { 
       //     'Authorization': '"access_token"'
       //   }

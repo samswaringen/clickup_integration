@@ -53,6 +53,11 @@ var App = function App() {
       showModal = _useState6[0],
       setShowModal = _useState6[1];
 
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+      _useState8 = _slicedToArray(_useState7, 2),
+      ticket = _useState8[0],
+      setTicket = _useState8[1];
+
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var script = document.createElement('script');
     script.src = 'https://static.freshdev.io/fdk/2.0/assets/fresh_client.js';
@@ -66,11 +71,10 @@ var App = function App() {
     if (!loaded && !showModal) return;
     app.initialized().then(function (client) {
       client.data.get('ticket').then(function (data) {
+        setTicket(data.ticket);
         /* set initial component to clickup ticket maker */
-        setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TicketForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          ticket: data.ticket,
-          client: client
-        }));
+        //setChild((<TicketForm ticket={data.ticket} client={client} />))
+
         /* set app activate and deactivate events and callbacks and pass retrieved ticket data*/
 
         client.events.on("app.activated", function () {
@@ -100,8 +104,13 @@ var App = function App() {
       app.initialized().then(function (client) {
         client["interface"].trigger("showModal", {
           title: "Click up Integration",
-          template: "index.html"
-        }).then(function (data) {// data - success message
+          template: "modal.html",
+          data: ticket
+        }).then(function (data) {
+          // data - success message
+          document.querySelectorAll('[aria-label="Close"]').addEventListener("onClick", function () {
+            console.log("modal closed");
+          });
         })["catch"](function (error) {// error - error object
         });
       });
@@ -115,11 +124,7 @@ var App = function App() {
     }));
   };
 
-  var onAppDeactivated = function onAppDeactivated(ticket, client) {
-    setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TicketForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      ticket: ticket,
-      client: client
-    }));
+  var onAppDeactivated = function onAppDeactivated(ticket, client) {// setChild((<TicketForm ticket={ticket} client={client} />))
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(TicketObj.Provider, {
@@ -177,25 +182,18 @@ function ClickUpStatus(props) {
       customID = _useState2[0],
       setCustomID = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
       _useState4 = _slicedToArray(_useState3, 2),
-      taskID = _useState4[0],
-      setTaskID = _useState4[1];
+      clickUpExists = _useState4[0],
+      setClickUpExists = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
       _useState6 = _slicedToArray(_useState5, 2),
-      clickUpExists = _useState6[0],
-      setClickUpExists = _useState6[1];
-
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
-      _useState8 = _slicedToArray(_useState7, 2),
-      clickTick = _useState8[0],
-      setClickTick = _useState8[1];
+      clickTick = _useState6[0],
+      setClickTick = _useState6[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     setCustomID(ticket.custom_fields.cf_clickup_ticket); // need to make new field in freshdesk and then change this to find that value
-
-    setTaskID(ticket.custom_fields.cf_clickup_ticket);
   }, []);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     console.log(customID);
@@ -204,7 +202,7 @@ function ClickUpStatus(props) {
       setClickUpExists(false);
     } else {// var config = {
       //   method: 'get',
-      //   url: `https://api.clickup.com/api/v2/task/${taskID}/?custom_task_ids=${customID}`,
+      //   url: `https://api.clickup.com/api/v2/task/${customID}/?custom_task_ids=true`,
       //   headers: { 
       //     'Authorization': '"access_token"'
       //   }
@@ -246,7 +244,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Success(props) {
-  var clickCustID = props.clickCustID;
+  var clickCustID = props.clickCustID,
+      client = props.client;
+  setTimeout(function () {
+    client.instance.close();
+  }, 2000);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Click up Ticket sent, ticket created ", clickCustID, " and Freshdesk ticket updated successfully. You can close this window.");
 }
 
@@ -310,15 +312,20 @@ var TicketForm = function TicketForm(props) {
   var ticketContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_App__WEBPACK_IMPORTED_MODULE_4__.TicketObj);
   var setChild = ticketContext.setChild;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
-      tags = _useState2[0],
-      setTags = _useState2[1];
+      loading = _useState2[0],
+      setLoading = _useState2[1];
 
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
       _useState4 = _slicedToArray(_useState3, 2),
-      assignees = _useState4[0],
-      setAssignees = _useState4[1];
+      tags = _useState4[0],
+      setTags = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      _useState6 = _slicedToArray(_useState5, 2),
+      assignees = _useState6[0],
+      setAssignees = _useState6[1];
 
   var requestingArr = ["Who is Requesting?", "AAP", "TSC", "Menard's", "PetPeople", "TBC", "ATD", "MiltonCat", "Skullcandy", "Pepsi", "OneRail"];
   /* Get ids from everyone */
@@ -357,8 +364,9 @@ var TicketForm = function TicketForm(props) {
   };
 
   var assigneeChange = function assigneeChange(e) {
+    console.log(e);
     e.map(function (item) {
-      return setAssignees([].concat(_toConsumableArray(tags), [item.value]));
+      return setAssignees([].concat(_toConsumableArray(assignees), [item.value]));
     });
   };
 
@@ -414,7 +422,7 @@ var TicketForm = function TicketForm(props) {
       }, {
         /* point of contact */
         "id": "dd085afd-fdda-45c9-bd7e-7888e7d1ecac",
-        "value": values.assignees[0]
+        "value": assignees[0]
       }, {
         /* description... use it to list freshdesk ticket ID? */
         "id": "5418bbd8-47f5-479c-8b07-88dded5b0540",
@@ -448,14 +456,20 @@ var TicketForm = function TicketForm(props) {
 
     /* put this in updateFreshdeskWithClickup and make loading component.  update success with returned clickup information */
 
-    setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Success__WEBPACK_IMPORTED_MODULE_5__["default"], null));
+    setLoading(true); //simulate sending ticket and awaiting response, then updating freshdesk ticket and loading success page
+
+    setTimeout(function () {
+      setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Success__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        client: client
+      }));
+    }, 2000);
   };
 
   var validate = function validate(values) {
     var errors = {};
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Formik, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, !loading && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Formik, {
     onSubmit: onSubmit,
     validate: validate,
     initialValues: initialValues
@@ -537,7 +551,7 @@ var TicketForm = function TicketForm(props) {
     onChange: tagChange
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     type: "submit"
-  }, "Make Click-up Ticket"))));
+  }, "Make Click-up Ticket"))), loading && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Sending..."));
 };
 
 TicketForm.propTypes = {
@@ -936,4 +950,4 @@ module.exports = content.locals || {};
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.068f69b6.js.map
+//# sourceMappingURL=main.b4afe198.js.map

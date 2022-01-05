@@ -13,6 +13,7 @@ const TicketForm = (props) => {
   const ticketContext = useContext(TicketObj)
   const {setChild} = ticketContext
 
+  const [loading, setLoading] = useState(false)
   const [tags, setTags] = useState([])
   const [assignees, setAssignees] = useState([])
 
@@ -46,7 +47,8 @@ const TicketForm = (props) => {
   }
 
   const assigneeChange = (e)=>{
-    e.map((item)=>setAssignees([...tags,item.value]))
+    console.log(e)
+    e.map((item)=>setAssignees([...assignees,item.value]))
   }
 
   const updateFreshdeskWithClickup =(res)=>{
@@ -101,7 +103,7 @@ const TicketForm = (props) => {
         {
           /* point of contact */
           "id":"dd085afd-fdda-45c9-bd7e-7888e7d1ecac",
-          "value": values.assignees[0]
+          "value": assignees[0]
         },
         {
           /* description... use it to list freshdesk ticket ID? */
@@ -137,8 +139,13 @@ const TicketForm = (props) => {
     // .catch(function (error) {
     //   console.log(error);
     // });
-    /* put this in updateFreshdeskWithClickup and make loading component.  update success with returned clickup information */ 
-    setChild((<Success />))
+    /* put this in updateFreshdeskWithClickup and make loading component.  update success with returned clickup information */
+    setLoading(true)
+    //simulate sending ticket and awaiting response, then updating freshdesk ticket and loading success page
+    setTimeout(()=>{
+      setChild((<Success client={client}/>))
+    },2000)
+
   }
 
   const validate = (values)=>{
@@ -147,7 +154,7 @@ const TicketForm = (props) => {
 
   return (
     <div>
-        <Formik
+        {!loading && <Formik
             onSubmit={onSubmit}
             validate={validate}
             initialValues={initialValues}
@@ -205,7 +212,12 @@ const TicketForm = (props) => {
               <button type="submit">Make Click-up Ticket</button>
             </Form>
           </Formik>
-
+        }
+        { loading &&
+        <div>
+          Sending...
+        </div>
+        }
     </div>
   )
 }
@@ -215,4 +227,5 @@ TicketForm.propTypes = {
 }
 
 export default TicketForm
+
 
