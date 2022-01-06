@@ -21241,3 +21241,552 @@ Quit the server with Control-C.
 2022-01-06 15:08:37.697 -0500 [info] App packed successfully at \dist\clickup_integration.zip
 2022-01-06 15:08:37.697 -0500 [info] Upload this file to the marketplace by following the instructions at https://developer.freshdesk.com/v2/docs/freshdesk-apps/
 2022-01-06 15:08:37.697 -0500 [debug] ([34mfile-util.js[0m) [31mDeleting digest.[0m
+2022-01-06 15:25:07.951 -0500 [debug] ([34mlogger.js[0m) [31mStarting FDK in node v12.22.0 on win32[0m
+2022-01-06 15:25:08.481 -0500 [debug] ([34msequelize.js[0m) [31msetting up sqilite at "C:\Users\SamSwaringen\Desktop\clickup_integration/.fdk/store.sqlite"[0m
+2022-01-06 15:25:08.569 -0500 [debug] ([34mindex.js[0m) [31mRunning with args {"cmd":"run","gopts":{},"opts":{},"goptArg":{},"optArg":{},"args":[]}[0m
+2022-01-06 15:25:08.570 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.17","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.17.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1641494505722}}[0m
+2022-01-06 15:25:08.570 -0500 [debug] ([34mupdater.js[0m) [31mlast check less than an day ago, not looking for updates[0m
+2022-01-06 15:25:08.742 -0500 [debug] ([34mmanifest.js[0m) [31mReloading manifest with {"platform-version":"2.2","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"whitelisted-domains":[],"engines":{"node":"12.22.0","fdk":"7.3.0"}}.[0m
+2022-01-06 15:25:08.742 -0500 [debug] ([34mmanifest.js[0m) [31mInferred db as features.[0m
+2022-01-06 15:25:08.745 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.17","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.17.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1641494505722}}[0m
+2022-01-06 15:25:08.755 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.17","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.17.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1641494505722}}[0m
+2022-01-06 15:25:09.726 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.17","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.17.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1641494505722}}[0m
+2022-01-06 15:25:10.478 -0500 [debug] ([34mvalidate.js[0m) [31masked to skip the following validations, [0m
+2022-01-06 15:25:10.479 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator actions[0m
+2022-01-06 15:25:10.479 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator app-dir[0m
+2022-01-06 15:25:10.480 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator config-dir[0m
+2022-01-06 15:25:10.480 -0500 [debug] ([34mconfig-dir.js[0m) [31mChecking to see if C:\Users\SamSwaringen\Desktop\clickup_integration/config/ exists.[0m
+2022-01-06 15:25:10.480 -0500 [debug] ([34mconfig-dir.js[0m) [31mFetched the following config files iparams.json[0m
+2022-01-06 15:25:10.480 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator custom-objects[0m
+2022-01-06 15:25:10.480 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator event[0m
+2022-01-06 15:25:10.480 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator iparam[0m
+2022-01-06 15:25:10.482 -0500 [debug] ([34mvalidate.js[0m) [31mskipping validator lint[0m
+2022-01-06 15:25:10.482 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator manifest[0m
+2022-01-06 15:25:10.482 -0500 [debug] ([34mmanifest.js[0m) [31mrunning manifest validation with type run_validation[0m
+2022-01-06 15:25:10.482 -0500 [debug] ([34mvalidate.js[0m) [31mskipping validator manifest-dependency[0m
+2022-01-06 15:25:10.482 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator oauth[0m
+2022-01-06 15:25:10.482 -0500 [debug] ([34mvalidate.js[0m) [31mskipping validator pkgsize[0m
+2022-01-06 15:25:10.483 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator schema[0m
+2022-01-06 15:25:10.483 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator version-check[0m
+2022-01-06 15:25:10.484 -0500 [debug] ([34mwatcher.js[0m) [31mPreparing to watch the following files ./app,./config,./manifest.json[0m
+2022-01-06 15:25:10.569 -0500 [debug] ([34mcoverage-util.js[0m) [31mSnoozing coverage.[0m
+2022-01-06 15:25:10.569 -0500 [debug] ([34mfrontend_framework-util.js[0m) [31mMounting the default Webpack config[0m
+2022-01-06 15:25:11.127 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 15:25:11.127 -0500 [debug] ([34mcustom-objects.js[0m) [31mto force or not? false[0m
+2022-01-06 15:25:11.127 -0500 [debug] ([34mcustom-objects.js[0m) [31mbeginning to re-sync db[0m
+2022-01-06 15:25:11.160 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 15:25:11.160 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 15:25:11.170 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 15:25:11.170 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 15:25:11.204 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 15:25:11.204 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 15:25:11.205 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:11.599 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.374f0c6f.js[0m
+2022-01-06 15:25:11.599 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.374f0c6f.js[0m
+2022-01-06 15:25:11.605 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.11f472da.js[0m
+2022-01-06 15:25:11.607 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.11f472da.js[0m
+2022-01-06 15:25:11.610 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.6e27773e.js[0m
+2022-01-06 15:25:11.610 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.6e27773e.js[0m
+2022-01-06 15:25:15.029 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.6e27773e.js"}" to all listeners.[0m
+2022-01-06 15:25:15.030 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 15:25:15.030 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.6e27773e.js.map"}" to all listeners.[0m
+2022-01-06 15:25:15.031 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 15:25:15.031 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.374f0c6f.js"}" to all listeners.[0m
+2022-01-06 15:25:15.032 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 15:25:15.032 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.374f0c6f.js.map"}" to all listeners.[0m
+2022-01-06 15:25:15.032 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 15:25:15.033 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.11f472da.js"}" to all listeners.[0m
+2022-01-06 15:25:15.033 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 15:25:15.033 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.11f472da.js.LICENSE.txt"}" to all listeners.[0m
+2022-01-06 15:25:15.034 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 15:25:15.034 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.11f472da.js.map"}" to all listeners.[0m
+2022-01-06 15:25:15.035 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 15:25:15.064 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.070 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.071 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.075 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.077 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.078 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.081 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js"}" to all listeners.[0m
+2022-01-06 15:25:15.085 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 15:25:15.089 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.537be649.js"}" to all listeners.[0m
+2022-01-06 15:25:15.091 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.acf3fcde.js"}" to all listeners.[0m
+2022-01-06 15:25:15.093 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.537be649.js.map"}" to all listeners.[0m
+2022-01-06 15:25:15.094 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 15:25:15.094 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js.map"}" to all listeners.[0m
+2022-01-06 15:25:15.095 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 15:25:15.096 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.acf3fcde.js.map"}" to all listeners.[0m
+2022-01-06 15:25:15.097 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 15:25:15.100 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-06 15:25:15.101 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js.map"}" to all listeners.[0m
+2022-01-06 15:25:15.103 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.537be649.js"}" to all listeners.[0m
+2022-01-06 15:25:15.104 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.acf3fcde.js.map"}" to all listeners.[0m
+2022-01-06 15:25:15.105 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.acf3fcde.js"}" to all listeners.[0m
+2022-01-06 15:25:15.106 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.537be649.js.map"}" to all listeners.[0m
+2022-01-06 15:25:15.107 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.112 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js"}" to all listeners.[0m
+2022-01-06 15:25:15.112 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.537be649.js"}" to all listeners.[0m
+2022-01-06 15:25:15.113 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js.map"}" to all listeners.[0m
+2022-01-06 15:25:15.114 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.537be649.js.map"}" to all listeners.[0m
+2022-01-06 15:25:15.115 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.acf3fcde.js.map"}" to all listeners.[0m
+2022-01-06 15:25:15.116 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.acf3fcde.js"}" to all listeners.[0m
+2022-01-06 15:25:15.116 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-06 15:25:15.438 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.440 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.440 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.441 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.444 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-06 15:25:15.514 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.514 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.552 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.553 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.554 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.555 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.555 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.556 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.557 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.557 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.558 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.558 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.559 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.559 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.580 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:25:15.596 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.ab95bbe9.js[0m
+2022-01-06 15:25:15.597 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.ab95bbe9.js[0m
+2022-01-06 15:25:15.599 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.acf3fcde.js[0m
+2022-01-06 15:25:15.609 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.acf3fcde.js[0m
+2022-01-06 15:25:15.620 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.537be649.js[0m
+2022-01-06 15:25:15.621 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.537be649.js[0m
+2022-01-06 15:25:15.732 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\bigint-pivot.js"[0m
+2022-01-06 15:25:15.734 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\entity-field-choice.js"[0m
+2022-01-06 15:25:15.735 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\entity-field.js"[0m
+2022-01-06 15:25:15.736 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\entity.js"[0m
+2022-01-06 15:25:15.737 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\record.js"[0m
+2022-01-06 15:25:15.738 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\string-pivot.js"[0m
+2022-01-06 15:25:15.753 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 15:25:15.754 -0500 [debug] ([34mcustom-objects.js[0m) [31mupdated local store with latest entity hash[0m
+2022-01-06 15:25:15.754 -0500 [info] Starting local testing server at http://*:10001/    
+Append 'dev=true' to your Freshdesk account URL to start testing    
+e.g. https://domain.freshdesk.com/a/tickets/1?dev=true    
+Quit the server with Control-C.
+2022-01-06 15:26:13.436 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:26:13.449 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.ab95bbe9.js[0m
+2022-01-06 15:26:13.449 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.ab95bbe9.js[0m
+2022-01-06 15:26:13.454 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.acf3fcde.js[0m
+2022-01-06 15:26:13.461 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.acf3fcde.js[0m
+2022-01-06 15:26:13.468 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.537be649.js[0m
+2022-01-06 15:26:13.469 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.537be649.js[0m
+2022-01-06 15:26:28.933 -0500 [debug] ([34mdata-pipe.js[0m) [31mreceived call for route "proxy" with action "execute" and body {"action":"execute","data":{"headers":{"Authorization":"pk_26300173_E1SRMU3J8KK4TJFKRET9M98NKVG9HV73","Content-Type":"application/json"},"body":{"name":"RE: 206940799,206939317","markdown_description":"**Freshdesk Ticket 50445:** \n Good morning,\r\n\r\nI am not showing order #206940799 and order #206939317 is in the process of being delivered to the customer now.\r\n\r\nWe have received complaints from our customers because sometimes the orders are not being picked up within the 2 hour timeframe. We wanted to make you aware so that we don't have this problem going forward. If there is anything that we can do to assist you all, please let us know.\r\n\r\nThanks,\r\n\r\n\r\n[cid:image001.png@01D802EC.C7F29190]\r\nShayla Tyner\r\nAdministrative Clerk\r\no: 601-718-4966 | styner@atd-us.com<mailto:styner@atd-us.com>\r\n500 Hwy 49 South, Richland, MS 39218\r\n\r\n\r\nFrom: OneRail Dispatch <dispatch@onerail.io>\r\nSent: Thursday, January 6, 2022 8:27 AM\r\nTo: DC Resolution Team - Jackson <ResponseTeam-Jackson@ATD-US.com>\r\nSubject: 206940799,206939317\r\n\r\n-----EXTERNAL EMAIL - USE CAUTION -----\r\n\r\nHello\r\n\r\nI just wanted to verify these two orders are available for pick up, please advise\r\n\r\nThank you,\r\nTatiana\r\n\r\n[Image removed by sender. OneRail]<https://urldefense.com/v3/__https:/onerail.io/__;!!DfQtb1M!HTfgrCDdEAEYH-BNIYDg81d9frdhpye5e_ZWD2aL2oDzjruYLbPcb7_q2l6otKN8xmzuq7fw_g$>\r\n\r\nDispatch Team\r\nFulfillment Operations\r\n\r\ndispatch@onerail.io<mailto:dispatch@onerail.io>  |  +1.407.201.9829\r\n\r\nOneRail.io<https://urldefense.com/v3/__https:/onerail.io/__;!!DfQtb1M!HTfgrCDdEAEYH-BNIYDg81d9frdhpye5e_ZWD2aL2oDzjruYLbPcb7_q2l6otKN8xmzuq7fw_g$>\r\nFinal Mile, Delivered.\r\n\r\n\r\nThe information contained in this e-mail is confidential; it is intended only for the use of the individual or entity named above. If the reader of this message is not the intended recipient, you may not use, copy or disclose to anyone the message or any information contained in or attached to the message. If you have received the message in error, please advise the sender by reply e-mail or by telephone at the number set forth above, and delete the message. Although this e-mail is believed to be free of any virus or other defect that might affect any computer system in which it is received, it is the responsibility of the recipient to ensure that it is virus-free.\r\n\r\nFinal Mile, Delivered\r\nonerail.io<https://urldefense.com/v3/__http:/onerail.io/__;!!DfQtb1M!HTfgrCDdEAEYH-BNIYDg81d9frdhpye5e_ZWD2aL2oDzjruYLbPcb7_q2l6otKN8xmw8_k5Ixg$>\r\n\r\n50368:1858546\r\n\r\nCAUTION: This email originated outside of the organization. DO NOT CLICK any links, open attachments or reply unless you were expecting this email and trust that the content is safe. Keep confidential data safe.\r\n\r\n\r\n \n **Additional Notes:** \n notes","assignees":[26300173],"tags":["atd","back-end","blue green","blue team","bug","bugs"],"status":"Requested","priority":4,"due_date":1642710388895,"due_date_time":false,"time_estimate":1209600000,"start_date":1641500788895,"start_date_time":false,"notify_all":true,"parent":null,"links_to":null,"check_required_custom_fields":true,"custom_fields":[{"id":"693b7b05-8c30-4e7b-be39-295245333faf","value":"89705354-3e0b-4d9a-b2c3-7ca5232e825e"},{"id":"9cfbd761-8aff-416c-bd8e-6fb06f2849f3","value":"a932b0ae-1ce9-4664-9b21-af813f5e5e97"}]},"url":"https://api.clickup.com/api/v2/list/71601233/task","method":"post"}}[0m
+2022-01-06 15:26:28.938 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 15:26:28.938 -0500 [debug] ([34mproxy.js[0m) [31mSubstituing Templates {"headers":{"Authorization":"pk_26300173_E1SRMU3J8KK4TJFKRET9M98NKVG9HV73","Content-Type":"application/json"},"body":{"name":"RE: 206940799,206939317","markdown_description":"**Freshdesk Ticket 50445:** \n Good morning,\r\n\r\nI am not showing order #206940799 and order #206939317 is in the process of being delivered to the customer now.\r\n\r\nWe have received complaints from our customers because sometimes the orders are not being picked up within the 2 hour timeframe. We wanted to make you aware so that we don't have this problem going forward. If there is anything that we can do to assist you all, please let us know.\r\n\r\nThanks,\r\n\r\n\r\n[cid:image001.png@01D802EC.C7F29190]\r\nShayla Tyner\r\nAdministrative Clerk\r\no: 601-718-4966 | styner@atd-us.com<mailto:styner@atd-us.com>\r\n500 Hwy 49 South, Richland, MS 39218\r\n\r\n\r\nFrom: OneRail Dispatch <dispatch@onerail.io>\r\nSent: Thursday, January 6, 2022 8:27 AM\r\nTo: DC Resolution Team - Jackson <ResponseTeam-Jackson@ATD-US.com>\r\nSubject: 206940799,206939317\r\n\r\n-----EXTERNAL EMAIL - USE CAUTION -----\r\n\r\nHello\r\n\r\nI just wanted to verify these two orders are available for pick up, please advise\r\n\r\nThank you,\r\nTatiana\r\n\r\n[Image removed by sender. OneRail]<https://urldefense.com/v3/__https:/onerail.io/__;!!DfQtb1M!HTfgrCDdEAEYH-BNIYDg81d9frdhpye5e_ZWD2aL2oDzjruYLbPcb7_q2l6otKN8xmzuq7fw_g$>\r\n\r\nDispatch Team\r\nFulfillment Operations\r\n\r\ndispatch@onerail.io<mailto:dispatch@onerail.io>  |  +1.407.201.9829\r\n\r\nOneRail.io<https://urldefense.com/v3/__https:/onerail.io/__;!!DfQtb1M!HTfgrCDdEAEYH-BNIYDg81d9frdhpye5e_ZWD2aL2oDzjruYLbPcb7_q2l6otKN8xmzuq7fw_g$>\r\nFinal Mile, Delivered.\r\n\r\n\r\nThe information contained in this e-mail is confidential; it is intended only for the use of the individual or entity named above. If the reader of this message is not the intended recipient, you may not use, copy or disclose to anyone the message or any information contained in or attached to the message. If you have received the message in error, please advise the sender by reply e-mail or by telephone at the number set forth above, and delete the message. Although this e-mail is believed to be free of any virus or other defect that might affect any computer system in which it is received, it is the responsibility of the recipient to ensure that it is virus-free.\r\n\r\nFinal Mile, Delivered\r\nonerail.io<https://urldefense.com/v3/__http:/onerail.io/__;!!DfQtb1M!HTfgrCDdEAEYH-BNIYDg81d9frdhpye5e_ZWD2aL2oDzjruYLbPcb7_q2l6otKN8xmw8_k5Ixg$>\r\n\r\n50368:1858546\r\n\r\nCAUTION: This email originated outside of the organization. DO NOT CLICK any links, open attachments or reply unless you were expecting this email and trust that the content is safe. Keep confidential data safe.\r\n\r\n\r\n \n **Additional Notes:** \n notes","assignees":[26300173],"tags":["atd","back-end","blue green","blue team","bug","bugs"],"status":"Requested","priority":4,"due_date":1642710388895,"due_date_time":false,"time_estimate":1209600000,"start_date":1641500788895,"start_date_time":false,"notify_all":true,"parent":null,"links_to":null,"check_required_custom_fields":true,"custom_fields":[{"id":"693b7b05-8c30-4e7b-be39-295245333faf","value":"89705354-3e0b-4d9a-b2c3-7ca5232e825e"},{"id":"9cfbd761-8aff-416c-bd8e-6fb06f2849f3","value":"a932b0ae-1ce9-4664-9b21-af813f5e5e97"}]},"url":"https://api.clickup.com/api/v2/list/71601233/task","method":"post"} with {"iparam":{},"oauth_iparams":{}}[0m
+2022-01-06 15:26:28.939 -0500 [debug] ([34mproxy.js[0m) [31mParsed https://api.clickup.com/api/v2/list/71601233/task as {"protocol":"https:","slashes":true,"auth":null,"host":"api.clickup.com","port":null,"hostname":"api.clickup.com","hash":null,"search":null,"query":null,"pathname":"/api/v2/list/71601233/task","path":"/api/v2/list/71601233/task","href":"https://api.clickup.com/api/v2/list/71601233/task"}[0m
+2022-01-06 15:26:28.941 -0500 [debug] ([34mproxy.js[0m) [31mChecking if the request url is whitelisted in manifest[0m
+2022-01-06 15:26:28.941 -0500 [debug] ([34mproxy.js[0m) [31mProxy errored with This domain has not been whitelisted[0m
+2022-01-06 15:27:49.904 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 15:27:49.905 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 15:27:49.929 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 15:27:49.929 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 15:27:49.956 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 15:27:49.957 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 15:27:49.964 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 15:27:49.964 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 15:27:49.974 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 15:27:49.974 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 15:27:49.983 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 15:27:49.983 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 15:27:50.009 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:27:50.011 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 15:27:50.011 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 15:27:50.045 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.ab95bbe9.js[0m
+2022-01-06 15:27:50.046 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.ab95bbe9.js[0m
+2022-01-06 15:27:50.049 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.acf3fcde.js[0m
+2022-01-06 15:27:50.060 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.acf3fcde.js[0m
+2022-01-06 15:27:50.071 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.537be649.js[0m
+2022-01-06 15:27:50.072 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.537be649.js[0m
+2022-01-06 15:27:58.495 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:27:58.509 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.ab95bbe9.js[0m
+2022-01-06 15:27:58.510 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.ab95bbe9.js[0m
+2022-01-06 15:27:58.512 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.acf3fcde.js[0m
+2022-01-06 15:27:58.521 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.acf3fcde.js[0m
+2022-01-06 15:27:58.538 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.537be649.js[0m
+2022-01-06 15:27:58.538 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.537be649.js[0m
+2022-01-06 15:28:11.307 -0500 [debug] ([34mdata-pipe.js[0m) [31mreceived call for route "proxy" with action "execute" and body {"action":"execute","data":{"headers":{"Authorization":"pk_26300173_E1SRMU3J8KK4TJFKRET9M98NKVG9HV73","Content-Type":"application/json"},"body":{"name":"RE: 206940799,206939317","markdown_description":"**Freshdesk Ticket 50445:** \n Good morning,\r\n\r\nI am not showing order #206940799 and order #206939317 is in the process of being delivered to the customer now.\r\n\r\nWe have received complaints from our customers because sometimes the orders are not being picked up within the 2 hour timeframe. We wanted to make you aware so that we don't have this problem going forward. If there is anything that we can do to assist you all, please let us know.\r\n\r\nThanks,\r\n\r\n\r\n[cid:image001.png@01D802EC.C7F29190]\r\nShayla Tyner\r\nAdministrative Clerk\r\no: 601-718-4966 | styner@atd-us.com<mailto:styner@atd-us.com>\r\n500 Hwy 49 South, Richland, MS 39218\r\n\r\n\r\nFrom: OneRail Dispatch <dispatch@onerail.io>\r\nSent: Thursday, January 6, 2022 8:27 AM\r\nTo: DC Resolution Team - Jackson <ResponseTeam-Jackson@ATD-US.com>\r\nSubject: 206940799,206939317\r\n\r\n-----EXTERNAL EMAIL - USE CAUTION -----\r\n\r\nHello\r\n\r\nI just wanted to verify these two orders are available for pick up, please advise\r\n\r\nThank you,\r\nTatiana\r\n\r\n[Image removed by sender. OneRail]<https://urldefense.com/v3/__https:/onerail.io/__;!!DfQtb1M!HTfgrCDdEAEYH-BNIYDg81d9frdhpye5e_ZWD2aL2oDzjruYLbPcb7_q2l6otKN8xmzuq7fw_g$>\r\n\r\nDispatch Team\r\nFulfillment Operations\r\n\r\ndispatch@onerail.io<mailto:dispatch@onerail.io>  |  +1.407.201.9829\r\n\r\nOneRail.io<https://urldefense.com/v3/__https:/onerail.io/__;!!DfQtb1M!HTfgrCDdEAEYH-BNIYDg81d9frdhpye5e_ZWD2aL2oDzjruYLbPcb7_q2l6otKN8xmzuq7fw_g$>\r\nFinal Mile, Delivered.\r\n\r\n\r\nThe information contained in this e-mail is confidential; it is intended only for the use of the individual or entity named above. If the reader of this message is not the intended recipient, you may not use, copy or disclose to anyone the message or any information contained in or attached to the message. If you have received the message in error, please advise the sender by reply e-mail or by telephone at the number set forth above, and delete the message. Although this e-mail is believed to be free of any virus or other defect that might affect any computer system in which it is received, it is the responsibility of the recipient to ensure that it is virus-free.\r\n\r\nFinal Mile, Delivered\r\nonerail.io<https://urldefense.com/v3/__http:/onerail.io/__;!!DfQtb1M!HTfgrCDdEAEYH-BNIYDg81d9frdhpye5e_ZWD2aL2oDzjruYLbPcb7_q2l6otKN8xmw8_k5Ixg$>\r\n\r\n50368:1858546\r\n\r\nCAUTION: This email originated outside of the organization. DO NOT CLICK any links, open attachments or reply unless you were expecting this email and trust that the content is safe. Keep confidential data safe.\r\n\r\n\r\n \n **Additional Notes:** \n notes","assignees":[26300173],"tags":["atd","blue green","blue team","bug","back-end","audit/watcher","all customer"],"status":"Requested","priority":4,"due_date":1642710491300,"due_date_time":false,"time_estimate":1209600000,"start_date":1641500891300,"start_date_time":false,"notify_all":true,"parent":null,"links_to":null,"check_required_custom_fields":true,"custom_fields":[{"id":"693b7b05-8c30-4e7b-be39-295245333faf","value":"a665613e-c932-4196-9bba-6b51356c2ef5"},{"id":"9cfbd761-8aff-416c-bd8e-6fb06f2849f3","value":"a932b0ae-1ce9-4664-9b21-af813f5e5e97"}]},"url":"https://api.clickup.com/api/v2/list/71601233/task","method":"post"}}[0m
+2022-01-06 15:28:11.307 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 15:28:11.308 -0500 [debug] ([34mproxy.js[0m) [31mSubstituing Templates {"headers":{"Authorization":"pk_26300173_E1SRMU3J8KK4TJFKRET9M98NKVG9HV73","Content-Type":"application/json"},"body":{"name":"RE: 206940799,206939317","markdown_description":"**Freshdesk Ticket 50445:** \n Good morning,\r\n\r\nI am not showing order #206940799 and order #206939317 is in the process of being delivered to the customer now.\r\n\r\nWe have received complaints from our customers because sometimes the orders are not being picked up within the 2 hour timeframe. We wanted to make you aware so that we don't have this problem going forward. If there is anything that we can do to assist you all, please let us know.\r\n\r\nThanks,\r\n\r\n\r\n[cid:image001.png@01D802EC.C7F29190]\r\nShayla Tyner\r\nAdministrative Clerk\r\no: 601-718-4966 | styner@atd-us.com<mailto:styner@atd-us.com>\r\n500 Hwy 49 South, Richland, MS 39218\r\n\r\n\r\nFrom: OneRail Dispatch <dispatch@onerail.io>\r\nSent: Thursday, January 6, 2022 8:27 AM\r\nTo: DC Resolution Team - Jackson <ResponseTeam-Jackson@ATD-US.com>\r\nSubject: 206940799,206939317\r\n\r\n-----EXTERNAL EMAIL - USE CAUTION -----\r\n\r\nHello\r\n\r\nI just wanted to verify these two orders are available for pick up, please advise\r\n\r\nThank you,\r\nTatiana\r\n\r\n[Image removed by sender. OneRail]<https://urldefense.com/v3/__https:/onerail.io/__;!!DfQtb1M!HTfgrCDdEAEYH-BNIYDg81d9frdhpye5e_ZWD2aL2oDzjruYLbPcb7_q2l6otKN8xmzuq7fw_g$>\r\n\r\nDispatch Team\r\nFulfillment Operations\r\n\r\ndispatch@onerail.io<mailto:dispatch@onerail.io>  |  +1.407.201.9829\r\n\r\nOneRail.io<https://urldefense.com/v3/__https:/onerail.io/__;!!DfQtb1M!HTfgrCDdEAEYH-BNIYDg81d9frdhpye5e_ZWD2aL2oDzjruYLbPcb7_q2l6otKN8xmzuq7fw_g$>\r\nFinal Mile, Delivered.\r\n\r\n\r\nThe information contained in this e-mail is confidential; it is intended only for the use of the individual or entity named above. If the reader of this message is not the intended recipient, you may not use, copy or disclose to anyone the message or any information contained in or attached to the message. If you have received the message in error, please advise the sender by reply e-mail or by telephone at the number set forth above, and delete the message. Although this e-mail is believed to be free of any virus or other defect that might affect any computer system in which it is received, it is the responsibility of the recipient to ensure that it is virus-free.\r\n\r\nFinal Mile, Delivered\r\nonerail.io<https://urldefense.com/v3/__http:/onerail.io/__;!!DfQtb1M!HTfgrCDdEAEYH-BNIYDg81d9frdhpye5e_ZWD2aL2oDzjruYLbPcb7_q2l6otKN8xmw8_k5Ixg$>\r\n\r\n50368:1858546\r\n\r\nCAUTION: This email originated outside of the organization. DO NOT CLICK any links, open attachments or reply unless you were expecting this email and trust that the content is safe. Keep confidential data safe.\r\n\r\n\r\n \n **Additional Notes:** \n notes","assignees":[26300173],"tags":["atd","blue green","blue team","bug","back-end","audit/watcher","all customer"],"status":"Requested","priority":4,"due_date":1642710491300,"due_date_time":false,"time_estimate":1209600000,"start_date":1641500891300,"start_date_time":false,"notify_all":true,"parent":null,"links_to":null,"check_required_custom_fields":true,"custom_fields":[{"id":"693b7b05-8c30-4e7b-be39-295245333faf","value":"a665613e-c932-4196-9bba-6b51356c2ef5"},{"id":"9cfbd761-8aff-416c-bd8e-6fb06f2849f3","value":"a932b0ae-1ce9-4664-9b21-af813f5e5e97"}]},"url":"https://api.clickup.com/api/v2/list/71601233/task","method":"post"} with {"iparam":{},"oauth_iparams":{}}[0m
+2022-01-06 15:28:11.309 -0500 [debug] ([34mproxy.js[0m) [31mParsed https://api.clickup.com/api/v2/list/71601233/task as {"protocol":"https:","slashes":true,"auth":null,"host":"api.clickup.com","port":null,"hostname":"api.clickup.com","hash":null,"search":null,"query":null,"pathname":"/api/v2/list/71601233/task","path":"/api/v2/list/71601233/task","href":"https://api.clickup.com/api/v2/list/71601233/task"}[0m
+2022-01-06 15:28:11.309 -0500 [debug] ([34mproxy.js[0m) [31mChecking if the request url is whitelisted in manifest[0m
+2022-01-06 15:28:11.309 -0500 [debug] ([34mproxy.js[0m) [31mProxy errored with This domain has not been whitelisted[0m
+2022-01-06 15:49:26.244 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"clickup.html"}" to all listeners.[0m
+2022-01-06 15:49:26.251 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:49:26.297 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.ab95bbe9.js[0m
+2022-01-06 15:49:26.297 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.ab95bbe9.js[0m
+2022-01-06 15:49:26.299 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.acf3fcde.js[0m
+2022-01-06 15:49:26.312 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.acf3fcde.js[0m
+2022-01-06 15:49:26.328 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.537be649.js[0m
+2022-01-06 15:49:26.330 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.537be649.js[0m
+2022-01-06 15:49:28.683 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"ClickUpModal.jsx"}" to all listeners.[0m
+2022-01-06 15:49:28.694 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:49:28.726 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.ab95bbe9.js[0m
+2022-01-06 15:49:28.727 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.ab95bbe9.js[0m
+2022-01-06 15:49:28.728 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.acf3fcde.js[0m
+2022-01-06 15:49:28.737 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.acf3fcde.js[0m
+2022-01-06 15:49:28.744 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.537be649.js[0m
+2022-01-06 15:49:28.745 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.537be649.js[0m
+2022-01-06 15:49:29.531 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-06 15:49:29.533 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-06 15:49:29.567 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:49:29.611 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-06 15:49:29.612 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.ab95bbe9.js[0m
+2022-01-06 15:49:29.613 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.ab95bbe9.js[0m
+2022-01-06 15:49:29.614 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.acf3fcde.js[0m
+2022-01-06 15:49:29.627 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.acf3fcde.js[0m
+2022-01-06 15:49:29.637 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-06 15:49:29.660 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-06 15:49:29.703 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.537be649.js[0m
+2022-01-06 15:49:29.703 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.537be649.js[0m
+2022-01-06 15:49:29.727 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-06 15:49:29.746 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:49:29.747 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:49:29.760 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-06 15:49:29.784 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:49:29.814 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:49:29.823 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-06 15:49:29.857 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-06 15:49:29.858 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-06 15:49:29.893 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.ab95bbe9.js[0m
+2022-01-06 15:49:29.894 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.ab95bbe9.js[0m
+2022-01-06 15:49:29.895 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.acf3fcde.js[0m
+2022-01-06 15:49:29.906 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.acf3fcde.js[0m
+2022-01-06 15:49:29.979 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.537be649.js[0m
+2022-01-06 15:49:29.980 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.537be649.js[0m
+2022-01-06 15:49:31.036 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"ticket.html"}" to all listeners.[0m
+2022-01-06 15:49:31.044 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:49:31.130 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.ab95bbe9.js[0m
+2022-01-06 15:49:31.131 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.ab95bbe9.js[0m
+2022-01-06 15:49:31.133 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.acf3fcde.js[0m
+2022-01-06 15:49:31.143 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.acf3fcde.js[0m
+2022-01-06 15:49:31.153 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.537be649.js[0m
+2022-01-06 15:49:31.154 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.537be649.js[0m
+2022-01-06 15:49:33.765 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"TicketModal.jsx"}" to all listeners.[0m
+2022-01-06 15:49:33.772 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:49:33.800 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.ab95bbe9.js[0m
+2022-01-06 15:49:33.801 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.ab95bbe9.js[0m
+2022-01-06 15:49:33.802 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.acf3fcde.js[0m
+2022-01-06 15:49:33.817 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.acf3fcde.js[0m
+2022-01-06 15:49:33.827 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.537be649.js[0m
+2022-01-06 15:49:33.828 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.537be649.js[0m
+2022-01-06 15:49:35.962 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"styles.css"}" to all listeners.[0m
+2022-01-06 15:49:35.970 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 15:49:35.991 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.ab95bbe9.js[0m
+2022-01-06 15:49:35.992 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.ab95bbe9.js[0m
+2022-01-06 15:49:35.993 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.acf3fcde.js[0m
+2022-01-06 15:49:36.009 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.acf3fcde.js[0m
+2022-01-06 15:49:36.020 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.537be649.js[0m
+2022-01-06 15:49:36.022 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.537be649.js[0m
+2022-01-06 16:02:28.543 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-06 16:02:28.544 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.f7468d26.js"}" to all listeners.[0m
+2022-01-06 16:02:28.545 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 16:02:28.546 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.f7468d26.js.map"}" to all listeners.[0m
+2022-01-06 16:02:28.547 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 16:02:28.550 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.f7468d26.js"}" to all listeners.[0m
+2022-01-06 16:02:28.553 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.f7468d26.js.map"}" to all listeners.[0m
+2022-01-06 16:02:28.730 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-06 16:02:28.730 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.f7468d26.js"}" to all listeners.[0m
+2022-01-06 16:02:28.731 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.f7468d26.js.map"}" to all listeners.[0m
+2022-01-06 16:02:28.732 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.537be649.js"}" to all listeners.[0m
+2022-01-06 16:02:28.733 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:02:28.734 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:02:28.735 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:02:28.735 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:02:28.736 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:02:28.738 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:02:28.749 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.ab95bbe9.js[0m
+2022-01-06 16:02:28.750 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.ab95bbe9.js[0m
+2022-01-06 16:02:28.751 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.acf3fcde.js[0m
+2022-01-06 16:02:28.758 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.acf3fcde.js[0m
+2022-01-06 16:02:28.763 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.f7468d26.js[0m
+2022-01-06 16:02:28.764 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.f7468d26.js[0m
+2022-01-06 16:02:29.873 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 16:02:29.877 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:02:29.890 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.ab95bbe9.js[0m
+2022-01-06 16:02:29.890 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.ab95bbe9.js[0m
+2022-01-06 16:02:29.891 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.acf3fcde.js[0m
+2022-01-06 16:02:29.899 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.acf3fcde.js[0m
+2022-01-06 16:02:29.904 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.f7468d26.js[0m
+2022-01-06 16:02:29.905 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.f7468d26.js[0m
+2022-01-06 16:07:56.939 -0500 [debug] ([34mmanifest.js[0m) [31mReloading manifest with {"platform-version":"2.2","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"whitelisted-domains":[],"engines":{"node":"12.22.0","fdk":"7.3.0"}}.[0m
+2022-01-06 16:07:56.940 -0500 [debug] ([34mmanifest.js[0m) [31mInferred db as features.[0m
+2022-01-06 16:07:56.940 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"manifest.json"}" to all listeners.[0m
+2022-01-06 16:07:57.921 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:07:57.966 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.ab95bbe9.js[0m
+2022-01-06 16:07:57.967 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.ab95bbe9.js[0m
+2022-01-06 16:07:57.968 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.acf3fcde.js[0m
+2022-01-06 16:07:57.978 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.acf3fcde.js[0m
+2022-01-06 16:07:57.991 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.f7468d26.js[0m
+2022-01-06 16:07:57.992 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.f7468d26.js[0m
+2022-01-06 16:24:44.458 -0500 [debug] ([34mmanifest.js[0m) [31mError while parsing manifest file Unexpected end of JSON input[0m
+2022-01-06 16:25:08.522 -0500 [debug] ([34mlogger.js[0m) [31mStarting FDK in node v12.22.0 on win32[0m
+2022-01-06 16:25:09.042 -0500 [debug] ([34msequelize.js[0m) [31msetting up sqilite at "C:\Users\SamSwaringen\Desktop\clickup_integration/.fdk/store.sqlite"[0m
+2022-01-06 16:25:09.127 -0500 [debug] ([34mindex.js[0m) [31mRunning with args {"cmd":"run","gopts":{},"opts":{},"goptArg":{},"optArg":{},"args":[]}[0m
+2022-01-06 16:25:09.127 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.17","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.17.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1641494505722}}[0m
+2022-01-06 16:25:09.127 -0500 [debug] ([34mupdater.js[0m) [31mlast check less than an day ago, not looking for updates[0m
+2022-01-06 16:25:09.274 -0500 [debug] ([34mmanifest.js[0m) [31mReloading manifest with {"platform-version":"2.2","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"whitelisted-domains":["https://api.clickup.com"],"engines":{"node":"12.22.0","fdk":"7.3.0"}}.[0m
+2022-01-06 16:25:09.274 -0500 [debug] ([34mmanifest.js[0m) [31mInferred db as features.[0m
+2022-01-06 16:25:09.277 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.17","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.17.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1641494505722}}[0m
+2022-01-06 16:25:09.285 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.17","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.17.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1641494505722}}[0m
+2022-01-06 16:25:10.225 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.17","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.17.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1641494505722}}[0m
+2022-01-06 16:25:10.945 -0500 [debug] ([34mvalidate.js[0m) [31masked to skip the following validations, [0m
+2022-01-06 16:25:10.946 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator actions[0m
+2022-01-06 16:25:10.946 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator app-dir[0m
+2022-01-06 16:25:10.946 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator config-dir[0m
+2022-01-06 16:25:10.947 -0500 [debug] ([34mconfig-dir.js[0m) [31mChecking to see if C:\Users\SamSwaringen\Desktop\clickup_integration/config/ exists.[0m
+2022-01-06 16:25:10.947 -0500 [debug] ([34mconfig-dir.js[0m) [31mFetched the following config files iparams.json[0m
+2022-01-06 16:25:10.947 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator custom-objects[0m
+2022-01-06 16:25:10.947 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator event[0m
+2022-01-06 16:25:10.947 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator iparam[0m
+2022-01-06 16:25:10.948 -0500 [debug] ([34mvalidate.js[0m) [31mskipping validator lint[0m
+2022-01-06 16:25:10.949 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator manifest[0m
+2022-01-06 16:25:10.949 -0500 [debug] ([34mmanifest.js[0m) [31mrunning manifest validation with type run_validation[0m
+2022-01-06 16:25:10.949 -0500 [debug] ([34mvalidate.js[0m) [31mskipping validator manifest-dependency[0m
+2022-01-06 16:25:10.949 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator oauth[0m
+2022-01-06 16:25:10.949 -0500 [debug] ([34mvalidate.js[0m) [31mskipping validator pkgsize[0m
+2022-01-06 16:25:10.949 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator schema[0m
+2022-01-06 16:25:10.949 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator version-check[0m
+2022-01-06 16:25:10.951 -0500 [debug] ([34mwatcher.js[0m) [31mPreparing to watch the following files ./app,./config,./manifest.json[0m
+2022-01-06 16:25:11.029 -0500 [debug] ([34mcoverage-util.js[0m) [31mSnoozing coverage.[0m
+2022-01-06 16:25:11.029 -0500 [debug] ([34mfrontend_framework-util.js[0m) [31mMounting the default Webpack config[0m
+2022-01-06 16:25:11.571 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 16:25:11.571 -0500 [debug] ([34mcustom-objects.js[0m) [31mto force or not? false[0m
+2022-01-06 16:25:11.571 -0500 [debug] ([34mcustom-objects.js[0m) [31mbeginning to re-sync db[0m
+2022-01-06 16:25:11.831 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-06 16:25:12.253 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-06 16:25:12.419 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-06 16:25:12.694 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-06 16:25:13.299 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-06 16:25:13.425 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-06 16:25:14.046 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.537be649.js.map"}" to all listeners.[0m
+2022-01-06 16:25:14.047 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 16:25:14.047 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.f7468d26.js"}" to all listeners.[0m
+2022-01-06 16:25:14.047 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 16:25:14.047 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.f7468d26.js.map"}" to all listeners.[0m
+2022-01-06 16:25:14.048 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 16:25:14.048 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js"}" to all listeners.[0m
+2022-01-06 16:25:14.048 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 16:25:14.048 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js.map"}" to all listeners.[0m
+2022-01-06 16:25:14.048 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 16:25:14.048 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.acf3fcde.js"}" to all listeners.[0m
+2022-01-06 16:25:14.049 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 16:25:14.049 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.acf3fcde.js.map"}" to all listeners.[0m
+2022-01-06 16:25:14.049 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 16:25:14.067 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.acf3fcde.js"}" to all listeners.[0m
+2022-01-06 16:25:14.068 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.f7468d26.js"}" to all listeners.[0m
+2022-01-06 16:25:14.068 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js"}" to all listeners.[0m
+2022-01-06 16:25:14.069 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 16:25:14.069 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-06 16:25:14.070 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.f7468d26.js.map"}" to all listeners.[0m
+2022-01-06 16:25:14.070 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js.map"}" to all listeners.[0m
+2022-01-06 16:25:14.071 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 16:25:14.071 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.acf3fcde.js.map"}" to all listeners.[0m
+2022-01-06 16:25:14.072 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.f7468d26.js"}" to all listeners.[0m
+2022-01-06 16:25:14.072 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js"}" to all listeners.[0m
+2022-01-06 16:25:14.072 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 16:25:14.073 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-06 16:25:14.073 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.f7468d26.js.map"}" to all listeners.[0m
+2022-01-06 16:25:14.074 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.f7468d26.js"}" to all listeners.[0m
+2022-01-06 16:25:14.075 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js"}" to all listeners.[0m
+2022-01-06 16:25:14.075 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js.map"}" to all listeners.[0m
+2022-01-06 16:25:14.076 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-06 16:25:14.076 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.f7468d26.js.map"}" to all listeners.[0m
+2022-01-06 16:25:14.076 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.acf3fcde.js"}" to all listeners.[0m
+2022-01-06 16:25:14.077 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.acf3fcde.js.map"}" to all listeners.[0m
+2022-01-06 16:25:14.281 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js.map"}" to all listeners.[0m
+2022-01-06 16:25:14.282 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.acf3fcde.js.map"}" to all listeners.[0m
+2022-01-06 16:25:14.455 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\bigint-pivot.js"[0m
+2022-01-06 16:25:14.456 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\entity-field-choice.js"[0m
+2022-01-06 16:25:14.457 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\entity-field.js"[0m
+2022-01-06 16:25:14.458 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\entity.js"[0m
+2022-01-06 16:25:14.459 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\record.js"[0m
+2022-01-06 16:25:14.459 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\string-pivot.js"[0m
+2022-01-06 16:25:14.471 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 16:25:14.472 -0500 [debug] ([34mcustom-objects.js[0m) [31mupdated local store with latest entity hash[0m
+2022-01-06 16:25:14.473 -0500 [info] Starting local testing server at http://*:10001/    
+Append 'dev=true' to your Freshdesk account URL to start testing    
+e.g. https://domain.freshdesk.com/a/tickets/1?dev=true    
+Quit the server with Control-C.
+2022-01-06 16:25:41.050 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 16:25:41.050 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 16:25:41.057 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 16:25:41.057 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 16:25:41.072 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 16:25:41.072 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 16:25:41.078 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 16:25:41.078 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 16:25:41.084 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 16:25:41.084 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 16:25:41.089 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 16:25:41.089 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 16:25:41.103 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:25:41.104 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 16:25:41.104 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 16:25:41.113 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.ab95bbe9.js[0m
+2022-01-06 16:25:41.115 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.ab95bbe9.js[0m
+2022-01-06 16:25:41.117 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.acf3fcde.js[0m
+2022-01-06 16:25:41.127 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.acf3fcde.js[0m
+2022-01-06 16:25:41.141 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.f7468d26.js[0m
+2022-01-06 16:25:41.142 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.f7468d26.js[0m
+2022-01-06 16:25:44.954 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:25:44.964 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.ab95bbe9.js[0m
+2022-01-06 16:25:44.965 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.ab95bbe9.js[0m
+2022-01-06 16:25:44.969 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.acf3fcde.js[0m
+2022-01-06 16:25:44.980 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.acf3fcde.js[0m
+2022-01-06 16:25:44.991 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.f7468d26.js[0m
+2022-01-06 16:25:44.992 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.f7468d26.js[0m
+2022-01-06 16:26:56.879 -0500 [debug] ([34mdata-pipe.js[0m) [31mreceived call for route "proxy" with action "execute" and body {"action":"execute","data":{"headers":{"Authorization":"pk_26300173_E1SRMU3J8KK4TJFKRET9M98NKVG9HV73","Content-Type":"application/json"},"body":{"name":"RE: 206940799,206939317","markdown_description":"**Freshdesk Ticket 50445:** \n Good morning,\r\n\r\nI am not showing order #206940799 and order #206939317 is in the process of being delivered to the customer now.\r\n\r\nWe have received complaints from our customers because sometimes the orders are not being picked up within the 2 hour timeframe. We wanted to make you aware so that we don't have this problem going forward. If there is anything that we can do to assist you all, please let us know.\r\n\r\nThanks,\r\n\r\n\r\n[cid:image001.png@01D802EC.C7F29190]\r\nShayla Tyner\r\nAdministrative Clerk\r\no: 601-718-4966 | styner@atd-us.com<mailto:styner@atd-us.com>\r\n500 Hwy 49 South, Richland, MS 39218\r\n\r\n\r\nFrom: OneRail Dispatch <dispatch@onerail.io>\r\nSent: Thursday, January 6, 2022 8:27 AM\r\nTo: DC Resolution Team - Jackson <ResponseTeam-Jackson@ATD-US.com>\r\nSubject: 206940799,206939317\r\n\r\n-----EXTERNAL EMAIL - USE CAUTION -----\r\n\r\nHello\r\n\r\nI just wanted to verify these two orders are available for pick up, please advise\r\n\r\nThank you,\r\nTatiana\r\n\r\n[Image removed by sender. OneRail]<https://urldefense.com/v3/__https:/onerail.io/__;!!DfQtb1M!HTfgrCDdEAEYH-BNIYDg81d9frdhpye5e_ZWD2aL2oDzjruYLbPcb7_q2l6otKN8xmzuq7fw_g$>\r\n\r\nDispatch Team\r\nFulfillment Operations\r\n\r\ndispatch@onerail.io<mailto:dispatch@onerail.io>  |  +1.407.201.9829\r\n\r\nOneRail.io<https://urldefense.com/v3/__https:/onerail.io/__;!!DfQtb1M!HTfgrCDdEAEYH-BNIYDg81d9frdhpye5e_ZWD2aL2oDzjruYLbPcb7_q2l6otKN8xmzuq7fw_g$>\r\nFinal Mile, Delivered.\r\n\r\n\r\nThe information contained in this e-mail is confidential; it is intended only for the use of the individual or entity named above. If the reader of this message is not the intended recipient, you may not use, copy or disclose to anyone the message or any information contained in or attached to the message. If you have received the message in error, please advise the sender by reply e-mail or by telephone at the number set forth above, and delete the message. Although this e-mail is believed to be free of any virus or other defect that might affect any computer system in which it is received, it is the responsibility of the recipient to ensure that it is virus-free.\r\n\r\nFinal Mile, Delivered\r\nonerail.io<https://urldefense.com/v3/__http:/onerail.io/__;!!DfQtb1M!HTfgrCDdEAEYH-BNIYDg81d9frdhpye5e_ZWD2aL2oDzjruYLbPcb7_q2l6otKN8xmw8_k5Ixg$>\r\n\r\n50368:1858546\r\n\r\nCAUTION: This email originated outside of the organization. DO NOT CLICK any links, open attachments or reply unless you were expecting this email and trust that the content is safe. Keep confidential data safe.\r\n\r\n\r\n \n **Additional Notes:** \n notes","assignees":[26300173],"tags":["atd","blue team","blue green","all customer"],"status":"Requested","priority":4,"due_date":1642714016862,"due_date_time":false,"time_estimate":1209600000,"start_date":1641504416862,"start_date_time":false,"notify_all":true,"parent":null,"links_to":null,"check_required_custom_fields":true,"custom_fields":[{"id":"693b7b05-8c30-4e7b-be39-295245333faf","value":"11bc28f1-75fa-4226-a366-bb5ef4f1c9de"},{"id":"9cfbd761-8aff-416c-bd8e-6fb06f2849f3","value":"a932b0ae-1ce9-4664-9b21-af813f5e5e97"}]},"url":"https://api.clickup.com/api/v2/list/71601233/task","method":"post"}}[0m
+2022-01-06 16:33:51.864 -0500 [debug] ([34mlogger.js[0m) [31mStarting FDK in node v12.22.0 on win32[0m
+2022-01-06 16:33:52.390 -0500 [debug] ([34msequelize.js[0m) [31msetting up sqilite at "C:\Users\SamSwaringen\Desktop\clickup_integration/.fdk/store.sqlite"[0m
+2022-01-06 16:33:52.475 -0500 [debug] ([34mindex.js[0m) [31mRunning with args {"cmd":"run","gopts":{},"opts":{},"goptArg":{},"optArg":{},"args":[]}[0m
+2022-01-06 16:33:52.475 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.17","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.17.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1641494505722}}[0m
+2022-01-06 16:33:52.475 -0500 [debug] ([34mupdater.js[0m) [31mlast check less than an day ago, not looking for updates[0m
+2022-01-06 16:33:52.623 -0500 [debug] ([34mmanifest.js[0m) [31mReloading manifest with {"platform-version":"2.2","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"whitelisted-domains":["https://api.clickup.com"],"engines":{"node":"12.22.0","fdk":"7.3.0"}}.[0m
+2022-01-06 16:33:52.624 -0500 [debug] ([34mmanifest.js[0m) [31mInferred db as features.[0m
+2022-01-06 16:33:52.625 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.17","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.17.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1641494505722}}[0m
+2022-01-06 16:33:52.635 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.17","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.17.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1641494505722}}[0m
+2022-01-06 16:33:53.589 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.17","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.17.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1641494505722}}[0m
+2022-01-06 16:33:54.328 -0500 [debug] ([34mvalidate.js[0m) [31masked to skip the following validations, [0m
+2022-01-06 16:33:54.329 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator actions[0m
+2022-01-06 16:33:54.329 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator app-dir[0m
+2022-01-06 16:33:54.329 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator config-dir[0m
+2022-01-06 16:33:54.329 -0500 [debug] ([34mconfig-dir.js[0m) [31mChecking to see if C:\Users\SamSwaringen\Desktop\clickup_integration/config/ exists.[0m
+2022-01-06 16:33:54.330 -0500 [debug] ([34mconfig-dir.js[0m) [31mFetched the following config files iparams.json[0m
+2022-01-06 16:33:54.330 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator custom-objects[0m
+2022-01-06 16:33:54.330 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator event[0m
+2022-01-06 16:33:54.330 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator iparam[0m
+2022-01-06 16:33:54.331 -0500 [debug] ([34mvalidate.js[0m) [31mskipping validator lint[0m
+2022-01-06 16:33:54.332 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator manifest[0m
+2022-01-06 16:33:54.332 -0500 [debug] ([34mmanifest.js[0m) [31mrunning manifest validation with type run_validation[0m
+2022-01-06 16:33:54.332 -0500 [debug] ([34mvalidate.js[0m) [31mskipping validator manifest-dependency[0m
+2022-01-06 16:33:54.332 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator oauth[0m
+2022-01-06 16:33:54.332 -0500 [debug] ([34mvalidate.js[0m) [31mskipping validator pkgsize[0m
+2022-01-06 16:33:54.332 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator schema[0m
+2022-01-06 16:33:54.332 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator version-check[0m
+2022-01-06 16:33:54.334 -0500 [debug] ([34mwatcher.js[0m) [31mPreparing to watch the following files ./app,./config,./manifest.json[0m
+2022-01-06 16:33:54.408 -0500 [debug] ([34mcoverage-util.js[0m) [31mSnoozing coverage.[0m
+2022-01-06 16:33:54.409 -0500 [debug] ([34mfrontend_framework-util.js[0m) [31mMounting the default Webpack config[0m
+2022-01-06 16:33:54.949 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 16:33:54.949 -0500 [debug] ([34mcustom-objects.js[0m) [31mto force or not? false[0m
+2022-01-06 16:33:54.949 -0500 [debug] ([34mcustom-objects.js[0m) [31mbeginning to re-sync db[0m
+2022-01-06 16:33:55.566 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 16:33:55.566 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 16:33:55.579 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 16:33:55.579 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 16:33:55.760 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 16:33:55.760 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 16:33:55.760 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:33:55.961 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.ab95bbe9.js[0m
+2022-01-06 16:33:55.962 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.ab95bbe9.js[0m
+2022-01-06 16:33:56.033 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.acf3fcde.js[0m
+2022-01-06 16:33:56.045 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.acf3fcde.js[0m
+2022-01-06 16:33:56.053 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.f7468d26.js[0m
+2022-01-06 16:33:56.053 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.f7468d26.js[0m
+2022-01-06 16:33:58.558 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.f7468d26.js"}" to all listeners.[0m
+2022-01-06 16:33:58.560 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 16:33:58.560 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.f7468d26.js.map"}" to all listeners.[0m
+2022-01-06 16:33:58.561 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 16:33:58.561 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js"}" to all listeners.[0m
+2022-01-06 16:33:58.562 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 16:33:58.562 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js.map"}" to all listeners.[0m
+2022-01-06 16:33:58.563 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 16:33:58.563 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.acf3fcde.js"}" to all listeners.[0m
+2022-01-06 16:33:58.564 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 16:33:58.564 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.acf3fcde.js.map"}" to all listeners.[0m
+2022-01-06 16:33:58.564 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 16:33:58.566 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:33:58.569 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:33:58.603 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:33:58.608 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:33:58.614 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:33:58.615 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:33:58.616 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:33:58.617 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:33:58.619 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js"}" to all listeners.[0m
+2022-01-06 16:33:58.624 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.acf3fcde.js"}" to all listeners.[0m
+2022-01-06 16:33:58.625 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.558acc09.js"}" to all listeners.[0m
+2022-01-06 16:33:58.626 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 16:33:58.628 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.558acc09.js.map"}" to all listeners.[0m
+2022-01-06 16:33:58.629 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js.map"}" to all listeners.[0m
+2022-01-06 16:33:58.633 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 16:33:58.634 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.acf3fcde.js.map"}" to all listeners.[0m
+2022-01-06 16:33:58.635 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-06 16:33:58.638 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-06 16:33:58.640 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.acf3fcde.js"}" to all listeners.[0m
+2022-01-06 16:33:58.641 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.558acc09.js"}" to all listeners.[0m
+2022-01-06 16:33:58.642 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.558acc09.js.map"}" to all listeners.[0m
+2022-01-06 16:33:58.643 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js.map"}" to all listeners.[0m
+2022-01-06 16:33:58.644 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.acf3fcde.js.map"}" to all listeners.[0m
+2022-01-06 16:33:58.646 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:33:58.649 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.558acc09.js"}" to all listeners.[0m
+2022-01-06 16:33:58.650 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js"}" to all listeners.[0m
+2022-01-06 16:33:58.651 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.558acc09.js.map"}" to all listeners.[0m
+2022-01-06 16:33:58.652 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.acf3fcde.js"}" to all listeners.[0m
+2022-01-06 16:33:58.653 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js.map"}" to all listeners.[0m
+2022-01-06 16:33:58.654 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.acf3fcde.js.map"}" to all listeners.[0m
+2022-01-06 16:33:58.654 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-06 16:33:59.146 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:33:59.148 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:33:59.149 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:33:59.152 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-06 16:33:59.210 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:33:59.211 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:33:59.250 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:33:59.251 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:33:59.251 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:33:59.252 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:33:59.253 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:33:59.254 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:33:59.267 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.ab95bbe9.js[0m
+2022-01-06 16:33:59.267 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.ab95bbe9.js[0m
+2022-01-06 16:33:59.270 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.acf3fcde.js[0m
+2022-01-06 16:33:59.277 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.acf3fcde.js[0m
+2022-01-06 16:33:59.299 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.558acc09.js[0m
+2022-01-06 16:33:59.300 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.558acc09.js[0m
+2022-01-06 16:33:59.409 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\bigint-pivot.js"[0m
+2022-01-06 16:33:59.412 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\entity-field-choice.js"[0m
+2022-01-06 16:33:59.413 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\entity-field.js"[0m
+2022-01-06 16:33:59.414 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\entity.js"[0m
+2022-01-06 16:33:59.416 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\record.js"[0m
+2022-01-06 16:33:59.417 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\string-pivot.js"[0m
+2022-01-06 16:33:59.434 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 16:33:59.434 -0500 [debug] ([34mcustom-objects.js[0m) [31mupdated local store with latest entity hash[0m
+2022-01-06 16:33:59.435 -0500 [info] Starting local testing server at http://*:10001/    
+Append 'dev=true' to your Freshdesk account URL to start testing    
+e.g. https://domain.freshdesk.com/a/tickets/1?dev=true    
+Quit the server with Control-C.
+2022-01-06 16:34:03.686 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 16:34:03.686 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 16:34:03.692 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 16:34:03.692 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 16:34:03.708 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 16:34:03.708 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 16:34:03.715 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 16:34:03.715 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 16:34:03.721 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 16:34:03.722 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 16:34:03.727 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 16:34:03.728 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 16:34:03.744 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:34:03.745 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-06 16:34:03.746 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-06 16:34:03.769 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.ab95bbe9.js[0m
+2022-01-06 16:34:03.769 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.ab95bbe9.js[0m
+2022-01-06 16:34:03.775 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.acf3fcde.js[0m
+2022-01-06 16:34:03.786 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.acf3fcde.js[0m
+2022-01-06 16:34:03.795 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.558acc09.js[0m
+2022-01-06 16:34:03.795 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.558acc09.js[0m
+2022-01-06 16:34:07.047 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-06 16:34:07.071 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.ab95bbe9.js[0m
+2022-01-06 16:34:07.071 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.ab95bbe9.js[0m
+2022-01-06 16:34:07.072 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.acf3fcde.js[0m
+2022-01-06 16:34:07.083 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.acf3fcde.js[0m
+2022-01-06 16:34:07.091 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.558acc09.js[0m
+2022-01-06 16:34:07.092 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.558acc09.js[0m
+2022-01-06 16:34:21.533 -0500 [debug] ([34mdata-pipe.js[0m) [31mreceived call for route "proxy" with action "execute" and body {"action":"execute","data":{"headers":{"Authorization":"pk_26300173_E1SRMU3J8KK4TJFKRET9M98NKVG9HV73","Content-Type":"application/json"},"body":{"name":"RE: 206940799,206939317","markdown_description":"**Freshdesk Ticket 50445:** \n Good morning,\r\n\r\nI am not showing order #206940799 and order #206939317 is in the process of being delivered to the customer now.\r\n\r\nWe have received complaints from our customers because sometimes the orders are not being picked up within the 2 hour timeframe. We wanted to make you aware so that we don't have this problem going forward. If there is anything that we can do to assist you all, please let us know.\r\n\r\nThanks,\r\n\r\n\r\n[cid:image001.png@01D802EC.C7F29190]\r\nShayla Tyner\r\nAdministrative Clerk\r\no: 601-718-4966 | styner@atd-us.com<mailto:styner@atd-us.com>\r\n500 Hwy 49 South, Richland, MS 39218\r\n\r\n\r\nFrom: OneRail Dispatch <dispatch@onerail.io>\r\nSent: Thursday, January 6, 2022 8:27 AM\r\nTo: DC Resolution Team - Jackson <ResponseTeam-Jackson@ATD-US.com>\r\nSubject: 206940799,206939317\r\n\r\n-----EXTERNAL EMAIL - USE CAUTION -----\r\n\r\nHello\r\n\r\nI just wanted to verify these two orders are available for pick up, please advise\r\n\r\nThank you,\r\nTatiana\r\n\r\n[Image removed by sender. OneRail]<https://urldefense.com/v3/__https:/onerail.io/__;!!DfQtb1M!HTfgrCDdEAEYH-BNIYDg81d9frdhpye5e_ZWD2aL2oDzjruYLbPcb7_q2l6otKN8xmzuq7fw_g$>\r\n\r\nDispatch Team\r\nFulfillment Operations\r\n\r\ndispatch@onerail.io<mailto:dispatch@onerail.io>  |  +1.407.201.9829\r\n\r\nOneRail.io<https://urldefense.com/v3/__https:/onerail.io/__;!!DfQtb1M!HTfgrCDdEAEYH-BNIYDg81d9frdhpye5e_ZWD2aL2oDzjruYLbPcb7_q2l6otKN8xmzuq7fw_g$>\r\nFinal Mile, Delivered.\r\n\r\n\r\nThe information contained in this e-mail is confidential; it is intended only for the use of the individual or entity named above. If the reader of this message is not the intended recipient, you may not use, copy or disclose to anyone the message or any information contained in or attached to the message. If you have received the message in error, please advise the sender by reply e-mail or by telephone at the number set forth above, and delete the message. Although this e-mail is believed to be free of any virus or other defect that might affect any computer system in which it is received, it is the responsibility of the recipient to ensure that it is virus-free.\r\n\r\nFinal Mile, Delivered\r\nonerail.io<https://urldefense.com/v3/__http:/onerail.io/__;!!DfQtb1M!HTfgrCDdEAEYH-BNIYDg81d9frdhpye5e_ZWD2aL2oDzjruYLbPcb7_q2l6otKN8xmw8_k5Ixg$>\r\n\r\n50368:1858546\r\n\r\nCAUTION: This email originated outside of the organization. DO NOT CLICK any links, open attachments or reply unless you were expecting this email and trust that the content is safe. Keep confidential data safe.\r\n\r\n\r\n \n **Additional Notes:** \n notes","assignees":[26300173],"tags":["audit/watcher","back end","blue green","blue team"],"status":"Requested","priority":4,"due_date":1642714461517,"due_date_time":false,"time_estimate":1209600000,"start_date":1641504861517,"start_date_time":false,"notify_all":true,"parent":null,"links_to":null,"check_required_custom_fields":true,"custom_fields":[{"id":"693b7b05-8c30-4e7b-be39-295245333faf","value":"85a42e7b-c746-49cd-afae-a4e09c188ab6"},{"id":"9cfbd761-8aff-416c-bd8e-6fb06f2849f3","value":"a932b0ae-1ce9-4664-9b21-af813f5e5e97"}]},"url":"https://api.clickup.com/api/v2/list/71601233/task","method":"post"}}[0m

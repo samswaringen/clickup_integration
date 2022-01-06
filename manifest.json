@@ -10,7 +10,7 @@
       }
     }
   },
-  "whitelisted-domains": [],
+  "whitelisted-domains": ["https://api.clickup.com"],
   "engines": {
     "node": "12.22.0",
     "fdk": "7.3.0"

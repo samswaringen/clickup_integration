@@ -133,37 +133,37 @@ const TicketForm = (props) => {
     var options = {
       headers: { 
         /*GET API KEY*/
-        'Authorization': 'pk_26300173_E1SRMU3J8KK4TJFKRET9M98NKVG9HV73', 
+        'Authorization': 'pk_26300173_XLACDBWL2MZ2QPURUK1U7P8I34K459CC',
         'Content-Type': 'application/json'
       },
-      body : payload
+      body : JSON.stringify(payload)
     };
     client.request.post("https://api.clickup.com/api/v2/list/71601233/task", options).then(
       function(data){
         console.log(data)
-        updateFreshdeskWithClickup(data)
+        //updateFreshdeskWithClickup(data)
       },
       function(error){
         console.log(error)
       }
     )
 
-    .then(function (response) {
-      console.log(JSON.stringify(response.data));
-      /* set Click up ticket field to returned click up ticket */
-      setLoading(true)
-      //updateFreshdeskWithClickup(response)
+    // .then(function (response) {
+    //   console.log(JSON.stringify(response.data));
+    //   /* set Click up ticket field to returned click up ticket */
+    //   setLoading(true)
+    //   //updateFreshdeskWithClickup(response)
       
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-    /* put this in updateFreshdeskWithClickup and make loading component.  update success with returned clickup information */
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    // });
+    // /* put this in updateFreshdeskWithClickup and make loading component.  update success with returned clickup information */
 
-    //simulate sending ticket and awaiting response, then updating freshdesk ticket and loading success page
-    setTimeout(()=>{
-      setChild((<Success client={client}/>))
-    },2000)
+    // //simulate sending ticket and awaiting response, then updating freshdesk ticket and loading success page
+    // setTimeout(()=>{
+    //   setChild((<Success client={client}/>))
+    // },2000)
 
   }
 
