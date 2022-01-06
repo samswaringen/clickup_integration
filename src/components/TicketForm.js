@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Form, Formik, Field } from 'formik';
 import axios from 'axios';
 import Select from 'react-select'
-import { tagList } from './tagList';
+import { tagList, requestingArr, priorityArr, assigneeArr } from './formArrays';
 import {TicketObj} from '../App'
 import Success from './Success';
 
@@ -18,18 +18,8 @@ const TicketForm = (props) => {
   const [assignees, setAssignees] = useState([])
 
 
-
-
-  const requestingArr = ["Who is Requesting?","AAP","TSC","Menard's","PetPeople","TBC","ATD","MiltonCat","Skullcandy","Pepsi","OneRail"]
-
   /* Get ids from everyone */
-  const assigneeArr = [
-    {value:1, label:"Adam"},
-    {value:2, label:"Chelsea"},
-    {value:3, label:"Corrie"},
-    {value:4, label:"Marissa"},
-    {value:26300173, label:"Sam"}
-  ]
+
 
   const initialValues = { 
     ticketID: ticket.id,
@@ -38,7 +28,7 @@ const TicketForm = (props) => {
     notes: "",
     reqCustomer:"",
     tags:[],
-    priority:0,
+    priority:{},
     reqDueDate:0
   }
 
@@ -49,46 +39,78 @@ const TicketForm = (props) => {
   const assigneeChange = (e)=>{
     console.log(e)
     e.map((item)=>setAssignees([...assignees,item.value]))
+
+    const getClickUpCustomID = (id)=>{
+      var options = {
+        headers:{
+          'Authorization': 'pk_26300173_E1SRMU3J8KK4TJFKRET9M98NKVG9HV73'
+        }
+      }
+      client.request.get(`https://api.clickup.com/api/v2/task/${id}`,options)
+        .then(function (data) {
+          console.log(data);
+          updateFreshdeskWithClickup(data.custom_id)
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
   }
 
   const updateFreshdeskWithClickup =(res)=>{
     let data = {
       custom_fields:{
         /* figure out proper object property path for click up custom id looks like REQ-XXXX */
-        cf_clickup_ticket:res.data
+        cf_clickup_ticket:res.data.id
       }
     }
-    var config = {
-      method: 'put',
-      url: `https://onerail.freshdesk.com/api/v2/tickets/${ticket.id}`,
+    var options = {
       headers: { 
         'Authorization': `Basic /* Insert Freshdesk API Here */ `
       },
-      data:data
+      body:data
     };
-    axios(config)
-    .then(function (response) {
-      console.log(JSON.stringify(response.data));
+    client.request.put(`https://onerail.freshdesk.com/api/v2/tickets/${ticket.id}`,options)
+    .then(function (data) {
+      console.log(data);
     })
     .catch(function (error) {
       console.log(error);
     });
   }
 
-
+  const handlePriority = (priority)=>{
+    let level = 0;
+    switch(priority){
+      case 'a932b0ae-1ce9-4664-9b21-af813f5e5e97':
+        level = 4;
+        break;
+      case 'dfc34a8f-0c76-4e30-a522-9b7caa722d92':
+        level = 3;
+        break;
+      case '23a52a86-534e-4d5a-8adc-274054d1eb19':
+        level = 2;
+        break;
+      case '72790d5b-fb1e-44b6-be6a-59f8ff4e5ac3':
+        level = 1;
+        break;
+    }
+    return level
+  }
 
   const onSubmit = (values)=>{
+    const level = handlePriority(values.priority)
     const payload = {
       "name": values.title,
-      "markdown_description": <><p>Freshdesk Ticket:{values.description}</p><p>Additional Notes:{values.notes}</p></>,
+      "markdown_description": `**Freshdesk Ticket ${values.ticketID}:** \n ${values.description} \n **Additional Notes:** \n ${values.notes}`,
       "assignees": assignees,
       "tags": tags,
-      "status": "Open",
-      "priority": Number(values.priority),
-      "due_date": "" /* i dont know */,
+      "status": "Requested",
+      "priority": level,
+      "due_date":  Date.now()+1209600000,
       "due_date_time": false,
-      "time_estimate": "" /* i dont know */,
-      "start_date": "" /* i dont know */,
+      "time_estimate": 1209600000 /* 2 weeks in milliseconds unless we want to have different times based on priority level */,
+      "start_date": Date.now() /* current dateTime in milliseconds */,
       "start_date_time": false,
       "notify_all": true,
       "parent": null,
@@ -101,46 +123,43 @@ const TicketForm = (props) => {
           "value": values.reqCustomer
         },
         {
-          /* point of contact */
-          "id":"dd085afd-fdda-45c9-bd7e-7888e7d1ecac",
-          "value": assignees[0]
-        },
-        {
-          /* description... use it to list freshdesk ticket ID? */
-          "id":"5418bbd8-47f5-479c-8b07-88dded5b0540",
-          "value": values.ticketID
-        },
-        {
-          /* Requested Due Date */
-          "id":"b27c4ef5-a843-4c29-a3d4-e613bafcbad1",
-          "value": values.reqDueDate
+          "id": "9cfbd761-8aff-416c-bd8e-6fb06f2849f3",
+          "value": values.priority
         }
       ]
     }
     console.log("payload",payload)
-    // var config = {
-    //   method: 'post',
-    //   url: 'https://api.clickup.com/api/v2/list/6-71601233-1/task',
-    //   headers: { 
-    //     /*GET API KEY*/
-    //     'Authorization': '"access token"', 
-    //     'Content-Type': 'application/json'
-    //   },
-    //   data : payload
-    // };
+    
+    var options = {
+      headers: { 
+        /*GET API KEY*/
+        'Authorization': 'pk_26300173_E1SRMU3J8KK4TJFKRET9M98NKVG9HV73', 
+        'Content-Type': 'application/json'
+      },
+      body : payload
+    };
+    client.request.post("https://api.clickup.com/api/v2/list/71601233/task", options).then(
+      function(data){
+        console.log(data)
+        updateFreshdeskWithClickup(data)
+      },
+      function(error){
+        console.log(error)
+      }
+    )
 
-    // axios(config)
-    // .then(function (response) {
-    //   console.log(JSON.stringify(response.data));
-    //   /* set Click up ticket field to returned click up ticket */
-    //   updateFreshdeskWithClickup(response)
-    //   
-    // })
-    // .catch(function (error) {
-    //   console.log(error);
-    // });
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+      /* set Click up ticket field to returned click up ticket */
+      setLoading(true)
+      //updateFreshdeskWithClickup(response)
+      
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
     /* put this in updateFreshdeskWithClickup and make loading component.  update success with returned clickup information */
-    setLoading(true)
+
     //simulate sending ticket and awaiting response, then updating freshdesk ticket and loading success page
     setTimeout(()=>{
       setChild((<Success client={client}/>))
@@ -190,18 +209,14 @@ const TicketForm = (props) => {
                 {/* dropdown field for requesting customer */}
                 <label>Requesting Customer:</label>
                 <Field as="select" name="reqCustomer" className="input">
-                  {requestingArr.map((item, i)=><option key={i} value={item}>{item}</option>)}
+                  {requestingArr.map((item, i)=><option key={i} value={item.value}>{item.label}</option>)}
                 </Field>
               </div><br/>
               <div className="input-div">
                 {/* dropdown field for Priority */}
                 <label>Priority:</label>
                 <Field as="select" name="priority" className="input">
-                  <option value="0">Choose Priority</option>
-                  <option value="4">Low</option>
-                  <option value="3">Medium</option>
-                  <option value="2">High</option>
-                  <option value="1">Urgent</option>
+                  {priorityArr.map((priority, i)=><option key={i} value={priority.value}>{priority.label}</option>)}
                 </Field>
               </div><br/>
               <div className="input-div">

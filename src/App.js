@@ -30,7 +30,7 @@ const App = () => {
         client.data.get('ticket').then((data) => {
           setTicket(data.ticket)
           /* set initial component to clickup ticket maker */
-         //setChild((<TicketForm ticket={data.ticket} client={client} />))
+          setChild((<TicketForm ticket={data.ticket} client={client} />))
           /* set app activate and deactivate events and callbacks and pass retrieved ticket data*/
           client.events.on("app.activated", ()=>onAppActivated(data.ticket, client));
           client.events.on("app.deactivated", ()=>onAppDeactivated(data.ticket, client)); 
@@ -46,31 +46,29 @@ const App = () => {
             }
         };
         client.events.on("ticket.statusChanged", propertyChangeCallback);
-
-        
       })
       if(showModal){
         /*initialize client to pull modal */
         app.initialized().then((client) => {
           client.interface.trigger("showModal", {
             title: "Click up Integration",
-            template: "ticket.html",
-            data: ticket
+            template: "index.html",
           }).then(function(data) {
           // data - success message
           }).catch(function(error) {
           // error - error object
           });
-        })
+      })
     }
   }, [loaded,showModal])
 
   const onAppActivated =(ticket, client)=>{
     setChild((<ClickUpStatus ticket={ticket} client={client} />))
+
   }
 
   const onAppDeactivated = (ticket, client)=>{
-   // setChild((<TicketForm ticket={ticket} client={client} />))
+    setChild((<TicketForm ticket={ticket} client={client} />))
   }
 
 

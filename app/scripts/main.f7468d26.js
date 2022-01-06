@@ -73,8 +73,11 @@ var App = function App() {
       client.data.get('ticket').then(function (data) {
         setTicket(data.ticket);
         /* set initial component to clickup ticket maker */
-        //setChild((<TicketForm ticket={data.ticket} client={client} />))
 
+        setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TicketForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          ticket: data.ticket,
+          client: client
+        }));
         /* set app activate and deactivate events and callbacks and pass retrieved ticket data*/
 
         client.events.on("app.activated", function () {
@@ -104,8 +107,7 @@ var App = function App() {
       app.initialized().then(function (client) {
         client["interface"].trigger("showModal", {
           title: "Click up Integration",
-          template: "ticket.html",
-          data: ticket
+          template: "index.html"
         }).then(function (data) {// data - success message
         })["catch"](function (error) {// error - error object
         });
@@ -120,7 +122,11 @@ var App = function App() {
     }));
   };
 
-  var onAppDeactivated = function onAppDeactivated(ticket, client) {// setChild((<TicketForm ticket={ticket} client={client} />))
+  var onAppDeactivated = function onAppDeactivated(ticket, client) {
+    setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TicketForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      ticket: ticket,
+      client: client
+    }));
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(TicketObj.Provider, {
@@ -278,7 +284,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ 9669);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-select */ 23157);
-/* harmony import */ var _tagList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tagList */ 6519);
+/* harmony import */ var _formArrays__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./formArrays */ 7818);
 /* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../App */ 48187);
 /* harmony import */ var _Success__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Success */ 48122);
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
@@ -330,26 +336,9 @@ var TicketForm = function TicketForm(props) {
       _useState6 = _slicedToArray(_useState5, 2),
       assignees = _useState6[0],
       setAssignees = _useState6[1];
-
-  var requestingArr = ["Who is Requesting?", "AAP", "TSC", "Menard's", "PetPeople", "TBC", "ATD", "MiltonCat", "Skullcandy", "Pepsi", "OneRail"];
   /* Get ids from everyone */
 
-  var assigneeArr = [{
-    value: 1,
-    label: "Adam"
-  }, {
-    value: 2,
-    label: "Chelsea"
-  }, {
-    value: 3,
-    label: "Corrie"
-  }, {
-    value: 4,
-    label: "Marissa"
-  }, {
-    value: 26300173,
-    label: "Sam"
-  }];
+
   var initialValues = {
     ticketID: ticket.id,
     title: ticket.subject,
@@ -357,7 +346,7 @@ var TicketForm = function TicketForm(props) {
     notes: "",
     reqCustomer: "",
     tags: [],
-    priority: 0,
+    priority: {},
     reqDueDate: 0
   };
 
@@ -372,47 +361,82 @@ var TicketForm = function TicketForm(props) {
     e.map(function (item) {
       return setAssignees([].concat(_toConsumableArray(assignees), [item.value]));
     });
+
+    var getClickUpCustomID = function getClickUpCustomID(id) {
+      var options = {
+        headers: {
+          'Authorization': 'pk_26300173_E1SRMU3J8KK4TJFKRET9M98NKVG9HV73'
+        }
+      };
+      client.request.get("https://api.clickup.com/api/v2/task/".concat(id), options).then(function (data) {
+        console.log(data);
+        updateFreshdeskWithClickup(data.custom_id);
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    };
   };
 
   var updateFreshdeskWithClickup = function updateFreshdeskWithClickup(res) {
     var data = {
       custom_fields: {
         /* figure out proper object property path for click up custom id looks like REQ-XXXX */
-        cf_clickup_ticket: res.data
+        cf_clickup_ticket: res.data.id
       }
     };
-    var config = {
-      method: 'put',
-      url: "https://onerail.freshdesk.com/api/v2/tickets/".concat(ticket.id),
+    var options = {
       headers: {
         'Authorization': "Basic /* Insert Freshdesk API Here */ "
       },
-      data: data
+      body: data
     };
-    axios__WEBPACK_IMPORTED_MODULE_2___default()(config).then(function (response) {
-      console.log(JSON.stringify(response.data));
+    client.request.put("https://onerail.freshdesk.com/api/v2/tickets/".concat(ticket.id), options).then(function (data) {
+      console.log(data);
     })["catch"](function (error) {
       console.log(error);
     });
   };
 
+  var handlePriority = function handlePriority(priority) {
+    var level = 0;
+
+    switch (priority) {
+      case 'a932b0ae-1ce9-4664-9b21-af813f5e5e97':
+        level = 4;
+        break;
+
+      case 'dfc34a8f-0c76-4e30-a522-9b7caa722d92':
+        level = 3;
+        break;
+
+      case '23a52a86-534e-4d5a-8adc-274054d1eb19':
+        level = 2;
+        break;
+
+      case '72790d5b-fb1e-44b6-be6a-59f8ff4e5ac3':
+        level = 1;
+        break;
+    }
+
+    return level;
+  };
+
   var onSubmit = function onSubmit(values) {
+    var level = handlePriority(values.priority);
     var payload = {
       "name": values.title,
-      "markdown_description": /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Freshdesk Ticket:", values.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Additional Notes:", values.notes)),
+      "markdown_description": "**Freshdesk Ticket ".concat(values.ticketID, ":** \n ").concat(values.description, " \n **Additional Notes:** \n ").concat(values.notes),
       "assignees": assignees,
       "tags": tags,
-      "status": "Open",
-      "priority": Number(values.priority),
-      "due_date": ""
-      /* i dont know */
-      ,
+      "status": "Requested",
+      "priority": level,
+      "due_date": Date.now() + 1209600000,
       "due_date_time": false,
-      "time_estimate": ""
-      /* i dont know */
+      "time_estimate": 1209600000
+      /* 2 weeks in milliseconds unless we want to have different times based on priority level */
       ,
-      "start_date": ""
-      /* i dont know */
+      "start_date": Date.now()
+      /* current dateTime in milliseconds */
       ,
       "start_date_time": false,
       "notify_all": true,
@@ -424,43 +448,34 @@ var TicketForm = function TicketForm(props) {
         "id": "693b7b05-8c30-4e7b-be39-295245333faf",
         "value": values.reqCustomer
       }, {
-        /* point of contact */
-        "id": "dd085afd-fdda-45c9-bd7e-7888e7d1ecac",
-        "value": assignees[0]
-      }, {
-        /* description... use it to list freshdesk ticket ID? */
-        "id": "5418bbd8-47f5-479c-8b07-88dded5b0540",
-        "value": values.ticketID
-      }, {
-        /* Requested Due Date */
-        "id": "b27c4ef5-a843-4c29-a3d4-e613bafcbad1",
-        "value": values.reqDueDate
+        "id": "9cfbd761-8aff-416c-bd8e-6fb06f2849f3",
+        "value": values.priority
       }]
     };
-    console.log("payload", payload); // var config = {
-    //   method: 'post',
-    //   url: 'https://api.clickup.com/api/v2/list/6-71601233-1/task',
-    //   headers: { 
-    //     /*GET API KEY*/
-    //     'Authorization': '"access token"', 
-    //     'Content-Type': 'application/json'
-    //   },
-    //   data : payload
-    // };
-    // axios(config)
-    // .then(function (response) {
-    //   console.log(JSON.stringify(response.data));
-    //   /* set Click up ticket field to returned click up ticket */
-    //   updateFreshdeskWithClickup(response)
-    //   
-    // })
-    // .catch(function (error) {
-    //   console.log(error);
-    // });
+    console.log("payload", payload);
+    var options = {
+      headers: {
+        /*GET API KEY*/
+        'Authorization': 'pk_26300173_E1SRMU3J8KK4TJFKRET9M98NKVG9HV73',
+        'Content-Type': 'application/json'
+      },
+      body: payload
+    };
+    client.request.post("https://api.clickup.com/api/v2/list/71601233/task", options).then(function (data) {
+      console.log(data);
+      updateFreshdeskWithClickup(data);
+    }, function (error) {
+      console.log(error);
+    }).then(function (response) {
+      console.log(JSON.stringify(response.data));
+      /* set Click up ticket field to returned click up ticket */
 
+      setLoading(true); //updateFreshdeskWithClickup(response)
+    })["catch"](function (error) {
+      console.log(error);
+    });
     /* put this in updateFreshdeskWithClickup and make loading component.  update success with returned clickup information */
-
-    setLoading(true); //simulate sending ticket and awaiting response, then updating freshdesk ticket and loading success page
+    //simulate sending ticket and awaiting response, then updating freshdesk ticket and loading success page
 
     setTimeout(function () {
       setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Success__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -493,7 +508,7 @@ var TicketForm = function TicketForm(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Assignee:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_select__WEBPACK_IMPORTED_MODULE_6__["default"], {
     id: "assignees",
     name: "assignees",
-    options: assigneeArr,
+    options: _formArrays__WEBPACK_IMPORTED_MODULE_3__.assigneeArr,
     isMulti: true,
     classNamePrefix: "select",
     closeMenuOnSelect: false,
@@ -522,33 +537,28 @@ var TicketForm = function TicketForm(props) {
     as: "select",
     name: "reqCustomer",
     className: "input"
-  }, requestingArr.map(function (item, i) {
+  }, _formArrays__WEBPACK_IMPORTED_MODULE_3__.requestingArr.map(function (item, i) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
       key: i,
-      value: item
-    }, item);
+      value: item.value
+    }, item.label);
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "input-div"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Priority:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
     as: "select",
     name: "priority",
     className: "input"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "0"
-  }, "Choose Priority"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "4"
-  }, "Low"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "3"
-  }, "Medium"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "2"
-  }, "High"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "1"
-  }, "Urgent"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, _formArrays__WEBPACK_IMPORTED_MODULE_3__.priorityArr.map(function (priority, i) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+      key: i,
+      value: priority.value
+    }, priority.label);
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "input-div"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Tags:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_select__WEBPACK_IMPORTED_MODULE_6__["default"], {
     id: "tags",
     name: "tags",
-    options: _tagList__WEBPACK_IMPORTED_MODULE_3__.tagList,
+    options: _formArrays__WEBPACK_IMPORTED_MODULE_3__.tagList,
     isMulti: true,
     classNamePrefix: "select",
     closeMenuOnSelect: false,
@@ -565,17 +575,81 @@ TicketForm.propTypes = {
 
 /***/ }),
 
-/***/ 6519:
-/*!***********************************!*\
-  !*** ./src/components/tagList.js ***!
-  \***********************************/
+/***/ 7818:
+/*!**************************************!*\
+  !*** ./src/components/formArrays.js ***!
+  \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "tagList": () => (/* binding */ tagList)
+/* harmony export */   "requestingArr": () => (/* binding */ requestingArr),
+/* harmony export */   "tagList": () => (/* binding */ tagList),
+/* harmony export */   "priorityArr": () => (/* binding */ priorityArr),
+/* harmony export */   "assigneeArr": () => (/* binding */ assigneeArr)
 /* harmony export */ });
+var requestingArr = [{
+  value: "",
+  label: "Who is Requesting?"
+}, {
+  value: "45c3d4ca-f36c-47c4-bb0e-d8f66cb08e49",
+  label: "AAP"
+}, {
+  value: "2ac912e7-4c67-4a20-a88e-c5b573acc59d",
+  label: "TSC"
+}, {
+  value: "45ecfb6a-dcd4-4fa1-ab4e-a88127b7e741",
+  label: "Menard's"
+}, {
+  value: "4755f95d-7e13-4122-9d4e-b4cb4451af3f",
+  label: "PetPeople"
+}, {
+  value: "0f6fed9c-9e13-43a6-b79f-03f68a67202d",
+  label: "TBC"
+}, {
+  value: "89705354-3e0b-4d9a-b2c3-7ca5232e825e",
+  label: "ATD"
+}, {
+  value: "6b56f348-eecc-438e-881f-270f8f386d80",
+  label: "MiltonCat"
+}, {
+  value: "85a42e7b-c746-49cd-afae-a4e09c188ab6",
+  label: "Skullcandy"
+}, {
+  value: "11bc28f1-75fa-4226-a366-bb5ef4f1c9de",
+  label: "Pepsi"
+}, {
+  value: "a665613e-c932-4196-9bba-6b51356c2ef5",
+  label: "OneRail"
+}, {
+  value: "31d4abc2-fa8b-45be-9694-e686291cc88e",
+  label: "Clmbr"
+}, {
+  value: "f1444b44-b75c-4451-855e-27068bd1cc36",
+  label: "Peloton"
+}, {
+  value: "7a4e7755-b302-4dea-8b73-c6fef6441822",
+  label: "World Electric"
+}, {
+  value: "b7169c14-93ac-4b99-b2ea-23f8b36f985b",
+  label: "Lowes"
+}, {
+  value: "9ae72a95-a5df-428a-8cff-22cc2451df8e",
+  label: "AAFES"
+}, {
+  value: "4d014f1a-e3d8-433c-930a-602d55f2b383",
+  label: "Galleghar Tire"
+}, {
+  value: "45ecfb6a-dcd4-4fa1-ab4e-a88127b7e741",
+  label: "Menards"
+}, {
+  value: "1ab62bd3-cc40-45cb-8ba3-0c0a3a0bf86b",
+  label: "onePotluck"
+}, {
+  value: "f8580be7-3b19-40ce-b208-c791bc25affa",
+  label: "Pitney Bowes"
+}];
 var tagList = [{
   value: "aap",
   label: "aap"
@@ -817,6 +891,43 @@ var tagList = [{
   value: "test(s)",
   label: "test(s)"
 }];
+var priorityArr = [{
+  value: "",
+  label: "Priority Level",
+  level: 0
+}, {
+  value: "a932b0ae-1ce9-4664-9b21-af813f5e5e97",
+  label: "Low",
+  level: 4
+}, {
+  value: "dfc34a8f-0c76-4e30-a522-9b7caa722d92",
+  label: "Normal",
+  level: 3
+}, {
+  value: "23a52a86-534e-4d5a-8adc-274054d1eb19",
+  label: "High",
+  level: 2
+}, {
+  value: "72790d5b-fb1e-44b6-be6a-59f8ff4e5ac3",
+  label: "Urgent",
+  level: 1
+}];
+var assigneeArr = [{
+  value: 1,
+  label: "Adam"
+}, {
+  value: 2,
+  label: "Chelsea"
+}, {
+  value: 3,
+  label: "Corrie"
+}, {
+  value: 4,
+  label: "Marissa"
+}, {
+  value: 26300173,
+  label: "Sam"
+}];
 
 
 /***/ }),
@@ -954,4 +1065,4 @@ module.exports = content.locals || {};
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.93addc9c.js.map
+//# sourceMappingURL=main.f7468d26.js.map
