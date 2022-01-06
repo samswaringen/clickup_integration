@@ -104,13 +104,9 @@ var App = function App() {
       app.initialized().then(function (client) {
         client["interface"].trigger("showModal", {
           title: "Click up Integration",
-          template: "modal.html",
+          template: "ticket.html",
           data: ticket
-        }).then(function (data) {
-          // data - success message
-          document.querySelectorAll('[aria-label="Close"]').addEventListener("onClick", function () {
-            console.log("modal closed");
-          });
+        }).then(function (data) {// data - success message
         })["catch"](function (error) {// error - error object
         });
       });
@@ -218,7 +214,15 @@ function ClickUpStatus(props) {
     }
   }, [customID]);
 
-  var openClickUpModal = function openClickUpModal() {};
+  var openClickUpModal = function openClickUpModal() {
+    client["interface"].trigger("showModal", {
+      title: "Click up Integration",
+      template: "clickup.html",
+      data: ticket
+    }).then(function (data) {// data - success message
+    })["catch"](function (error) {// error - error object
+    });
+  };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, clickUpExists && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "click up ticket number is ", customID, "Status: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     onClick: openClickUpModal
@@ -950,4 +954,4 @@ module.exports = content.locals || {};
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.b4afe198.js.map
+//# sourceMappingURL=main.93addc9c.js.map

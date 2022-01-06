@@ -42,7 +42,15 @@ function ClickUpStatus(props) {
   },[customID])
 
   const openClickUpModal = ()=>{
-
+    client.interface.trigger("showModal", {
+      title: "Click up Integration",
+      template: "clickup.html",
+      data: ticket
+    }).then(function(data) {
+    // data - success message
+    }).catch(function(error) {
+    // error - error object
+    });
   }
 
   return (

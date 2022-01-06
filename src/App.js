@@ -54,13 +54,10 @@ const App = () => {
         app.initialized().then((client) => {
           client.interface.trigger("showModal", {
             title: "Click up Integration",
-            template: "modal.html",
+            template: "ticket.html",
             data: ticket
           }).then(function(data) {
           // data - success message
-          document.querySelectorAll('[aria-label="Close"]').addEventListener("onClick", ()=>{
-            console.log("modal closed")
-          })
           }).catch(function(error) {
           // error - error object
           });

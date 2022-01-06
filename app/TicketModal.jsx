@@ -1,6 +1,6 @@
 
 
-function ModalForm() {
+function TicketModal() {
 
   const [tags, setTags] = React.useState([])
   const [assignees, setAssignees] = React.useState([])
@@ -283,7 +283,7 @@ function ModalForm() {
 
 ReactDOM.render(
 
-    <ModalForm />,
+    <TicketModal />,
 
   document.getElementById("root")
 )
