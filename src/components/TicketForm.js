@@ -93,7 +93,7 @@ const TicketForm = (props) => {
 
     const payload = {
       "name": values.title,
-      "markdown_description": `###Problem Description:### \n\n ${values.description} \n ###Steps to Reproduce###\n\n ${values.steps} \n ###Acceptance Criteria:### \n\n ${values.acceptance}`,
+      "markdown_description": `### Problem Description: \n ${values.description} \n ### Steps to Reproduce: \n ${values.steps} \n ### Acceptance Criteria: \n ${values.acceptance}`,
       "assignees": values.assignees,
       "tags": values.tags,
       "status": "Requested",

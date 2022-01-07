@@ -414,7 +414,7 @@ var TicketForm = function TicketForm(props) {
     var timeEst = milliDate - Date.now();
     var payload = {
       "name": values.title,
-      "markdown_description": "###Problem Description:### \n\n ".concat(values.description, " \n ###Steps to Reproduce###\n\n ").concat(values.steps, " \n ###Acceptance Criteria:### \n\n ").concat(values.acceptance),
+      "markdown_description": "### Problem Description: \n ".concat(values.description, " \n ### Steps to Reproduce: \n ").concat(values.steps, " \n ### Acceptance Criteria: \n ").concat(values.acceptance),
       "assignees": values.assignees,
       "tags": values.tags,
       "status": "Requested",
@@ -1232,4 +1232,4 @@ module.exports = content.locals || {};
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.022ad1fc.js.map
+//# sourceMappingURL=main.77e50982.js.map
