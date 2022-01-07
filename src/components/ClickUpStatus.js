@@ -56,10 +56,9 @@ function ClickUpStatus(props) {
   return (
     <div>
       {clickUpExists &&
-        <div style={{border:'1px solid lightgrey', display:"flex",justifyContent:"center", paddingTop:'2vh', width:'98vw', borderRadius:"4px", height:"95vh"}}>
-          click up ticket number is {customID}
+        <div style={{border:'1px solid lightgrey', display:"flex",justifyContent:"center",alignItems:"center", textAlign:"center", flexDirection:"column", paddingTop:'2vh', width:'98vw', borderRadius:"4px", height:"95vh"}}>
+          click up ticket number is {customID}<br/>
           {/*here we will get click up ticket and post pertanent information*/}
-          Status: <br/>
           <button onClick={openClickUpModal}>More Detailed View</button>
         </div>
       }

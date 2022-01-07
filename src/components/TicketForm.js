@@ -93,7 +93,7 @@ const TicketForm = (props) => {
 
     const payload = {
       "name": values.title,
-      "markdown_description": `**Freshdesk Ticket ${values.ticketID}:** \n ${values.description} \n **Additional Notes:** \n ${values.notes}`,
+      "markdown_description": `###Problem Description:### \n\n ${values.description} \n ###Steps to Reproduce###\n\n ${values.steps} \n ###Acceptance Criteria:### \n\n ${values.acceptance}`,
       "assignees": values.assignees,
       "tags": values.tags,
       "status": "Requested",
@@ -159,8 +159,9 @@ const TicketForm = (props) => {
     initialValues : { 
       ticketID: ticket.id,
       title: ticket.subject,
-      description: ticket.description_text,
-      notes: "",
+      description: "",
+      steps: "",
+      acceptance:"",
       reqCustomer:"",
       assignees:[],
       tags:[],
@@ -173,9 +174,10 @@ const TicketForm = (props) => {
 
   return (
     <div>
-        {!loading && <div style={{marginTop:"2vh"}}>
+        {!loading && 
+          <div style={{marginTop:"2vh"}}>
             <form onSubmit={formik.handleSubmit}>
-            <div className="input-div">
+              <div className="input-div">
                 <TextField 
                   fullwidth
                   id="ticketID" 
@@ -201,132 +203,168 @@ const TicketForm = (props) => {
               </div><br/><br/>
               <div className="input-div">
                 {/* dropdown Textfield for Assignees. Need everyones clickup id number */}
-              <FormControl>
-                <InputLabel shrink htmlFor="assignees">
-                  Assignee:
-                </InputLabel>
-                <Select 
-                  fullwidth
-                  label="Assignee:"
-                  id="assignees" 
-                  name="assignees" 
-                  multiple 
-                  defaultValue="Assignee"
-                  onChange={formik.handleChange}
-                  value={formik.values.assignees} 
-                  input={<OutlinedInput id="assignees" label="Chip" />}
-                  renderValue={(selected) => (
-                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                      {selected.map((value) => (
-                        <Chip key={value} label={assigneeArr.filter((item)=>item[value])[0][value]} />
-                      ))}
-                    </Box>
-                  )}
-                >
-                 { assigneeArr.map((name) => (
-                    <MenuItem
-                      key={name}
-                      value={name.value}
-                    >
-                      {name.label}
-                    </MenuItem>
-                    ))
-                  }
-                </Select>
-              </FormControl>
+                <FormControl >
+                  <InputLabel shrink htmlFor="assignees" style={{backgroundColor:"white", padding:"3px"}}>
+                    Assignee:
+                  </InputLabel>
+                  <Select 
+                    fullwidth
+                    key="assignees"
+                    labelID="asignees"
+                    id="assignees" 
+                    name="assignees" 
+                    multiple 
+                    defaultValue="Assignee"
+                    onChange={formik.handleChange}
+                    value={formik.values.assignees} 
+                    input={<OutlinedInput id="assignees" label="Chip" />}
+                    renderValue={(selected) => (
+                      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                        {selected.map((value) => (
+                          <Chip key={value} label={assigneeArr.filter((item)=>item[value])[0][value]} />
+                        ))}
+                      </Box>
+                    )}
+                  >
+                  { assigneeArr.map((name) => (
+                      <MenuItem
+                        key={name}
+                        value={name.value}
+                      >
+                        {name.label}
+                      </MenuItem>
+                      ))
+                    }
+                  </Select>
+                </FormControl>
               </div><br/>
               <div className="input-div">
-                <label>Description:</label>
-                <TextareaAutosize
-                  label="Description"
-                  aria-label="description"
-                  name="description" 
-                  className="textarea"
-                  placeholder="Description"
-                  value={formik.values.description}
-                  onChange={formik.handleChange}
-                  minRows={6}
-                />
+                <FormControl>
+                  <InputLabel shrink htmlFor="description" style={{backgroundColor:"white", padding:"3px"}}>Description:</InputLabel>
+                  <TextareaAutosize
+                    id="desription"
+                    label="Description"
+                    aria-label="description"
+                    name="description" 
+                    className="textarea"
+                    placeholder="Enter description of problem"
+                    value={formik.values.description}
+                    onChange={formik.handleChange}
+                    minRows={3}
+                    style={{padding:"10px"}}
+                  />
+                </FormControl >
               </div><br/>
               <div className="input-div">
-              <label>Additional Notes:</label>
-              <TextareaAutosize
-                  aria-label="notes"
-                  name="notes" 
-                  className="textarea"
-                  placeholder="Additional Notes"
-                  value={formik.values.notes}
-                  onChange={formik.handleChange}
-                  minRows={6}
-                />
+                <FormControl>
+                  <InputLabel shrink htmlFor="steps" style={{backgroundColor:"white", padding:"3px"}}>Steps to Reproduce:</InputLabel>
+                  <TextareaAutosize
+                    id="steps"
+                    aria-label="steps"
+                    name="steps" 
+                    className="textarea"
+                    placeholder="Enter steps to reproduce problem"
+                    value={formik.values.steps}
+                    onChange={formik.handleChange}
+                    minRows={3}
+                    style={{padding:"10px"}}
+                  />
+                </FormControl>
+              </div><br/>
+              <div className="input-div">
+                <FormControl>
+                  <InputLabel shrink htmlFor="notes" style={{backgroundColor:"white", padding:"3px"}}>Acceptance Criteria:</InputLabel>
+                  <TextareaAutosize
+                    id="acceptance"
+                    aria-label="acceptance"
+                    name="acceptance" 
+                    className="textarea"
+                    placeholder="Enter acceptance criteria for problem resolution"
+                    value={formik.values.acceptance}
+                    onChange={formik.handleChange}
+                    minRows={3}
+                    style={{padding:"10px"}}
+                  />
+                </FormControl>
               </div><br/>
               <div className="input-div">
                 {/* dropdown Textfield for requesting customer */}
-                <label>Requested Due Date:</label>
-                <TextField 
-                  type="date" 
-                  name="reqDueDate" 
-                  className="input"
-                  value={formik.values.reqDueDate} 
-                  onChange={formik.handleChange}
-                />
-              </div><br/>
+                <FormControl>
+                  <InputLabel shrink htmlFor="date" style={{backgroundColor:"white", padding:"3px"}}>Requested Due Date:</InputLabel>
+                  <TextField 
+                    type="date" 
+                    id="date"
+                    name="reqDueDate" 
+                    className="input"
+                    value={formik.values.reqDueDate} 
+                    onChange={formik.handleChange}
+                  />
+                </FormControl>
+              </div><br/><br/>
               <div className="input-div">
                 {/* dropdown Textfield for requesting customer */}
-                <label>Requesting Customer:</label>
-                <Select 
-                  id="reqCustomer"
-                  name="reqCustomer" 
-                  className="input"
-                  value={formik.values.reqCustomer}
-                  onChange={formik.handleChange}
-                  input={<OutlinedInput id="reqCustomer" label="reqCustomer" />}
-                >
-                  {requestingArr.map((item, i)=><MenuItem key={i} value={item.value}>{item.label}</MenuItem>)}
-                </Select>
+                <FormControl>
+                  <InputLabel shrink htmlFor="reqCustomer" style={{backgroundColor:"white", padding:"3px"}}>Requesting Customer:</InputLabel>
+                  <Select 
+                    id="reqCustomer"
+                    name="reqCustomer" 
+                    className="input"
+                    value={formik.values.reqCustomer}
+                    onChange={formik.handleChange}
+                    input={<OutlinedInput id="reqCustomer" label="reqCustomer" />}
+                    style={{height:"200%"}}
+                  >
+                    {requestingArr.map((item, i)=><MenuItem key={i} value={item.value}>{item.label}</MenuItem>)}
+                  </Select>
+                </FormControl>
               </div><br/>
               <div className="input-div">
                 {/* dropdown Textfield for Priority */}
-                <label>Priority:</label>
-                <Select 
-                  id="priority" 
-                  name="priority" 
-                  className="input" 
-                  value={formik.values.priority} 
-                  onChange={formik.handleChange}
-                  input={<OutlinedInput id="priority" label="Priority" />}
-                >
-                  {priorityArr.map((priority, i)=><MenuItem key={i} value={priority.value}>{priority.label}</MenuItem>)}
-                </Select>
+                <FormControl>
+                  <InputLabel shrink htmlFor="priority" style={{backgroundColor:"white", padding:"3px"}}>Priority:</InputLabel>
+                  <Select 
+                    id="priority" 
+                    name="priority" 
+                    className="input" 
+                    value={formik.values.priority} 
+                    onChange={formik.handleChange}
+                    input={<OutlinedInput id="priority" label="Priority" />}
+                    style={{height:"200%"}}
+                  >
+                    {priorityArr.map((priority, i)=><MenuItem key={i} value={priority.value}>{priority.label}</MenuItem>)}
+                  </Select>
+                </FormControl>
               </div><br/>
               <div className="input-div">
                 {/* multi-select input Textfield */}
-                <label>Tags:</label>
-                <Select 
-                  id="tags" 
-                  name="tags"  
-                  multiple
-                  onChange={formik.handleChange}
-                  value={formik.values.tags}
-                  renderValue={(selected) => (
-                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                      {selected.map((value) => (
-                        <Chip key={value} label={value} />
+                <FormControl>
+                  <InputLabel shrink htmlFor="tags" style={{backgroundColor:"white", padding:"3px"}}>Tags:</InputLabel>
+                  <Select 
+                    id="tags" 
+                    name="tags"  
+                    multiple
+                    onChange={formik.handleChange}
+                    value={formik.values.tags}
+                    renderValue={(selected) => (
+                      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                        {selected.map((value) => (
+                          <Chip key={value} label={value} />
+                        ))}
+                      </Box>
+                    )}
+                  >
+                    {tagList.map((tag) => (
+                      <MenuItem
+                        key={tag}
+                        value={tag.value}
+                      >
+                        {tag.label}
+                      </MenuItem>
                       ))}
-                    </Box>
-                  )}
-                >
-                  {tagList.map((tag) => (
-                    <MenuItem
-                      key={tag}
-                      value={tag.value}
-                    >
-                      {tag.label}
-                    </MenuItem>
-                    ))}
-                </Select>
+                  </Select>
+                </FormControl>
               </div><br/>
-              <button type="submit">Make Click-up Ticket</button>
+              <Button type="submit">Make Click-up Ticket</Button>
             </form>
           </div>
         }

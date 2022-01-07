@@ -129,119 +129,9 @@ var App = function App() {
 /*!*****************************************!*\
   !*** ./src/components/ClickUpStatus.js ***!
   \*****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 67294);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ 9669);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../App */ 48187);
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-
-function ClickUpStatus(props) {
-  var ticket = props.ticket,
-      client = props.client;
-  var ticketContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_App__WEBPACK_IMPORTED_MODULE_2__.TicketObj);
-  var setChild = ticketContext.setChild;
-  console.log("context", ticketContext);
-
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
-      _useState2 = _slicedToArray(_useState, 2),
-      customID = _useState2[0],
-      setCustomID = _useState2[1];
-
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
-      _useState4 = _slicedToArray(_useState3, 2),
-      clickUpExists = _useState4[0],
-      setClickUpExists = _useState4[1];
-
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
-      _useState6 = _slicedToArray(_useState5, 2),
-      clickTick = _useState6[0],
-      setClickTick = _useState6[1];
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    setCustomID(ticket.custom_fields.cf_clickup_ticket); // need to make new field in freshdesk and then change this to find that value
-  }, []);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    console.log(customID);
-
-    if (customID === null) {
-      setClickUpExists(false);
-    } else {// var config = {
-      //   method: 'get',
-      //   url: `https://api.clickup.com/api/v2/task/${customID}/?custom_task_ids=true`,
-      //   headers: { 
-      //     'Authorization': '"access_token"'
-      //   }
-      // };
-      // axios(config)
-      // .then(function (response) {
-      //   console.log(JSON.stringify(response.data));
-      //   setClickTick(response.data)
-      // })
-      // .catch(function (error) {
-      //   console.log(error);
-      // });
-    }
-  }, [customID]);
-
-  var openClickUpModal = function openClickUpModal() {
-    client["interface"].trigger("showModal", {
-      title: "Click up Integration",
-      template: "clickup.html",
-      data: ticket
-    }).then(function (data) {// data - success message
-    })["catch"](function (error) {// error - error object
-    });
-  };
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, clickUpExists && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    style: {
-      border: '1px solid lightgrey',
-      display: "flex",
-      justifyContent: "center",
-      paddingTop: '2vh',
-      width: '98vw',
-      borderRadius: "4px",
-      height: "95vh"
-    }
-  }, "click up ticket number is ", customID, "Status: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-    onClick: openClickUpModal
-  }, "More Detailed View")), !clickUpExists && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    style: {
-      border: '1px solid lightgrey',
-      display: "flex",
-      justifyContent: "center",
-      textAlign: "center",
-      flexDirection: "column",
-      padding: '1vh',
-      width: '94vw',
-      borderRadius: "4px",
-      height: "94vh"
-    }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, "Click up ticket doesn't exist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "To make one, switch status to 'In Development'")));
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ClickUpStatus);
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\src\\components\\ClickUpStatus.js: Invalid shorthand property initializer. (59:100)\n\n  57 |     <div>\n  58 |       {clickUpExists &&\n> 59 |         <div style={{border:'1px solid lightgrey', display:\"flex\",justifyContent:\"center\", textAlign=\"center\", flexDirection:\"column\", paddingTop:'2vh', width:'98vw', borderRadius:\"4px\", height:\"95vh\"}}>\n     |                                                                                                     ^\n  60 |           click up ticket number is {customID}<br/>\n  61 |           {/*here we will get click up ticket and post pertanent information*/}\n  62 |           Status: <br/>\n    at Object._raise (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:569:17)\n    at Object.raiseWithData (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:562:17)\n    at Object.raise (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:523:17)\n    at Object.checkExpressionErrors (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:3704:14)\n    at Object.parseMaybeAssign (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:11388:12)\n    at Object.parseExpressionBase (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:11294:23)\n    at C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:11288:39\n    at Object.allowInAnd (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:13232:12)\n    at Object.parseExpression (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:11288:17)\n    at Object.jsxParseExpressionContainer (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:7361:31)\n    at Object.jsxParseAttributeValue (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:7327:21)\n    at Object.jsxParseAttribute (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:7384:38)\n    at Object.jsxParseOpeningElementAfterName (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:7404:28)\n    at Object.jsxParseOpeningElementAt (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:7397:17)\n    at Object.jsxParseElementAt (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:7429:33)\n    at Object.jsxParseElement (C:\\Users\\SamSwaringen\\Desktop\\clickup_integration\\node_modules\\@babel\\parser\\lib\\index.js:7504:17)");
 
 /***/ }),
 
@@ -264,6 +154,7 @@ function Success(props) {
       client = props.client;
   setTimeout(function () {
     client.instance.close();
+    window.top.location.reload();
   }, 2000);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Click up Ticket sent, ticket created ", clickCustID, " and Freshdesk ticket updated successfully. You can close this window.");
 }
@@ -1144,4 +1035,4 @@ module.exports = content.locals || {};
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.3effc52e.js.map
+//# sourceMappingURL=main.2b777ae2.js.map
