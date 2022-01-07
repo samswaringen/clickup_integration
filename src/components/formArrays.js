@@ -106,7 +106,7 @@ const tagList=[
 ]
 
 const priorityArr = [
-  {value:"",label:"Priority Level",level:0},
+  {value:"Priority Level",label:"Priority Level",level:0},
   {value:"a932b0ae-1ce9-4664-9b21-af813f5e5e97",label:"Low",level:4},
   {value:"dfc34a8f-0c76-4e30-a522-9b7caa722d92",label:"Normal",level:3},
   {value:"23a52a86-534e-4d5a-8adc-274054d1eb19",label:"High",level:2},

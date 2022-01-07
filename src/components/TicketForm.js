@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react'
 import PropTypes from 'prop-types'
-import { Form, Formik, Field } from 'formik';
+import { useFormik } from 'formik';
 import { tagList, requestingArr, priorityArr, assigneeArr } from './formArrays';
 import {TicketObj} from '../App'
 import Success from './Success'
 import { useTheme } from '@mui/material/styles'
-import { Select, Button, TextField, Drop, MenuItem, InputLabel, OutlinedInput, Box, Chip} from '@mui/material';
+import { Select, Button, TextField, Drop, MenuItem, InputLabel, OutlinedInput, Box, Chip, TextareaAutosize, FormControl } from '@mui/material';
 
 
 const TicketForm = (props) => {
@@ -14,23 +14,12 @@ const TicketForm = (props) => {
   const {setChild} = ticketContext
 
   const [loading, setLoading] = useState(false)
-  const [tags, setTags] = useState([])
-  const [assignees, setAssignees] = useState([])
 
 
   /* Get ids from everyone */
 
 
-  const initialValues = { 
-    ticketID: ticket.id,
-    title: ticket.subject,
-    description: ticket.description_text,
-    notes: "",
-    reqCustomer:"",
-    tags:[],
-    priority:{},
-    reqDueDate:0
-  }
+
 
   const tagChange= (e)=>{
    setTags(e.target.value)
@@ -41,25 +30,25 @@ const TicketForm = (props) => {
     setAssignees(e.target.value)
   }
 
-    const getClickUpCustomID = (id)=>{
-      var options = {
-        headers:{
-          'Authorization': 'pk_26300173_E1SRMU3J8KK4TJFKRET9M98NKVG9HV73'
-        }
+  const getClickUpCustomID = (id)=>{
+    var options = {
+      headers:{
+        'Authorization': 'pk_26300173_E1SRMU3J8KK4TJFKRET9M98NKVG9HV73'
       }
-      client.request.get(`https://api.clickup.com/api/v2/task/${id}`,options)
-        .then(function (data) {
-          console.log(data);
-          updateFreshdeskWithClickup(data.custom_id)
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
     }
+    client.request.get(`https://api.clickup.com/api/v2/task/${id}`,options)
+      .then(function (data) {
+        console.log(data);
+        updateFreshdeskWithClickup(data.custom_id)
+      })
+      .catch(function (error) {
+         console.log(error);
+      });
+  }
 
   const updateFreshdeskWithClickup =(res)=>{
     let data = {
-      custom_fields:{
+      custom_Textfields:{
         /* figure out proper object property path for click up custom id looks like REQ-XXXX */
         cf_clickup_ticket:res.data.id
       }
@@ -99,6 +88,19 @@ const TicketForm = (props) => {
     return level
   }
 
+
+
+  const ITEM_HEIGHT = 48;
+  const ITEM_PADDING_TOP = 8;
+  const MenuProps = {
+    PaperProps: {
+      style: {
+        maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+        width: 250,
+      },
+    },
+  };
+
   const onSubmit = (values)=>{
     const level = handlePriority(values.priority)
     let dueDate = `${values.reqDueDate}T00:00:00`
@@ -109,8 +111,8 @@ const TicketForm = (props) => {
     const payload = {
       "name": values.title,
       "markdown_description": `**Freshdesk Ticket ${values.ticketID}:** \n ${values.description} \n **Additional Notes:** \n ${values.notes}`,
-      "assignees": assignees,
-      "tags": tags,
+      "assignees": values.assignees,
+      "tags": values.tags,
       "status": "Requested",
       "priority": level,
       "due_date":  milliDate,
@@ -121,8 +123,8 @@ const TicketForm = (props) => {
       "notify_all": true,
       "parent": null,
       "links_to": null,
-      "check_required_custom_fields": true,
-      "custom_fields": [
+      "check_required_custom_Textfields": true,
+      "custom_Textfields": [
         {
           /* requesting customer */
           "id":"693b7b05-8c30-4e7b-be39-295245333faf",
@@ -130,7 +132,7 @@ const TicketForm = (props) => {
         },
         {
           "id":"dd085afd-fdda-45c9-bd7e-7888e7d1ecac",
-          "value": assignees
+          "value": values.assignees
         },
         {
           "id": "9cfbd761-8aff-416c-bd8e-6fb06f2849f3",
@@ -172,31 +174,66 @@ const TicketForm = (props) => {
     const errors = {}
   }
 
+  const formik = useFormik({
+    initialValues : { 
+      ticketID: ticket.id,
+      title: ticket.subject,
+      description: ticket.description_text,
+      notes: "",
+      reqCustomer:"",
+      assignees:[],
+      tags:[],
+      priority:priorityArr[0],
+      reqDueDate:0
+    },
+    validate: validate,
+    onSubmit: onSubmit,
+  });
+
   return (
     <div>
-        {!loading && <Formik
-            onSubmit={onSubmit}
-            validate={validate}
-            initialValues={initialValues}
-          >
-            <Form>
-              <div className="input-div">
-                <label>TicketID:</label>
-                <Field name="ticketID" className="input"/>
+        {!loading && <div style={{marginTop:"2vh"}}>
+            <form onSubmit={formik.handleSubmit}>
+            <div className="input-div">
+                <TextField 
+                  fullwidth
+                  id="ticketID" 
+                  name="ticketID" 
+                  className="input-div"
+                  label="TicketID:"
+                  value={formik.values.ticketID}
+                  onChange={formik.handleChange}
+                />
               </div><br/>
               <div className="input-div">
-                <label>Title:</label>
-                <Field name="title" type="text" className="input" />
-              </div><br/>
+                <TextField 
+                  fullwidth
+                  native
+                  id="title"
+                  name="title" 
+                  type="text" 
+                  className="input" 
+                  label="Title:"
+                  value={formik.values.title}
+                  onChange={formik.handleChange}
+                />
+              </div><br/><br/>
               <div className="input-div">
-                {/* dropdown field for Assignees. Need everyones clickup id number */}
-                <label>Assignee:</label>
+                {/* dropdown Textfield for Assignees. Need everyones clickup id number */}
+              <FormControl>
+                <InputLabel shrink htmlFor="assignees">
+                  Assignee:
+                </InputLabel>
                 <Select 
+                  fullwidth
+                  label="Assignee:"
                   id="assignees" 
                   name="assignees" 
                   multiple 
-                  onChange={assigneeChange}
-                  value={assignees} 
+                  defaultValue="Assignee"
+                  onChange={formik.handleChange}
+                  value={formik.values.assignees} 
+                  input={<OutlinedInput id="assignees" label="Chip" />}
                   renderValue={(selected) => (
                     <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
                       {selected.map((value) => (
@@ -215,43 +252,88 @@ const TicketForm = (props) => {
                     ))
                   }
                 </Select>
+              </FormControl>
               </div><br/>
               <div className="input-div">
                 <label>Description:</label>
-                <Field as="textarea" name="description" className="textarea"/>
+                <TextareaAutosize
+                  label="Description"
+                  aria-label="description"
+                  name="description" 
+                  className="textarea"
+                  placeholder="Description"
+                  value={formik.values.description}
+                  onChange={formik.handleChange}
+                  minRows={6}
+                />
               </div><br/>
               <div className="input-div">
               <label>Additional Notes:</label>
-                <Field as="textarea" name="notes" className="textarea"/>
+              <TextareaAutosize
+                  aria-label="notes"
+                  name="notes" 
+                  className="textarea"
+                  placeholder="Additional Notes"
+                  value={formik.values.notes}
+                  onChange={formik.handleChange}
+                  minRows={6}
+                />
               </div><br/>
               <div className="input-div">
-                {/* dropdown field for requesting customer */}
+                {/* dropdown Textfield for requesting customer */}
                 <label>Requested Due Date:</label>
-                <Field type="date" name="reqDueDate" className="input" />
+                <TextField 
+                  type="date" 
+                  name="reqDueDate" 
+                  className="input"
+                  value={formik.values.reqDueDate} 
+                  onChange={formik.handleChange}
+                />
               </div><br/>
               <div className="input-div">
-                {/* dropdown field for requesting customer */}
+                {/* dropdown Textfield for requesting customer */}
                 <label>Requesting Customer:</label>
-                <Field as="select" name="reqCustomer" className="input">
-                  {requestingArr.map((item, i)=><option key={i} value={item.value}>{item.label}</option>)}
-                </Field>
+                <Select 
+                  id="reqCustomer"
+                  name="reqCustomer" 
+                  className="input"
+                  value={formik.values.reqCustomer}
+                  onChange={formik.handleChange}
+                  input={<OutlinedInput id="reqCustomer" label="reqCustomer" />}
+                >
+                  {requestingArr.map((item, i)=><MenuItem key={i} value={item.value}>{item.label}</MenuItem>)}
+                </Select>
               </div><br/>
               <div className="input-div">
-                {/* dropdown field for Priority */}
+                {/* dropdown Textfield for Priority */}
                 <label>Priority:</label>
-                <Field as="select" name="priority" className="input">
-                  {priorityArr.map((priority, i)=><option key={i} value={priority.value}>{priority.label}</option>)}
-                </Field>
+                <Select 
+                  id="priority" 
+                  name="priority" 
+                  className="input" 
+                  value={formik.values.priority} 
+                  onChange={formik.handleChange}
+                  input={<OutlinedInput id="priority" label="Priority" />}
+                >
+                  {priorityArr.map((priority, i)=><MenuItem key={i} value={priority.value}>{priority.label}</MenuItem>)}
+                </Select>
               </div><br/>
               <div className="input-div">
-                {/* multi-select input field */}
+                {/* multi-select input Textfield */}
                 <label>Tags:</label>
                 <Select 
                   id="tags" 
                   name="tags"  
                   multiple
-                  onChange={tagChange}
-                  value={tags}
+                  onChange={formik.handleChange}
+                  value={formik.values.tags}
+                  renderValue={(selected) => (
+                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                      {selected.map((value) => (
+                        <Chip key={value} label={value} />
+                      ))}
+                    </Box>
+                  )}
                 >
                   {tagList.map((tag) => (
                     <MenuItem
@@ -264,8 +346,8 @@ const TicketForm = (props) => {
                 </Select>
               </div><br/>
               <button type="submit">Make Click-up Ticket</button>
-            </Form>
-          </Formik>
+            </form>
+          </div>
         }
         { loading &&
         <div>
