@@ -394,17 +394,6 @@ var TicketForm = function TicketForm(props) {
     return level;
   };
 
-  var ITEM_HEIGHT = 48;
-  var ITEM_PADDING_TOP = 8;
-  var MenuProps = {
-    PaperProps: {
-      style: {
-        maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-        width: 250
-      }
-    }
-  };
-
   var onSubmit = function onSubmit(values) {
     var level = handlePriority(values.priority);
     var dueDate = "".concat(values.reqDueDate, "T00:00:00");
@@ -458,11 +447,7 @@ var TicketForm = function TicketForm(props) {
       }, 500);
     }, function (error) {
       console.log(error);
-    }); // /* put this in updateFreshdeskWithClickup and make loading component.  update success with returned clickup information */
-    // //simulate sending ticket and awaiting response, then updating freshdesk ticket and loading success page
-    // setTimeout(()=>{
-    //   setChild((<Success client={client}/>))
-    // },2000)
+    });
   };
 
   var validate = function validate(values) {
@@ -991,21 +976,21 @@ var priorityArr = [{
   level: 1
 }];
 var assigneeArr = [{
-  value: 1,
+  value: 14701989,
   label: "Adam",
-  "1": "Adam"
+  "1": "14701989"
 }, {
-  value: 2,
+  value: 12644874,
   label: "Chelsea",
-  "2": "Chelsea"
+  "12644874": "Chelsea"
 }, {
-  value: 3,
+  value: 12703227,
   label: "Corrie",
-  "3": "Corrie"
+  "12703227": "Corrie"
 }, {
-  value: 4,
+  value: 26198452,
   label: "Marissa",
-  "4": "Marissa"
+  "26198452": "Marissa"
 }, {
   value: 26300173,
   label: "Sam",
@@ -1148,4 +1133,4 @@ module.exports = content.locals || {};
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.8d2a1308.js.map
+//# sourceMappingURL=main.1a7b61ea.js.map

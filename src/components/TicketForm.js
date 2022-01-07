@@ -80,18 +80,6 @@ const TicketForm = (props) => {
   }
 
 
-
-  const ITEM_HEIGHT = 48;
-  const ITEM_PADDING_TOP = 8;
-  const MenuProps = {
-    PaperProps: {
-      style: {
-        maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-        width: 250,
-      },
-    },
-  };
-
   const onSubmit = (values)=>{
     const level = handlePriority(values.priority)
     let dueDate = `${values.reqDueDate}T00:00:00`
@@ -152,12 +140,6 @@ const TicketForm = (props) => {
       }
     )
 
-    // /* put this in updateFreshdeskWithClickup and make loading component.  update success with returned clickup information */
-
-    // //simulate sending ticket and awaiting response, then updating freshdesk ticket and loading success page
-    // setTimeout(()=>{
-    //   setChild((<Success client={client}/>))
-    // },2000)
 
   }
 
