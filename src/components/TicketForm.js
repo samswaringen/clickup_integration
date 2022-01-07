@@ -19,45 +19,36 @@ const TicketForm = (props) => {
   /* Get ids from everyone */
 
 
-
-
-  const tagChange= (e)=>{
-   setTags(e.target.value)
-  }
-
-  const assigneeChange = (e)=>{
-    console.log("taregt",e.target)
-    setAssignees(e.target.value)
-  }
-
   const getClickUpCustomID = (id)=>{
     var options = {
       headers:{
-        'Authorization': 'pk_26300173_E1SRMU3J8KK4TJFKRET9M98NKVG9HV73'
+        'Authorization': 'pk_26300173_XLACDBWL2MZ2QPURUK1U7P8I34K459CC'
       }
     }
     client.request.get(`https://api.clickup.com/api/v2/task/${id}`,options)
       .then(function (data) {
-        console.log(data);
-        updateFreshdeskWithClickup(data.custom_id)
+        let response = JSON.parse(data.response)
+        console.log(response.custom_id);
+        updateFreshdeskWithClickup(response.custom_id)
       })
       .catch(function (error) {
          console.log(error);
       });
   }
 
-  const updateFreshdeskWithClickup =(res)=>{
+  const updateFreshdeskWithClickup =(custom_id)=>{
     let data = {
-      custom_Textfields:{
+      "custom_fields":{
         /* figure out proper object property path for click up custom id looks like REQ-XXXX */
-        cf_clickup_ticket:res.data.id
+        "cf_clickup_ticket":custom_id
       }
     }
     var options = {
       headers: { 
-        'Authorization': `Basic /* Insert Freshdesk API Here */ `
+        'Authorization': `Basic SkNvSDZaWGNuT2szemxRTHk1WUE6WA== `,
+        "Content-Type": "application/json"
       },
-      body:data
+      body: JSON.stringify(data)
     };
     client.request.put(`https://onerail.freshdesk.com/api/v2/tickets/${ticket.id}`,options)
     .then(function (data) {
@@ -124,15 +115,11 @@ const TicketForm = (props) => {
       "parent": null,
       "links_to": null,
       "check_required_custom_Textfields": true,
-      "custom_Textfields": [
+      "custom_fields": [
         {
           /* requesting customer */
           "id":"693b7b05-8c30-4e7b-be39-295245333faf",
           "value": values.reqCustomer
-        },
-        {
-          "id":"dd085afd-fdda-45c9-bd7e-7888e7d1ecac",
-          "value": values.assignees
         },
         {
           "id": "9cfbd761-8aff-416c-bd8e-6fb06f2849f3",
@@ -151,15 +138,19 @@ const TicketForm = (props) => {
       },
       body : JSON.stringify(payload)
     };
-    // client.request.post("https://api.clickup.com/api/v2/list/71601233/task", options).then(
-    //   function(data){
-    //     console.log(data)
-    //     getClickUpCustomID(data)
-    //   },
-    //   function(error){
-    //     console.log(error)
-    //   }
-    //)
+    client.request.post("https://api.clickup.com/api/v2/list/71601233/task", options).then(
+      function(data){
+        let response = JSON.parse(data.response)
+        console.log("response form clickup:",response.id)
+        setTimeout(
+          ()=>{
+            getClickUpCustomID(response.id)
+          }, 500)
+      },
+      function(error){
+        console.log(error)
+      }
+    )
 
     // /* put this in updateFreshdeskWithClickup and make loading component.  update success with returned clickup information */
 
@@ -237,7 +228,7 @@ const TicketForm = (props) => {
                   renderValue={(selected) => (
                     <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
                       {selected.map((value) => (
-                        <Chip key={value} label={value} />
+                        <Chip key={value} label={assigneeArr.filter((item)=>item[value])[0][value]} />
                       ))}
                     </Box>
                   )}
