@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react'
 import PropTypes from 'prop-types'
 import { Form, Formik, Field } from 'formik';
-import axios from 'axios';
-import Select from 'react-select'
 import { tagList, requestingArr, priorityArr, assigneeArr } from './formArrays';
 import {TicketObj} from '../App'
-import Success from './Success';
+import Success from './Success'
+import { useTheme } from '@mui/material/styles'
+import { Select, Button, TextField, Drop, MenuItem, InputLabel, OutlinedInput, Box, Chip} from '@mui/material';
 
 
 const TicketForm = (props) => {
@@ -33,12 +33,13 @@ const TicketForm = (props) => {
   }
 
   const tagChange= (e)=>{
-    e.map((item)=>setTags([...tags,item.value]))
+   setTags(e.target.value)
   }
 
   const assigneeChange = (e)=>{
-    console.log(e)
-    e.map((item)=>setAssignees([...assignees,item.value]))
+    console.log("taregt",e.target)
+    setAssignees(e.target.value)
+  }
 
     const getClickUpCustomID = (id)=>{
       var options = {
@@ -55,7 +56,6 @@ const TicketForm = (props) => {
           console.log(error);
         });
     }
-  }
 
   const updateFreshdeskWithClickup =(res)=>{
     let data = {
@@ -73,6 +73,7 @@ const TicketForm = (props) => {
     client.request.put(`https://onerail.freshdesk.com/api/v2/tickets/${ticket.id}`,options)
     .then(function (data) {
       console.log(data);
+      setChild((<Success />))
     })
     .catch(function (error) {
       console.log(error);
@@ -100,6 +101,11 @@ const TicketForm = (props) => {
 
   const onSubmit = (values)=>{
     const level = handlePriority(values.priority)
+    let dueDate = `${values.reqDueDate}T00:00:00`
+    let milliDate = Date.parse(dueDate)
+    console.log("millidate",milliDate)
+    let timeEst = milliDate - Date.now() 
+
     const payload = {
       "name": values.title,
       "markdown_description": `**Freshdesk Ticket ${values.ticketID}:** \n ${values.description} \n **Additional Notes:** \n ${values.notes}`,
@@ -107,9 +113,9 @@ const TicketForm = (props) => {
       "tags": tags,
       "status": "Requested",
       "priority": level,
-      "due_date":  Date.now()+1209600000,
+      "due_date":  milliDate,
       "due_date_time": false,
-      "time_estimate": 1209600000 /* 2 weeks in milliseconds unless we want to have different times based on priority level */,
+      "time_estimate": timeEst /* 2 weeks in milliseconds unless we want to have different times based on priority level */,
       "start_date": Date.now() /* current dateTime in milliseconds */,
       "start_date_time": false,
       "notify_all": true,
@@ -123,12 +129,17 @@ const TicketForm = (props) => {
           "value": values.reqCustomer
         },
         {
+          "id":"dd085afd-fdda-45c9-bd7e-7888e7d1ecac",
+          "value": assignees
+        },
+        {
           "id": "9cfbd761-8aff-416c-bd8e-6fb06f2849f3",
           "value": values.priority
         }
       ]
     }
     console.log("payload",payload)
+    setLoading(true)
     
     var options = {
       headers: { 
@@ -138,26 +149,16 @@ const TicketForm = (props) => {
       },
       body : JSON.stringify(payload)
     };
-    client.request.post("https://api.clickup.com/api/v2/list/71601233/task", options).then(
-      function(data){
-        console.log(data)
-        //updateFreshdeskWithClickup(data)
-      },
-      function(error){
-        console.log(error)
-      }
-    )
+    // client.request.post("https://api.clickup.com/api/v2/list/71601233/task", options).then(
+    //   function(data){
+    //     console.log(data)
+    //     getClickUpCustomID(data)
+    //   },
+    //   function(error){
+    //     console.log(error)
+    //   }
+    //)
 
-    // .then(function (response) {
-    //   console.log(JSON.stringify(response.data));
-    //   /* set Click up ticket field to returned click up ticket */
-    //   setLoading(true)
-    //   //updateFreshdeskWithClickup(response)
-      
-    // })
-    // .catch(function (error) {
-    //   console.log(error);
-    // });
     // /* put this in updateFreshdeskWithClickup and make loading component.  update success with returned clickup information */
 
     // //simulate sending ticket and awaiting response, then updating freshdesk ticket and loading success page
@@ -190,7 +191,30 @@ const TicketForm = (props) => {
               <div className="input-div">
                 {/* dropdown field for Assignees. Need everyones clickup id number */}
                 <label>Assignee:</label>
-                <Select id="assignees" name="assignees" options={assigneeArr} isMulti classNamePrefix="select" closeMenuOnSelect={false} onChange={assigneeChange} />
+                <Select 
+                  id="assignees" 
+                  name="assignees" 
+                  multiple 
+                  onChange={assigneeChange}
+                  value={assignees} 
+                  renderValue={(selected) => (
+                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                      {selected.map((value) => (
+                        <Chip key={value} label={value} />
+                      ))}
+                    </Box>
+                  )}
+                >
+                 { assigneeArr.map((name) => (
+                    <MenuItem
+                      key={name}
+                      value={name.value}
+                    >
+                      {name.label}
+                    </MenuItem>
+                    ))
+                  }
+                </Select>
               </div><br/>
               <div className="input-div">
                 <label>Description:</label>
@@ -222,7 +246,22 @@ const TicketForm = (props) => {
               <div className="input-div">
                 {/* multi-select input field */}
                 <label>Tags:</label>
-                <Select id="tags" name="tags" options={tagList} isMulti classNamePrefix="select" closeMenuOnSelect={false} onChange={tagChange} />
+                <Select 
+                  id="tags" 
+                  name="tags"  
+                  multiple
+                  onChange={tagChange}
+                  value={tags}
+                >
+                  {tagList.map((tag) => (
+                    <MenuItem
+                      key={tag}
+                      value={tag.value}
+                    >
+                      {tag.label}
+                    </MenuItem>
+                    ))}
+                </Select>
               </div><br/>
               <button type="submit">Make Click-up Ticket</button>
             </Form>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect, createContext } from 'react';
 import './App.css';
 import ClickUpStatus from './components/ClickUpStatus';
-import Success from './components/Success';
 import TicketForm from './components/TicketForm';
 
 
@@ -13,7 +12,6 @@ const App = () => {
   const [loaded, setLoaded] = useState(false);
   const [child, setChild] = useState(<h3>App is loading</h3>)
   const [showModal, setShowModal] = useState(false)
-  const [ticket, setTicket] = useState({})
 
 
   useEffect(() => {
@@ -28,12 +26,15 @@ const App = () => {
     if (!loaded && !showModal) return
       app.initialized().then((client) => {
         client.data.get('ticket').then((data) => {
-          setTicket(data.ticket)
           /* set initial component to clickup ticket maker */
-          setChild((<TicketForm ticket={data.ticket} client={client} />))
+          if(window.innerWidth < 300){
+            setChild((<ClickUpStatus ticket={data.ticket} client={client} />))
+          }else{
+            setChild((<TicketForm ticket={data.ticket} client={client} />))
+          }
           /* set app activate and deactivate events and callbacks and pass retrieved ticket data*/
-          client.events.on("app.activated", ()=>onAppActivated(data.ticket, client));
-          client.events.on("app.deactivated", ()=>onAppDeactivated(data.ticket, client)); 
+          // client.events.on("app.activated", ()=>onAppActivated(data.ticket, client));
+          // client.events.on("app.deactivated", ()=>onAppDeactivated(data.ticket, client)); 
         })
         var propertyChangeCallback = function (event)
         // code to be executed when the status of the ticket is changed.
@@ -62,18 +63,19 @@ const App = () => {
     }
   }, [loaded,showModal])
 
-  const onAppActivated =(ticket, client)=>{
-    setChild((<ClickUpStatus ticket={ticket} client={client} />))
+  // const onAppActivated =(ticket, client)=>{
+  //     setChild((<ClickUpStatus ticket={ticket} client={client} />))
+  // }
 
-  }
+  // const onAppDeactivated = (ticket, client)=>{
+  //     setChild((<TicketForm ticket={ticket} client={client} />))
+  // }
 
-  const onAppDeactivated = (ticket, client)=>{
-    setChild((<TicketForm ticket={ticket} client={client} />))
-  }
+
 
 
   return (
-    <TicketObj.Provider value={{setChild:setChild, setShowModal:setShowModal}}>
+    <TicketObj.Provider value={{setChild:setChild}}>
       <div>
           {child}
       </div>

@@ -56,7 +56,7 @@ function ClickUpStatus(props) {
   return (
     <div>
       {clickUpExists &&
-        <div>
+        <div style={{border:'1px solid lightgrey', display:"flex",justifyContent:"center", paddingTop:'2vh', width:'98vw', borderRadius:"4px", height:"95vh"}}>
           click up ticket number is {customID}
           {/*here we will get click up ticket and post pertanent information*/}
           Status: <br/>
@@ -64,8 +64,9 @@ function ClickUpStatus(props) {
         </div>
       }
       {!clickUpExists &&
-        <div>
-          Click up ticket doesn't exist
+        <div style={{border:'1px solid lightgrey', display:"flex",justifyContent:"center", textAlign:"center", flexDirection:"column", padding:'1vh', width:'94vw', borderRadius:"4px", height:"94vh"}}>
+          <h4>Click up ticket doesn't exist</h4>
+          <p>To make one, switch status to 'In Development'</p>
         </div>}
     </div>
   )
