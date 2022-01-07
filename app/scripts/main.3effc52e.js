@@ -342,7 +342,12 @@ var TicketForm = function TicketForm(props) {
     client.request.get("https://api.clickup.com/api/v2/task/".concat(id), options).then(function (data) {
       var response = JSON.parse(data.response);
       console.log(response.custom_id);
-      updateFreshdeskWithClickup(response.custom_id);
+
+      if (response.custom_id === null) {
+        getClickUpCustomID(id);
+      } else {
+        updateFreshdeskWithClickup(response.custom_id);
+      }
     })["catch"](function (error) {
       console.log(error);
     });
@@ -364,7 +369,10 @@ var TicketForm = function TicketForm(props) {
     };
     client.request.put("https://onerail.freshdesk.com/api/v2/tickets/".concat(ticket.id), options).then(function (data) {
       console.log(data);
-      setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Success__WEBPACK_IMPORTED_MODULE_4__["default"], null));
+      setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Success__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        client: client,
+        clickCustID: custom_id
+      }));
     })["catch"](function (error) {
       console.log(error);
     });
@@ -424,6 +432,9 @@ var TicketForm = function TicketForm(props) {
         /* requesting customer */
         "id": "693b7b05-8c30-4e7b-be39-295245333faf",
         "value": values.reqCustomer
+      }, {
+        "id": "5418bbd8-47f5-479c-8b07-88dded5b0540",
+        "value": "Freshdesk Ticket ".concat(ticket.id)
       }, {
         "id": "9cfbd761-8aff-416c-bd8e-6fb06f2849f3",
         "value": values.priority
@@ -1133,4 +1144,4 @@ module.exports = content.locals || {};
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.1a7b61ea.js.map
+//# sourceMappingURL=main.3effc52e.js.map

@@ -29,7 +29,11 @@ const TicketForm = (props) => {
       .then(function (data) {
         let response = JSON.parse(data.response)
         console.log(response.custom_id);
-        updateFreshdeskWithClickup(response.custom_id)
+        if(response.custom_id === null){
+          getClickUpCustomID(id)
+        }else{
+          updateFreshdeskWithClickup(response.custom_id)
+        }
       })
       .catch(function (error) {
          console.log(error);
@@ -53,7 +57,7 @@ const TicketForm = (props) => {
     client.request.put(`https://onerail.freshdesk.com/api/v2/tickets/${ticket.id}`,options)
     .then(function (data) {
       console.log(data);
-      setChild((<Success />))
+      setChild((<Success client={client} clickCustID={custom_id}/>))
     })
     .catch(function (error) {
       console.log(error);
@@ -108,6 +112,10 @@ const TicketForm = (props) => {
           /* requesting customer */
           "id":"693b7b05-8c30-4e7b-be39-295245333faf",
           "value": values.reqCustomer
+        },
+        {
+          "id":"5418bbd8-47f5-479c-8b07-88dded5b0540",
+          "value":`Freshdesk Ticket ${ticket.id}`
         },
         {
           "id": "9cfbd761-8aff-416c-bd8e-6fb06f2849f3",
