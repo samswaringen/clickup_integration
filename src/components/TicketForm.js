@@ -4,7 +4,6 @@ import { useFormik } from 'formik';
 import { tagList, requestingArr, priorityArr, assigneeArr } from './formArrays';
 import {TicketObj} from '../App'
 import Success from './Success'
-import { useTheme } from '@mui/material/styles'
 import { Select, Button, TextField, Drop, MenuItem, InputLabel, OutlinedInput, Box, Chip, TextareaAutosize, FormControl } from '@mui/material';
 
 
@@ -22,7 +21,7 @@ const TicketForm = (props) => {
   const getClickUpCustomID = (id)=>{
     var options = {
       headers:{
-        'Authorization': 'pk_26300173_XLACDBWL2MZ2QPURUK1U7P8I34K459CC'
+        'Authorization': ''
       }
     }
     client.request.get(`https://api.clickup.com/api/v2/task/${id}`,options)
@@ -49,7 +48,7 @@ const TicketForm = (props) => {
     }
     var options = {
       headers: { 
-        'Authorization': `Basic SkNvSDZaWGNuT2szemxRTHk1WUE6WA== `,
+        'Authorization': `Basic `,
         "Content-Type": "application/json"
       },
       body: JSON.stringify(data)
@@ -88,7 +87,6 @@ const TicketForm = (props) => {
     const level = handlePriority(values.priority)
     let dueDate = `${values.reqDueDate}T00:00:00`
     let milliDate = Date.parse(dueDate)
-    console.log("millidate",milliDate)
     let timeEst = milliDate - Date.now() 
 
     const payload = {
@@ -123,13 +121,12 @@ const TicketForm = (props) => {
         }
       ]
     }
-    console.log("payload",payload)
     setLoading(true)
     
     var options = {
       headers: { 
         /*GET API KEY*/
-        'Authorization': 'pk_26300173_XLACDBWL2MZ2QPURUK1U7P8I34K459CC',
+        'Authorization': '',
         'Content-Type': 'application/json'
       },
       body : JSON.stringify(payload)
@@ -190,8 +187,6 @@ const TicketForm = (props) => {
               </div><br/>
               <div className="input-div">
                 <TextField 
-                  fullwidth
-                  native
                   id="title"
                   name="title" 
                   type="text" 
@@ -208,7 +203,6 @@ const TicketForm = (props) => {
                     Assignee:
                   </InputLabel>
                   <Select 
-                    fullwidth
                     key="assignees"
                     labelID="asignees"
                     id="assignees" 
@@ -314,7 +308,7 @@ const TicketForm = (props) => {
                     input={<OutlinedInput id="reqCustomer" label="reqCustomer" />}
                     style={{height:"200%"}}
                   >
-                    {requestingArr.map((item, i)=><MenuItem key={i} value={item.value}>{item.label}</MenuItem>)}
+                    {requestingArr.map((item, i)=><MenuItem key={item.label} value={item.value}>{item.label}</MenuItem>)}
                   </Select>
                 </FormControl>
               </div><br/>
@@ -331,7 +325,7 @@ const TicketForm = (props) => {
                     input={<OutlinedInput id="priority" label="Priority" />}
                     style={{height:"200%"}}
                   >
-                    {priorityArr.map((priority, i)=><MenuItem key={i} value={priority.value}>{priority.label}</MenuItem>)}
+                    {priorityArr.map((priority, i)=><MenuItem key={priority.label} value={priority.value}>{priority.label}</MenuItem>)}
                   </Select>
                 </FormControl>
               </div><br/>

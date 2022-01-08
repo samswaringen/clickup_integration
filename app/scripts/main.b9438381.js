@@ -323,7 +323,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 var TicketForm = function TicketForm(props) {
   var ticket = props.ticket,
       client = props.client;
@@ -340,7 +339,7 @@ var TicketForm = function TicketForm(props) {
   var getClickUpCustomID = function getClickUpCustomID(id) {
     var options = {
       headers: {
-        'Authorization': 'pk_26300173_XLACDBWL2MZ2QPURUK1U7P8I34K459CC'
+        'Authorization': ''
       }
     };
     client.request.get("https://api.clickup.com/api/v2/task/".concat(id), options).then(function (data) {
@@ -366,7 +365,7 @@ var TicketForm = function TicketForm(props) {
     };
     var options = {
       headers: {
-        'Authorization': "Basic SkNvSDZaWGNuT2szemxRTHk1WUE6WA== ",
+        'Authorization': "Basic ",
         "Content-Type": "application/json"
       },
       body: JSON.stringify(data)
@@ -410,7 +409,6 @@ var TicketForm = function TicketForm(props) {
     var level = handlePriority(values.priority);
     var dueDate = "".concat(values.reqDueDate, "T00:00:00");
     var milliDate = Date.parse(dueDate);
-    console.log("millidate", milliDate);
     var timeEst = milliDate - Date.now();
     var payload = {
       "name": values.title,
@@ -444,12 +442,11 @@ var TicketForm = function TicketForm(props) {
         "value": values.priority
       }]
     };
-    console.log("payload", payload);
     setLoading(true);
     var options = {
       headers: {
         /*GET API KEY*/
-        'Authorization': 'pk_26300173_XLACDBWL2MZ2QPURUK1U7P8I34K459CC',
+        'Authorization': '',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(payload)
@@ -504,8 +501,6 @@ var TicketForm = function TicketForm(props) {
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "input-div"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    fullwidth: true,
-    "native": true,
     id: "title",
     name: "title",
     type: "text",
@@ -523,7 +518,6 @@ var TicketForm = function TicketForm(props) {
       padding: "3px"
     }
   }, "Assignee:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    fullwidth: true,
     key: "assignees",
     labelID: "asignees",
     id: "assignees",
@@ -661,7 +655,7 @@ var TicketForm = function TicketForm(props) {
     }
   }, _formArrays__WEBPACK_IMPORTED_MODULE_2__.requestingArr.map(function (item, i) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_12__["default"], {
-      key: i,
+      key: item.label,
       value: item.value
     }, item.label);
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -688,7 +682,7 @@ var TicketForm = function TicketForm(props) {
     }
   }, _formArrays__WEBPACK_IMPORTED_MODULE_2__.priorityArr.map(function (priority, i) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_12__["default"], {
-      key: i,
+      key: priority.label,
       value: priority.value
     }, priority.label);
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -1077,7 +1071,7 @@ var priorityArr = [{
 var assigneeArr = [{
   value: 14701989,
   label: "Adam",
-  "1": "14701989"
+  "14701989": "Adam"
 }, {
   value: 12644874,
   label: "Chelsea",
@@ -1232,4 +1226,4 @@ module.exports = content.locals || {};
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.77e50982.js.map
+//# sourceMappingURL=main.b9438381.js.map

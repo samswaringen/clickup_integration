@@ -114,7 +114,7 @@ const priorityArr = [
 ]
 
 const assigneeArr = [
-  {value:14701989, label:"Adam", "1":"14701989"},
+  {value:14701989, label:"Adam", "14701989":"Adam"},
   {value:12644874, label:"Chelsea", "12644874":"Chelsea"},
   {value:12703227, label:"Corrie", "12703227":"Corrie"},
   {value:26198452, label:"Marissa", "26198452":"Marissa"},
