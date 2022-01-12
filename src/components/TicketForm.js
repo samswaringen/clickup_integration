@@ -4,7 +4,9 @@ import { useFormik } from 'formik';
 import { tagList, requestingArr, priorityArr, assigneeArr } from './formArrays';
 import {TicketObj} from '../App'
 import Success from './Success'
-import { Select, Button, TextField, Drop, MenuItem, InputLabel, OutlinedInput, Box, Chip, TextareaAutosize, FormControl } from '@mui/material';
+import { Select, Button, TextField, MenuItem, InputLabel, OutlinedInput, Box, Chip, TextareaAutosize, FormControl} from '@mui/material';
+import FormData from 'form-data'
+import Dropzone from 'react-dropzone'
 
 
 const TicketForm = (props) => {
@@ -13,9 +15,35 @@ const TicketForm = (props) => {
   const {setChild} = ticketContext
 
   const [loading, setLoading] = useState(false)
+  const [files,setFiles] = useState([])
 
+  
 
-  /* Get ids from everyone */
+  const sendAttachments = (id, files)=>{
+    files.map((file,i)=>{
+      console.log("file",file.path)
+      const form = new FormData()
+      form.append("attachment",file)
+      form.append("filename", file.name)
+      let options = {
+       headers:{ 'Authorization': '',
+        'Content-Type': 'multipart/form-data'},
+        body: form
+      }
+      let url = `https://api.clickup.com/api/v2/task/${id}/attachment`
+
+      console.log("form",form)
+
+      // client.request.post(url, options)
+      // .then(function(data){
+      //   console.log("data", data)
+      // }
+      // .catch(function(error){
+      //   console.log("error",error)
+      // }))
+    })
+
+  }
 
 
   const getClickUpCustomID = (id)=>{
@@ -82,6 +110,71 @@ const TicketForm = (props) => {
     return level
   }
 
+  const removeFile = (index)=>{
+    let newFiles = [...files]
+    newFiles.splice(index,1)
+    setFiles(newFiles)
+  }
+
+  const baseStyle = {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: '20px',
+    borderWidth: 2,
+    borderRadius: 2,
+    borderColor: '#eeeeee',
+    borderStyle: 'dashed',
+    backgroundColor: '#fafafa',
+    color: '#bdbdbd',
+    outline: 'none',
+    transition: 'border .24s ease-in-out'
+  };
+
+  const thumbsContainer = {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginTop: 16
+  };
+  
+  const thumb = {
+    display: 'inline-flex',
+    borderRadius: 2,
+    border: '1px solid #eaeaea',
+    marginBottom: 8,
+    marginRight: 8,
+    width: 100,
+    height: 100,
+    padding: 4,
+    boxSizing: 'border-box'
+  };
+  
+  const thumbInner = {
+    display: 'flex',
+    minWidth: 0,
+    overflow: 'hidden'
+  };
+  
+  const img = {
+    display: 'block',
+    width: 'auto',
+    height: '100%'
+  };
+  
+
+  const thumbs = files.map((file,i) => (
+    <div style={thumb} key={file.name} onClick={()=>removeFile(i)}>
+      <div style={thumbInner}>
+        <img
+          src={file.preview}
+          style={img}
+        />
+      </div>
+    </div>
+  ));
+
 
   const onSubmit = (values)=>{
     const level = handlePriority(values.priority)
@@ -122,11 +215,13 @@ const TicketForm = (props) => {
       ]
     }
     setLoading(true)
+    sendAttachments(1,values.attachments)
+    console.log("payload",payload)
     
     var options = {
       headers: { 
         /*GET API KEY*/
-        'Authorization': '',
+        'Authorization': 'pk_26300173_CI4KUDBCD4VJO6UUX1TKWVRZNIZLNYD5',
         'Content-Type': 'application/json'
       },
       body : JSON.stringify(payload)
@@ -135,6 +230,7 @@ const TicketForm = (props) => {
       function(data){
         let response = JSON.parse(data.response)
         console.log("response form clickup:",response.id)
+        sendAttachments(response.id, values.attachments)
         setTimeout(
           ()=>{
             getClickUpCustomID(response.id)
@@ -162,8 +258,9 @@ const TicketForm = (props) => {
       reqCustomer:"",
       assignees:[],
       tags:[],
-      priority:priorityArr[0],
-      reqDueDate:0
+      priority:priorityArr[ticket.priority-1].value,
+      reqDueDate:0,
+      attachments:[]
     },
     validate: validate,
     onSubmit: onSubmit,
@@ -357,6 +454,31 @@ const TicketForm = (props) => {
                       ))}
                   </Select>
                 </FormControl>
+              </div><br/>
+              <div className='input-div'>
+                <Dropzone
+                  onDrop={(fileObjects)=>{
+                  formik.setFieldValue("attachments", fileObjects);
+                  setFiles(
+                    fileObjects.map((file) =>
+                      Object.assign(file, {
+                        preview: URL.createObjectURL(file)
+                      })
+                    )
+                  );
+                  }}
+                  multiple
+                >
+                  {({getRootProps, getInputProps}) => (
+                  <section>
+                    <div {...getRootProps({style:baseStyle})}>
+                      <input {...getInputProps()} />
+                      <p>Drag 'n' drop some files here, or click to select files</p>
+                    </div>
+                    <aside>{thumbs}</aside>
+                  </section>
+                )}
+                </Dropzone>
               </div><br/>
               <Button type="submit">Make Click-up Ticket</Button>
             </form>

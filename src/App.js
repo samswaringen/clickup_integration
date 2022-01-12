@@ -27,8 +27,9 @@ const App = () => {
       app.initialized().then((client) => {
         client.data.get('ticket').then((data) => {
           /* set initial component to clickup ticket maker */
+          console.log("ticket:", data.ticket)
           if(window.innerWidth < 300){
-            setChild((<ClickUpStatus ticket={data.ticket} client={client} />))
+            setChild((<ClickUpStatus ticket={data.ticket}  client={client} />))
           }else{
             setChild((<TicketForm ticket={data.ticket} client={client} />))
           }
