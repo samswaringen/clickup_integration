@@ -89,8 +89,8 @@ const App = () => {
             var event_data = event.helper.getData();
             client.instance.close()
             console.log(event.type + " changed from " + event_data.old + " to " +  event_data.new);
-            console.log("ticket inside property change function",ticket)
-            if(event_data.new === 8 && ticket.cutom_fields.cf_clickup_ticket != null){
+            console.log("ticket inside property change function",ticket.custom_fields.cf_clickup_ticket)
+            if(event_data.new === 8 && ticket.custom_fields.cf_clickup_ticket === null){
               setShowModal(true)
             }
         };

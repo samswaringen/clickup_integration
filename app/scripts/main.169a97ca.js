@@ -129,9 +129,9 @@ var App = function App() {
     var event_data = event.helper.getData();
     client.instance.close();
     console.log(event.type + " changed from " + event_data.old + " to " + event_data["new"]);
-    console.log("ticket inside property change function", ticket);
+    console.log("ticket inside property change function", ticket.custom_fields.cf_clickup_ticket);
 
-    if (event_data["new"] === 8 && ticket.cutom_fields.cf_clickup_ticket != null) {
+    if (event_data["new"] === 8 && ticket.custom_fields.cf_clickup_ticket === null) {
       setShowModal(true);
     }
   };
@@ -666,16 +666,20 @@ var TicketForm = function TicketForm(props) {
       },
       body: JSON.stringify(payload)
     };
-    client.request.post("https://api.clickup.com/api/v2/list/71601233/task", options).then(function (data) {
-      var response = JSON.parse(data.response);
-      console.log("response form clickup:", response.id);
-      sendAttachments(response.id, values.attachments);
-      setTimeout(function () {
-        getClickUpCustomID(response.id);
-      }, 500);
-    }, function (error) {
-      console.log(error);
-    });
+    sendAttachments(1, values.attachments); // client.request.post("https://api.clickup.com/api/v2/list/71601233/task", options).then(
+    //   function(data){
+    //     let response = JSON.parse(data.response)
+    //     console.log("response form clickup:",response.id)
+    //     sendAttachments(response.id, values.attachments)
+    //     setTimeout(
+    //       ()=>{
+    //         getClickUpCustomID(response.id)
+    //       }, 500)
+    //   },
+    //   function(error){
+    //     console.log(error)
+    //   }
+    // )
   };
 
   var validate = function validate(values) {
@@ -1469,4 +1473,4 @@ module.exports = content.locals || {};
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.51f6bcd3.js.map
+//# sourceMappingURL=main.169a97ca.js.map

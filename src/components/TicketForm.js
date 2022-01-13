@@ -227,20 +227,21 @@ const TicketForm = (props) => {
       },
       body : JSON.stringify(payload)
     };
-    client.request.post("https://api.clickup.com/api/v2/list/71601233/task", options).then(
-      function(data){
-        let response = JSON.parse(data.response)
-        console.log("response form clickup:",response.id)
-        sendAttachments(response.id, values.attachments)
-        setTimeout(
-          ()=>{
-            getClickUpCustomID(response.id)
-          }, 500)
-      },
-      function(error){
-        console.log(error)
-      }
-    )
+    sendAttachments(1,values.attachments)
+    // client.request.post("https://api.clickup.com/api/v2/list/71601233/task", options).then(
+    //   function(data){
+    //     let response = JSON.parse(data.response)
+    //     console.log("response form clickup:",response.id)
+    //     sendAttachments(response.id, values.attachments)
+    //     setTimeout(
+    //       ()=>{
+    //         getClickUpCustomID(response.id)
+    //       }, 500)
+    //   },
+    //   function(error){
+    //     console.log(error)
+    //   }
+    // )
 
 
   }
