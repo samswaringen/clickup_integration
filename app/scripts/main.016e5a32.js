@@ -17,6 +17,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_ClickUpStatus__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/ClickUpStatus */ 39731);
 /* harmony import */ var _components_TicketForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/TicketForm */ 60282);
+/* harmony import */ var _components_formArrays__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/formArrays */ 7818);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -28,6 +29,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -51,6 +53,89 @@ var App = function App() {
       showModal = _useState6[0],
       setShowModal = _useState6[1];
 
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+      _useState8 = _slicedToArray(_useState7, 2),
+      contact = _useState8[0],
+      setContact = _useState8[1];
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+      _useState10 = _slicedToArray(_useState9, 2),
+      ticket = _useState10[0],
+      setTicket = _useState10[1];
+
+  var eventCallback = function eventCallback(event, client) {
+    //var event_data = event.helper.getData();
+    // console.log('contact in state', contact)
+    // console.log("ticket in state", ticket)
+    client.data.get("ticket").then(function (data) {
+      if (data.ticket.custom_fields.cf_customer && ticket.custom_fields.cf_customer === null && contact.company_id === null) {
+        console.log("no company, setting company as", _data.ticket.custom_fields.cf_customer); //send contact update based off data.ticket.custom_fields.cf_customer result. create key/value array with customer and freshdesk ids
+
+        var _data = {
+          "company_id": _components_formArrays__WEBPACK_IMPORTED_MODULE_4__.companies[_data.ticket.custom_fields.cf_customer]
+        };
+        var options = {
+          //put in API key
+          headers: {
+            'Authorization': "Basic ",
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(_data)
+        };
+        client.request.put("https://onerail.freshdesk.com/api/v2/contacts/".concat(contact.id), options).then(function (data) {
+          console.log(data);
+          console.log("success");
+        })["catch"](function (error) {
+          console.log(error);
+        });
+      } else if (contact.company_id && ticket.custom_fields.cf_customer === null && data.ticket.custom_fields.cf_customer === null) {
+        var companyKeys = Object.keys(_components_formArrays__WEBPACK_IMPORTED_MODULE_4__.companies);
+        var companyID;
+        companyKeys.map(function (key, i) {
+          if (_components_formArrays__WEBPACK_IMPORTED_MODULE_4__.companies[key] === contact.company_id) {
+            companyID = key;
+          }
+        });
+        var _data2 = {
+          "custom_fields": {
+            "cf_customer": companyID
+          }
+        };
+        var options = {
+          //put in API key
+          headers: {
+            'Authorization': "Basic ",
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(_data2)
+        };
+        client.request.put("https://onerail.freshdesk.com/api/v2/tickets/".concat(ticket.id), options).then(function (data) {
+          console.log(data);
+          console.log("success");
+        })["catch"](function (error) {
+          console.log(error);
+        });
+      } else {
+        contact.company_id ? console.log("customer belongs to ", contact.company_id) : console.log("ticket created by internal agent");
+      }
+
+      event.helper.done();
+      event.helper.fail('errorMessage');
+    });
+  };
+
+  var propertyChangeCallback = function propertyChangeCallback(event, client, ticket) // code to be executed when the status of the ticket is changed.
+  {
+    var event_data = event.helper.getData();
+    client.instance.close();
+    console.log(event.type + " changed from " + event_data.old + " to " + event_data["new"]);
+    console.log("ticket inside property change function", ticket);
+
+    if (event_data["new"] === 8 && ticket.cutom_fields.cf_clickup_ticket != null) {
+      setShowModal(true);
+    }
+  };
+
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var script = document.createElement('script');
     script.src = 'https://static.freshdev.io/fdk/2.0/assets/fresh_client.js';
@@ -61,12 +146,25 @@ var App = function App() {
     document.head.appendChild(script);
   }, []);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (ticket && contact) {
+      app.initialized().then(function (client) {
+        client.events.on("ticket.propertiesUpdated", function (event) {
+          return eventCallback(event, client);
+        }, {
+          intercept: true
+        });
+      });
+    }
+  }, [ticket, contact]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (!loaded && !showModal) return;
     app.initialized().then(function (client) {
+      client.data.get('contact').then(function (data) {
+        setContact(data.contact);
+        console.log("contact set");
+      });
       client.data.get('ticket').then(function (data) {
         /* set initial component to clickup ticket maker */
-        console.log("ticket:", data.ticket);
-
         if (window.innerWidth < 300) {
           setChild( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_ClickUpStatus__WEBPACK_IMPORTED_MODULE_2__["default"], {
             ticket: data.ticket,
@@ -78,24 +176,16 @@ var App = function App() {
             client: client
           }));
         }
+
+        setTicket(data.ticket);
+        console.log("ticket set");
+        client.events.on("ticket.statusChanged", function (event) {
+          return propertyChangeCallback(event, client, data.ticket);
+        });
         /* set app activate and deactivate events and callbacks and pass retrieved ticket data*/
         // client.events.on("app.activated", ()=>onAppActivated(data.ticket, client));
         // client.events.on("app.deactivated", ()=>onAppDeactivated(data.ticket, client)); 
-
       });
-
-      var propertyChangeCallback = function propertyChangeCallback(event) // code to be executed when the status of the ticket is changed.
-      {
-        var event_data = event.helper.getData();
-        client.instance.close();
-        console.log(event.type + " changed from " + event_data.old + " to " + event_data["new"]);
-
-        if (event_data["new"] === 8) {
-          setShowModal(true);
-        }
-      };
-
-      client.events.on("ticket.statusChanged", propertyChangeCallback);
     });
 
     if (showModal) {
@@ -871,7 +961,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "requestingArr": () => (/* binding */ requestingArr),
 /* harmony export */   "tagList": () => (/* binding */ tagList),
 /* harmony export */   "priorityArr": () => (/* binding */ priorityArr),
-/* harmony export */   "assigneeArr": () => (/* binding */ assigneeArr)
+/* harmony export */   "assigneeArr": () => (/* binding */ assigneeArr),
+/* harmony export */   "companies": () => (/* binding */ companies)
 /* harmony export */ });
 var requestingArr = [{
   value: "",
@@ -1213,6 +1304,17 @@ var assigneeArr = [{
   label: "Sam",
   "26300173": "Sam"
 }];
+var companies = {
+  "Advance Auto Parts": 69000959145,
+  "ATD": 69000959147,
+  "Menard's": 69000959172,
+  "MiltonCAT": 69000959173,
+  "Pepsi": 69000959179,
+  "PetPeople": 69000998973,
+  "Skullcandy": 7,
+  "TBC/NTW": 69000959175,
+  "TSC": 69000972056
+};
 
 
 /***/ }),
@@ -1350,4 +1452,4 @@ module.exports = content.locals || {};
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.6cea92b0.js.map
+//# sourceMappingURL=main.016e5a32.js.map
