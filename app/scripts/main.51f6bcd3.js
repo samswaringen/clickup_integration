@@ -406,6 +406,8 @@ function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symb
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -458,19 +460,34 @@ var TicketForm = function TicketForm(props) {
         body: form
       };
       var url = "https://api.clickup.com/api/v2/task/".concat(id, "/attachment");
-      console.log("form", form); // client.request.post(url, options)
-      // .then(function(data){
-      //   console.log("data", data)
-      // }
-      // .catch(function(error){
-      //   console.log("error",error)
-      // }))
+
+      var _iterator = _createForOfIteratorHelper(form.values()),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var _i2 = _step.value;
+          console.log("values", _i2);
+        } // client.request.post(url, options)
+        // .then(function(data){
+        //   console.log("data", data)
+        // }
+        // .catch(function(error){
+        //   console.log("error",error)
+        // }))
+
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
     });
   };
 
   var getClickUpCustomID = function getClickUpCustomID(id) {
     var options = {
       headers: {
+        //need clickup api key
         'Authorization': ''
       }
     };
@@ -644,7 +661,7 @@ var TicketForm = function TicketForm(props) {
     var options = {
       headers: {
         /*GET API KEY*/
-        'Authorization': 'pk_26300173_CI4KUDBCD4VJO6UUX1TKWVRZNIZLNYD5',
+        'Authorization': '',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(payload)
@@ -1452,4 +1469,4 @@ module.exports = content.locals || {};
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.016e5a32.js.map
+//# sourceMappingURL=main.51f6bcd3.js.map

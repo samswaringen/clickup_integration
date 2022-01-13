@@ -31,8 +31,9 @@ const TicketForm = (props) => {
         body: form
       }
       let url = `https://api.clickup.com/api/v2/task/${id}/attachment`
-
-      console.log("form",form)
+      for(let i of form.values()){
+        console.log("values",i)
+      }
 
       // client.request.post(url, options)
       // .then(function(data){
@@ -45,10 +46,10 @@ const TicketForm = (props) => {
 
   }
 
-
   const getClickUpCustomID = (id)=>{
     var options = {
       headers:{
+        //need clickup api key
         'Authorization': ''
       }
     }
@@ -221,7 +222,7 @@ const TicketForm = (props) => {
     var options = {
       headers: { 
         /*GET API KEY*/
-        'Authorization': 'pk_26300173_CI4KUDBCD4VJO6UUX1TKWVRZNIZLNYD5',
+        'Authorization': '',
         'Content-Type': 'application/json'
       },
       body : JSON.stringify(payload)
