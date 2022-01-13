@@ -2,6 +2,7 @@ import React, { useState, useEffect, createContext } from 'react';
 import './App.css';
 import ClickUpStatus from './components/ClickUpStatus';
 import TicketForm from './components/TicketForm';
+import { companies } from './components/formArrays';
 
 
 
@@ -12,7 +13,46 @@ const App = () => {
   const [loaded, setLoaded] = useState(false);
   const [child, setChild] = useState(<h3>App is loading</h3>)
   const [showModal, setShowModal] = useState(false)
+  const [contact,setContact] = useState()
+  const [ticket,setTicket] = useState()
 
+
+  var eventCallback = function (event, client) {
+    var event_data = event.helper.getData();
+    // console.log('contact in state', contact)
+    // console.log("ticket in state", ticket)
+    client.data.get("ticket").then((data)=>{
+      if(data.ticket.custom_fields.cf_customer && ticket.custom_fields.cf_customer === null && contact.company_id === null){
+        console.log("no company, setting company as", data.ticket.custom_fields.cf_customer)
+        //send contact update based off data.ticket.custom_fields.cf_customer result. create key/value array with customer and freshdesk ids
+        let data = {
+          company_id: companies[data.ticket.custom_fields.cf_customer]
+        }
+        var options = {
+          //put in API key
+          headers: { 
+            'Authorization': `Basic `,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        };
+        client.request.put(`https://onerail.freshdesk.com/api/v2/contacts/${contact.id}`,options)
+        .then(function (data) {
+          console.log(data);
+          console.log("success")
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+      }else {
+        console.log("customer belongs to ",contact.company_id)
+      }
+      event.helper.done()    
+      event.helper.fail('errorMessage')
+
+    })
+  }
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -22,9 +62,20 @@ const App = () => {
     document.head.appendChild(script);
   }, []);
 
+  useEffect(()=>{
+    if(ticket  && contact ){
+      app.initialized().then((client) => {
+        client.events.on("ticket.propertiesUpdated", (event)=>eventCallback(event,client), {intercept: true});
+      })
+    }
+  },[ticket,contact])
+
   useEffect(() => {
     if (!loaded && !showModal) return
       app.initialized().then((client) => {
+        client.data.get('contact').then(data=>{
+          setContact(data.contact)
+        })
         client.data.get('ticket').then((data) => {
           /* set initial component to clickup ticket maker */
           console.log("ticket:", data.ticket)
@@ -33,6 +84,7 @@ const App = () => {
           }else{
             setChild((<TicketForm ticket={data.ticket} client={client} />))
           }
+          setTicket(data.ticket)
           /* set app activate and deactivate events and callbacks and pass retrieved ticket data*/
           // client.events.on("app.activated", ()=>onAppActivated(data.ticket, client));
           // client.events.on("app.deactivated", ()=>onAppDeactivated(data.ticket, client)); 

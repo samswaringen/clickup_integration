@@ -120,5 +120,17 @@ const assigneeArr = [
   {value:26300173, label:"Sam", "26300173":"Sam"}
 ]
 
+const companies = {
+  "AAP":69000959145,
+  "ATD":69000959147,
+  "Menard's":69000959172,
+  "MiltonCat":69000959173,
+  "Pepsi":69000959179,
+  "PetPeople":69000998973,
+  "Skullcandy":7,
+  "TBC":69000959175,
+  "TSC":69000972056
+}
 
-export {requestingArr, tagList, priorityArr, assigneeArr}
+
+export {requestingArr, tagList, priorityArr, assigneeArr, companies}
