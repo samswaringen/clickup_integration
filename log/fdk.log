@@ -27439,3 +27439,1212 @@ Quit the server with Control-C.
 2022-01-13 14:59:32.943 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
 2022-01-13 14:59:34.494 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
 2022-01-13 14:59:34.495 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:31:32.251 -0500 [debug] ([34mlogger.js[0m) [31mStarting FDK in node v12.22.0 on win32[0m
+2022-01-14 13:31:32.857 -0500 [debug] ([34msequelize.js[0m) [31msetting up sqilite at "C:\Users\SamSwaringen\Desktop\clickup_integration/.fdk/store.sqlite"[0m
+2022-01-14 13:31:32.965 -0500 [debug] ([34mindex.js[0m) [31mRunning with args {"cmd":"run","gopts":{},"opts":{},"goptArg":{},"optArg":{},"args":[]}[0m
+2022-01-14 13:31:32.966 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.17","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.17.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1642024567561}}[0m
+2022-01-14 13:31:32.966 -0500 [debug] ([34mupdater.js[0m) [31mlast check more than an day ago, looking for updates again[0m
+2022-01-14 13:31:33.371 -0500 [debug] ([34mupdater.js[0m) [31mremote fdk - 7.3.0, local fdk - 7.3.0[0m
+2022-01-14 13:31:33.371 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.17","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.17.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1642024567561}}[0m
+2022-01-14 13:31:33.371 -0500 [debug] ([34mupdater.js[0m) [31mremote addon - 1.9.17, local addon - 1.9.17[0m
+2022-01-14 13:31:33.372 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.17","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.17.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1642024567561}}[0m
+2022-01-14 13:31:33.373 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.17","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.17.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1642024567561}}[0m
+2022-01-14 13:31:33.549 -0500 [debug] ([34mmanifest.js[0m) [31mReloading manifest with {"platform-version":"2.2","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"whitelisted-domains":["https://api.clickup.com","https://onerail.freshdesk.com"],"engines":{"node":"12.22.0","fdk":"7.3.0"}}.[0m
+2022-01-14 13:31:33.549 -0500 [debug] ([34mmanifest.js[0m) [31mInferred db as features.[0m
+2022-01-14 13:31:33.552 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.17","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.17.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1642185093373}}[0m
+2022-01-14 13:31:33.567 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.17","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.17.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1642185093373}}[0m
+2022-01-14 13:31:35.459 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.17","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.17.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1642185093373}}[0m
+2022-01-14 13:31:36.200 -0500 [debug] ([34mvalidate.js[0m) [31masked to skip the following validations, [0m
+2022-01-14 13:31:36.201 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator actions[0m
+2022-01-14 13:31:36.201 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator app-dir[0m
+2022-01-14 13:31:36.202 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator config-dir[0m
+2022-01-14 13:31:36.202 -0500 [debug] ([34mconfig-dir.js[0m) [31mChecking to see if C:\Users\SamSwaringen\Desktop\clickup_integration/config/ exists.[0m
+2022-01-14 13:31:36.202 -0500 [debug] ([34mconfig-dir.js[0m) [31mFetched the following config files iparams.json[0m
+2022-01-14 13:31:36.203 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator custom-objects[0m
+2022-01-14 13:31:36.203 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator event[0m
+2022-01-14 13:31:36.203 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator iparam[0m
+2022-01-14 13:31:36.205 -0500 [debug] ([34mvalidate.js[0m) [31mskipping validator lint[0m
+2022-01-14 13:31:36.205 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator manifest[0m
+2022-01-14 13:31:36.205 -0500 [debug] ([34mmanifest.js[0m) [31mrunning manifest validation with type run_validation[0m
+2022-01-14 13:31:36.206 -0500 [debug] ([34mvalidate.js[0m) [31mskipping validator manifest-dependency[0m
+2022-01-14 13:31:36.206 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator oauth[0m
+2022-01-14 13:31:36.206 -0500 [debug] ([34mvalidate.js[0m) [31mskipping validator pkgsize[0m
+2022-01-14 13:31:36.206 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator schema[0m
+2022-01-14 13:31:36.206 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator version-check[0m
+2022-01-14 13:31:36.209 -0500 [debug] ([34mwatcher.js[0m) [31mPreparing to watch the following files ./app,./config,./manifest.json[0m
+2022-01-14 13:31:36.312 -0500 [debug] ([34mcoverage-util.js[0m) [31mSnoozing coverage.[0m
+2022-01-14 13:31:36.312 -0500 [debug] ([34mfrontend_framework-util.js[0m) [31mMounting the default Webpack config[0m
+2022-01-14 13:31:36.949 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 13:31:36.949 -0500 [debug] ([34mcustom-objects.js[0m) [31mto force or not? false[0m
+2022-01-14 13:31:36.949 -0500 [debug] ([34mcustom-objects.js[0m) [31mbeginning to re-sync db[0m
+2022-01-14 13:31:37.217 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 13:31:37.668 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 13:31:37.978 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 13:31:38.393 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 13:31:38.550 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 13:31:38.961 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 13:31:39.067 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 13:31:39.115 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 13:31:39.431 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 13:31:39.509 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 13:31:39.528 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 13:31:39.865 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 13:31:39.912 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 13:31:40.141 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 13:31:40.436 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 13:31:40.452 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 13:31:40.590 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 13:31:40.670 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 13:31:40.683 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 13:31:41.490 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.ca1eb6f8.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.491 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.e919ed6e.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.491 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.07a87240.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.491 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.169a97ca.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.491 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.59b0a61d.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.491 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.6144a3c4.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.491 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.87a73188.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.491 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.88df2c90.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.491 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.93c70af2.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.491 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.a40c8b7f.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.491 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.a442d726.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.491 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.ad1c64a4.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.491 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.af4a3d98.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.491 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.b752e515.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.491 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.bd67661e.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.491 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.c24762cd.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.492 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.c4201fd4.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.492 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.ca1eb6f8.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.492 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.d7f5e9bb.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.492 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.e335dfc0.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.492 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.e7ea564b.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.492 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.e90d1415.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.492 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.e919ed6e.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.492 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.f0d2c1ff.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.492 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.f70244df.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.492 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.7eec20e5.js"}" to all listeners.[0m
+2022-01-14 13:31:41.492 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.7eec20e5.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.492 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.492 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.67890dd2.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.492 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.e927eb73.js"}" to all listeners.[0m
+2022-01-14 13:31:41.492 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.e927eb73.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.517 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 13:31:41.518 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.d765308f.js"}" to all listeners.[0m
+2022-01-14 13:31:41.519 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.9916a2bf.js"}" to all listeners.[0m
+2022-01-14 13:31:41.520 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.7eec20e5.js"}" to all listeners.[0m
+2022-01-14 13:31:41.520 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.9916a2bf.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.521 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.7eec20e5.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.521 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:31:41.521 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.d765308f.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.522 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.9916a2bf.js"}" to all listeners.[0m
+2022-01-14 13:31:41.522 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.7eec20e5.js"}" to all listeners.[0m
+2022-01-14 13:31:41.523 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.9916a2bf.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.523 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.7eec20e5.js.map"}" to all listeners.[0m
+2022-01-14 13:31:41.523 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:31:41.524 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.d765308f.js.map"}" to all listeners.[0m
+2022-01-14 13:31:42.142 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.7eec20e5.js"}" to all listeners.[0m
+2022-01-14 13:31:42.143 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:31:42.143 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.9916a2bf.js"}" to all listeners.[0m
+2022-01-14 13:31:42.144 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.9916a2bf.js.map"}" to all listeners.[0m
+2022-01-14 13:31:42.145 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.7eec20e5.js.map"}" to all listeners.[0m
+2022-01-14 13:31:42.146 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.d765308f.js"}" to all listeners.[0m
+2022-01-14 13:31:42.147 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.d765308f.js.map"}" to all listeners.[0m
+2022-01-14 13:31:42.284 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\bigint-pivot.js"[0m
+2022-01-14 13:31:42.285 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\entity-field-choice.js"[0m
+2022-01-14 13:31:42.286 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\entity-field.js"[0m
+2022-01-14 13:31:42.287 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\entity.js"[0m
+2022-01-14 13:31:42.287 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\record.js"[0m
+2022-01-14 13:31:42.288 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\string-pivot.js"[0m
+2022-01-14 13:31:42.303 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 13:31:42.303 -0500 [debug] ([34mcustom-objects.js[0m) [31mupdated local store with latest entity hash[0m
+2022-01-14 13:31:42.303 -0500 [info] Starting local testing server at http://*:10001/    
+Append 'dev=true' to your Freshdesk account URL to start testing    
+e.g. https://domain.freshdesk.com/a/tickets/1?dev=true    
+Quit the server with Control-C.
+2022-01-14 13:31:57.091 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 13:31:57.092 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-14 13:31:57.100 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 13:31:57.100 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-14 13:31:57.117 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 13:31:57.117 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-14 13:31:57.126 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 13:31:57.126 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-14 13:31:57.134 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 13:31:57.135 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-14 13:31:57.141 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 13:31:57.141 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-14 13:31:57.156 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:31:57.158 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 13:31:57.159 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-14 13:31:57.171 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:31:57.172 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:31:57.175 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:31:57.190 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:31:57.215 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.9916a2bf.js[0m
+2022-01-14 13:31:57.218 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.9916a2bf.js[0m
+2022-01-14 13:32:00.814 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:32:00.827 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:32:00.828 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:32:00.829 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:32:00.845 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:32:00.860 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.9916a2bf.js[0m
+2022-01-14 13:32:00.861 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.9916a2bf.js[0m
+2022-01-14 13:33:11.110 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 13:33:11.123 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:33:11.126 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:33:11.152 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:33:11.153 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:33:11.156 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:33:11.157 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:33:11.158 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:33:11.172 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:33:11.194 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.9916a2bf.js[0m
+2022-01-14 13:33:11.195 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.9916a2bf.js[0m
+2022-01-14 13:33:11.197 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:33:11.210 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:33:11.221 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.9916a2bf.js[0m
+2022-01-14 13:33:11.222 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.9916a2bf.js[0m
+2022-01-14 13:33:26.616 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.8f2563e8.js.map"}" to all listeners.[0m
+2022-01-14 13:33:26.618 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:33:26.618 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.8f2563e8.js"}" to all listeners.[0m
+2022-01-14 13:33:26.619 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:33:26.620 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.8f2563e8.js"}" to all listeners.[0m
+2022-01-14 13:33:27.043 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:33:27.044 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.8f2563e8.js"}" to all listeners.[0m
+2022-01-14 13:33:27.045 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.8f2563e8.js.map"}" to all listeners.[0m
+2022-01-14 13:33:27.045 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.9916a2bf.js"}" to all listeners.[0m
+2022-01-14 13:33:27.047 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:33:27.048 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:33:27.050 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:33:27.052 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:33:27.054 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:33:27.056 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:33:27.057 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:33:27.058 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:33:27.059 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:33:27.081 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:33:27.082 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:33:27.084 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:33:27.095 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:33:27.102 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.8f2563e8.js[0m
+2022-01-14 13:33:27.102 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.8f2563e8.js[0m
+2022-01-14 13:33:27.103 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:33:27.104 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:33:27.105 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:33:27.118 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:33:27.127 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.8f2563e8.js[0m
+2022-01-14 13:33:27.127 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.8f2563e8.js[0m
+2022-01-14 13:33:28.095 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 13:33:28.101 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:33:28.104 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:33:28.120 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:33:28.121 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:33:28.123 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:33:28.143 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:33:28.150 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.8f2563e8.js[0m
+2022-01-14 13:33:28.150 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.8f2563e8.js[0m
+2022-01-14 13:33:28.156 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:33:28.157 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:33:28.158 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:33:28.174 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:33:28.183 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.8f2563e8.js[0m
+2022-01-14 13:33:28.183 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.8f2563e8.js[0m
+2022-01-14 13:33:45.706 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:33:45.707 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.7ddbfc7a.js"}" to all listeners.[0m
+2022-01-14 13:33:45.708 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.7ddbfc7a.js.map"}" to all listeners.[0m
+2022-01-14 13:33:45.710 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.7ddbfc7a.js"}" to all listeners.[0m
+2022-01-14 13:33:45.711 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.7ddbfc7a.js.map"}" to all listeners.[0m
+2022-01-14 13:33:46.073 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.7ddbfc7a.js.map"}" to all listeners.[0m
+2022-01-14 13:33:46.075 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:33:46.076 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.7ddbfc7a.js"}" to all listeners.[0m
+2022-01-14 13:33:46.079 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.8f2563e8.js"}" to all listeners.[0m
+2022-01-14 13:33:46.079 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:33:46.081 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:33:46.082 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:33:46.088 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:33:46.092 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:33:46.094 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:33:46.121 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:33:46.121 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:33:46.139 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:33:46.152 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:33:46.162 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.7ddbfc7a.js[0m
+2022-01-14 13:33:46.163 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.7ddbfc7a.js[0m
+2022-01-14 13:33:46.163 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:33:46.164 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:33:46.164 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:33:46.174 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:33:46.186 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.7ddbfc7a.js[0m
+2022-01-14 13:33:46.187 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.7ddbfc7a.js[0m
+2022-01-14 13:33:47.118 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 13:33:47.123 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:33:47.127 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:33:47.145 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:33:47.145 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:33:47.146 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:33:47.162 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:33:47.170 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.7ddbfc7a.js[0m
+2022-01-14 13:33:47.170 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.7ddbfc7a.js[0m
+2022-01-14 13:33:47.171 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:33:47.172 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:33:47.172 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:33:47.184 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:33:47.192 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.7ddbfc7a.js[0m
+2022-01-14 13:33:47.192 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.7ddbfc7a.js[0m
+2022-01-14 13:34:46.423 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.0e93602b.js"}" to all listeners.[0m
+2022-01-14 13:34:46.425 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:34:46.426 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.0e93602b.js.map"}" to all listeners.[0m
+2022-01-14 13:34:46.996 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:34:47.002 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.0e93602b.js.map"}" to all listeners.[0m
+2022-01-14 13:34:47.003 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.0e93602b.js"}" to all listeners.[0m
+2022-01-14 13:34:47.005 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 13:34:47.005 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.7ddbfc7a.js"}" to all listeners.[0m
+2022-01-14 13:34:47.016 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 13:34:47.016 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:34:47.022 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:34:47.026 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:34:47.027 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:34:47.029 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:34:47.029 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:34:47.030 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:34:47.032 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:34:47.051 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:34:47.052 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:34:47.058 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:34:47.072 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:34:47.082 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.0e93602b.js[0m
+2022-01-14 13:34:47.082 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.0e93602b.js[0m
+2022-01-14 13:34:47.083 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:34:47.084 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:34:47.087 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:34:47.099 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:34:47.107 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.0e93602b.js[0m
+2022-01-14 13:34:47.108 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.0e93602b.js[0m
+2022-01-14 13:35:26.532 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.6f5830cf.js"}" to all listeners.[0m
+2022-01-14 13:35:26.534 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:35:26.535 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.6f5830cf.js.map"}" to all listeners.[0m
+2022-01-14 13:35:26.536 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:35:26.537 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.6f5830cf.js.map"}" to all listeners.[0m
+2022-01-14 13:35:27.088 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:35:27.090 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.6f5830cf.js"}" to all listeners.[0m
+2022-01-14 13:35:27.091 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.6f5830cf.js.map"}" to all listeners.[0m
+2022-01-14 13:35:27.093 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.0e93602b.js"}" to all listeners.[0m
+2022-01-14 13:35:27.094 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:35:27.096 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:35:27.097 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:35:27.099 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:35:27.101 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:35:27.103 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:35:27.107 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:35:27.110 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:35:27.113 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:35:27.115 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:35:27.140 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:35:27.141 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:35:27.144 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:35:27.161 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:35:27.174 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.6f5830cf.js[0m
+2022-01-14 13:35:27.176 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.6f5830cf.js[0m
+2022-01-14 13:35:27.177 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:35:27.177 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:35:27.178 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:35:27.192 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:35:27.206 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.6f5830cf.js[0m
+2022-01-14 13:35:27.206 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.6f5830cf.js[0m
+2022-01-14 13:35:28.118 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 13:35:28.126 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:35:28.128 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:35:28.146 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:35:28.146 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:35:28.147 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:35:28.162 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:35:28.170 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.6f5830cf.js[0m
+2022-01-14 13:35:28.170 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.6f5830cf.js[0m
+2022-01-14 13:35:28.172 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:35:28.172 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:35:28.173 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:35:28.185 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:35:28.196 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.6f5830cf.js[0m
+2022-01-14 13:35:28.196 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.6f5830cf.js[0m
+2022-01-14 13:37:17.480 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:37:17.481 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.7a05b3dc.js"}" to all listeners.[0m
+2022-01-14 13:37:17.482 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.7a05b3dc.js.map"}" to all listeners.[0m
+2022-01-14 13:37:17.483 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.7a05b3dc.js"}" to all listeners.[0m
+2022-01-14 13:37:17.485 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.7a05b3dc.js.map"}" to all listeners.[0m
+2022-01-14 13:37:18.091 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.7a05b3dc.js.map"}" to all listeners.[0m
+2022-01-14 13:37:18.093 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:37:18.094 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.7a05b3dc.js"}" to all listeners.[0m
+2022-01-14 13:37:18.098 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 13:37:18.099 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.6f5830cf.js"}" to all listeners.[0m
+2022-01-14 13:37:18.107 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 13:37:18.108 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:37:18.113 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:37:18.114 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:37:18.116 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:37:18.118 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:37:18.120 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:37:18.121 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:37:18.123 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:37:18.123 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:37:18.124 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:37:18.124 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:37:18.125 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:37:18.125 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:37:18.127 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:37:18.145 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:37:18.145 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:37:18.150 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:37:18.160 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:37:18.169 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:37:18.169 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:37:18.171 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.7a05b3dc.js[0m
+2022-01-14 13:37:18.171 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.7a05b3dc.js[0m
+2022-01-14 13:37:18.172 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:37:18.189 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:37:18.282 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.7a05b3dc.js[0m
+2022-01-14 13:37:18.283 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.7a05b3dc.js[0m
+2022-01-14 13:37:41.724 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 13:37:41.725 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-14 13:37:41.733 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 13:37:41.733 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-14 13:37:41.749 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 13:37:41.749 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-14 13:37:41.757 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 13:37:41.757 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-14 13:37:41.778 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 13:37:41.778 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-14 13:37:41.785 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 13:37:41.786 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-14 13:37:41.801 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:37:41.803 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 13:37:41.803 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-14 13:37:41.823 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:37:41.824 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:37:41.826 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:37:41.853 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:37:41.867 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.7a05b3dc.js[0m
+2022-01-14 13:37:41.867 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.7a05b3dc.js[0m
+2022-01-14 13:37:44.678 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:37:44.692 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:37:44.692 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:37:44.694 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:37:44.709 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:37:44.717 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.7a05b3dc.js[0m
+2022-01-14 13:37:44.717 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.7a05b3dc.js[0m
+2022-01-14 13:38:13.004 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:38:13.006 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.05768cf0.js"}" to all listeners.[0m
+2022-01-14 13:38:13.008 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.05768cf0.js.map"}" to all listeners.[0m
+2022-01-14 13:38:13.011 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.05768cf0.js.map"}" to all listeners.[0m
+2022-01-14 13:38:13.015 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.05768cf0.js.map"}" to all listeners.[0m
+2022-01-14 13:38:13.584 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.05768cf0.js"}" to all listeners.[0m
+2022-01-14 13:38:13.585 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:38:13.586 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.7a05b3dc.js"}" to all listeners.[0m
+2022-01-14 13:38:13.586 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:13.590 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:13.598 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:13.602 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:13.604 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:13.639 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:38:13.640 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:38:13.643 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.05768cf0.js[0m
+2022-01-14 13:38:13.644 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.05768cf0.js[0m
+2022-01-14 13:38:13.644 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:38:13.658 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:38:13.676 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:38:13.677 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:38:13.678 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.05768cf0.js[0m
+2022-01-14 13:38:13.678 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.05768cf0.js[0m
+2022-01-14 13:38:13.680 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:38:13.695 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:38:14.658 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 13:38:14.678 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:14.681 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:14.701 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:38:14.702 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:38:14.703 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:38:14.723 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:38:14.734 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.05768cf0.js[0m
+2022-01-14 13:38:14.734 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.05768cf0.js[0m
+2022-01-14 13:38:14.735 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:38:14.735 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:38:14.736 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:38:14.751 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:38:14.762 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.05768cf0.js[0m
+2022-01-14 13:38:14.762 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.05768cf0.js[0m
+2022-01-14 13:38:33.340 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:38:33.342 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.8c424a75.js.map"}" to all listeners.[0m
+2022-01-14 13:38:33.343 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.8c424a75.js"}" to all listeners.[0m
+2022-01-14 13:38:33.345 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.8c424a75.js.map"}" to all listeners.[0m
+2022-01-14 13:38:33.346 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.8c424a75.js"}" to all listeners.[0m
+2022-01-14 13:38:33.783 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:38:33.783 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.8c424a75.js"}" to all listeners.[0m
+2022-01-14 13:38:33.784 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.8c424a75.js.map"}" to all listeners.[0m
+2022-01-14 13:38:33.786 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.05768cf0.js"}" to all listeners.[0m
+2022-01-14 13:38:33.789 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:33.794 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:33.800 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:33.802 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:33.803 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:33.805 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:33.808 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:33.833 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:38:33.834 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:38:33.837 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.8c424a75.js[0m
+2022-01-14 13:38:33.838 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.8c424a75.js[0m
+2022-01-14 13:38:33.839 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:38:33.855 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:38:33.868 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:38:33.869 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:38:33.870 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.8c424a75.js[0m
+2022-01-14 13:38:33.870 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.8c424a75.js[0m
+2022-01-14 13:38:33.872 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:38:33.884 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:38:34.862 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 13:38:34.869 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:34.872 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:34.896 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:38:34.897 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:38:34.898 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:38:34.914 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:38:34.924 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.8c424a75.js[0m
+2022-01-14 13:38:34.925 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.8c424a75.js[0m
+2022-01-14 13:38:34.927 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:38:34.928 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:38:34.929 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:38:34.943 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:38:34.954 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.8c424a75.js[0m
+2022-01-14 13:38:34.955 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.8c424a75.js[0m
+2022-01-14 13:38:49.138 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:38:49.141 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:38:49.144 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:49.148 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:49.149 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.5cd15e6c.js"}" to all listeners.[0m
+2022-01-14 13:38:49.150 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.5cd15e6c.js.map"}" to all listeners.[0m
+2022-01-14 13:38:49.152 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.5cd15e6c.js.map"}" to all listeners.[0m
+2022-01-14 13:38:49.152 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:49.633 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.5cd15e6c.js.map"}" to all listeners.[0m
+2022-01-14 13:38:49.634 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.5cd15e6c.js"}" to all listeners.[0m
+2022-01-14 13:38:49.635 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.8c424a75.js"}" to all listeners.[0m
+2022-01-14 13:38:49.636 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:49.639 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:49.640 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:49.642 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:49.644 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:49.646 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:49.648 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:49.650 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:49.669 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:38:49.670 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:38:49.672 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.5cd15e6c.js[0m
+2022-01-14 13:38:49.673 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.5cd15e6c.js[0m
+2022-01-14 13:38:49.674 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:38:49.687 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:38:49.696 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:38:49.697 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:38:49.707 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.5cd15e6c.js[0m
+2022-01-14 13:38:49.708 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.5cd15e6c.js[0m
+2022-01-14 13:38:49.709 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:38:49.725 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:38:50.701 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 13:38:50.706 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:50.708 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:38:50.727 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:38:50.728 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:38:50.729 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:38:50.741 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:38:50.750 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.5cd15e6c.js[0m
+2022-01-14 13:38:50.751 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.5cd15e6c.js[0m
+2022-01-14 13:38:50.752 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:38:50.752 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:38:50.753 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:38:50.770 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:38:50.780 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.5cd15e6c.js[0m
+2022-01-14 13:38:50.781 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.5cd15e6c.js[0m
+2022-01-14 13:41:42.467 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.08c5a2ab.js"}" to all listeners.[0m
+2022-01-14 13:41:42.470 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.2faff375.js"}" to all listeners.[0m
+2022-01-14 13:41:42.471 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:41:42.480 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.c845aa59.js"}" to all listeners.[0m
+2022-01-14 13:41:42.481 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:41:42.485 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 13:41:42.485 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.08c5a2ab.js.map"}" to all listeners.[0m
+2022-01-14 13:41:42.486 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 13:41:42.488 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.c845aa59.js.map"}" to all listeners.[0m
+2022-01-14 13:41:42.489 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.08c5a2ab.js"}" to all listeners.[0m
+2022-01-14 13:41:42.490 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:41:42.490 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.2faff375.js"}" to all listeners.[0m
+2022-01-14 13:41:42.492 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.2faff375.js.map"}" to all listeners.[0m
+2022-01-14 13:41:42.493 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 13:41:42.494 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.08c5a2ab.js.map"}" to all listeners.[0m
+2022-01-14 13:41:42.495 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.c845aa59.js"}" to all listeners.[0m
+2022-01-14 13:41:42.497 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.08c5a2ab.js.map"}" to all listeners.[0m
+2022-01-14 13:41:42.498 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.c845aa59.js.map"}" to all listeners.[0m
+2022-01-14 13:41:42.499 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.2faff375.js.map"}" to all listeners.[0m
+2022-01-14 13:41:42.499 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:41:42.620 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.c845aa59.js.map"}" to all listeners.[0m
+2022-01-14 13:41:42.621 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.2faff375.js.map"}" to all listeners.[0m
+2022-01-14 13:41:42.628 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:41:42.631 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:41:42.634 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:41:42.634 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:41:42.635 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:41:42.636 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:41:42.638 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:41:42.639 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:41:42.641 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:41:42.644 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:41:42.645 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:41:42.647 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:41:42.648 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:41:42.650 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:41:42.684 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.c845aa59.js[0m
+2022-01-14 13:41:42.685 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.c845aa59.js[0m
+2022-01-14 13:41:42.687 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.2faff375.js[0m
+2022-01-14 13:41:42.695 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.2faff375.js[0m
+2022-01-14 13:41:42.714 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.c845aa59.js[0m
+2022-01-14 13:41:42.715 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.c845aa59.js[0m
+2022-01-14 13:41:42.716 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.2faff375.js[0m
+2022-01-14 13:41:42.724 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.2faff375.js[0m
+2022-01-14 13:41:42.732 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.08c5a2ab.js[0m
+2022-01-14 13:41:42.732 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.08c5a2ab.js[0m
+2022-01-14 13:41:42.738 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.08c5a2ab.js[0m
+2022-01-14 13:41:42.738 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.08c5a2ab.js[0m
+2022-01-14 13:42:03.270 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.0fec5d19.js.map"}" to all listeners.[0m
+2022-01-14 13:42:03.271 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:42:03.272 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.0fec5d19.js"}" to all listeners.[0m
+2022-01-14 13:42:03.273 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.7eec20e5.js.map"}" to all listeners.[0m
+2022-01-14 13:42:03.274 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.d765308f.js.map"}" to all listeners.[0m
+2022-01-14 13:42:03.276 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:42:03.277 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.0fec5d19.js"}" to all listeners.[0m
+2022-01-14 13:42:03.278 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.7eec20e5.js.map"}" to all listeners.[0m
+2022-01-14 13:42:03.278 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.d765308f.js.map"}" to all listeners.[0m
+2022-01-14 13:42:03.923 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:42:03.926 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.0fec5d19.js"}" to all listeners.[0m
+2022-01-14 13:42:03.928 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.d765308f.js.map"}" to all listeners.[0m
+2022-01-14 13:42:03.929 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.7eec20e5.js.map"}" to all listeners.[0m
+2022-01-14 13:42:03.931 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.0fec5d19.js.map"}" to all listeners.[0m
+2022-01-14 13:42:03.999 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.5cd15e6c.js"}" to all listeners.[0m
+2022-01-14 13:42:04.038 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:04.039 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:04.040 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:04.041 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:04.041 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:04.042 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:04.042 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:04.043 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:04.045 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:04.045 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:04.046 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:04.046 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:04.047 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:04.049 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:04.067 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:42:04.082 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:42:04.093 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:42:04.094 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:42:04.095 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:42:04.111 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:42:04.123 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.0fec5d19.js[0m
+2022-01-14 13:42:04.123 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.0fec5d19.js[0m
+2022-01-14 13:42:04.124 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:42:04.124 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:42:04.125 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.0fec5d19.js[0m
+2022-01-14 13:42:04.126 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.0fec5d19.js[0m
+2022-01-14 13:42:49.934 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 13:42:49.939 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:49.942 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:49.959 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:42:49.960 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:42:49.963 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:42:49.974 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:42:49.988 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.0fec5d19.js[0m
+2022-01-14 13:42:49.989 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.0fec5d19.js[0m
+2022-01-14 13:42:49.991 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:42:49.991 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:42:49.992 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:42:50.005 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:42:50.014 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.0fec5d19.js[0m
+2022-01-14 13:42:50.015 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.0fec5d19.js[0m
+2022-01-14 13:42:57.214 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:42:57.216 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.4f15e36f.js.map"}" to all listeners.[0m
+2022-01-14 13:42:57.218 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.4f15e36f.js"}" to all listeners.[0m
+2022-01-14 13:42:57.219 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.4f15e36f.js.map"}" to all listeners.[0m
+2022-01-14 13:42:57.220 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.4f15e36f.js"}" to all listeners.[0m
+2022-01-14 13:42:57.738 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:42:57.739 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.4f15e36f.js"}" to all listeners.[0m
+2022-01-14 13:42:57.740 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.4f15e36f.js.map"}" to all listeners.[0m
+2022-01-14 13:42:57.741 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.0fec5d19.js"}" to all listeners.[0m
+2022-01-14 13:42:57.742 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:57.743 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:57.745 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:57.747 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:57.750 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:57.752 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:57.754 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:57.755 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:57.773 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.4f15e36f.js[0m
+2022-01-14 13:42:57.774 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.4f15e36f.js[0m
+2022-01-14 13:42:57.777 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:42:57.778 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:42:57.778 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:42:57.793 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:42:57.806 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.4f15e36f.js[0m
+2022-01-14 13:42:57.807 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.4f15e36f.js[0m
+2022-01-14 13:42:57.808 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:42:57.809 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:42:57.810 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:42:57.822 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:42:58.838 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 13:42:58.845 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:58.847 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:42:58.862 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:42:58.863 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:42:58.864 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:42:58.884 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:42:58.893 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.4f15e36f.js[0m
+2022-01-14 13:42:58.893 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.4f15e36f.js[0m
+2022-01-14 13:42:58.894 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:42:58.895 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:42:58.897 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:42:58.911 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:42:58.924 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.4f15e36f.js[0m
+2022-01-14 13:42:58.925 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.4f15e36f.js[0m
+2022-01-14 13:43:55.425 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.bf85e698.js"}" to all listeners.[0m
+2022-01-14 13:43:55.427 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:43:55.428 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.bf85e698.js.map"}" to all listeners.[0m
+2022-01-14 13:43:55.430 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:43:55.432 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.bf85e698.js.map"}" to all listeners.[0m
+2022-01-14 13:43:55.871 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:43:55.872 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.bf85e698.js.map"}" to all listeners.[0m
+2022-01-14 13:43:55.875 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.bf85e698.js"}" to all listeners.[0m
+2022-01-14 13:43:55.876 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.4f15e36f.js"}" to all listeners.[0m
+2022-01-14 13:43:55.877 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:43:55.878 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:43:55.880 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:43:55.881 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:43:55.883 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:43:55.886 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:43:55.888 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:43:55.889 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:43:55.892 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:43:55.916 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:43:55.916 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:43:55.919 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.bf85e698.js[0m
+2022-01-14 13:43:55.919 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.bf85e698.js[0m
+2022-01-14 13:43:55.920 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:43:55.934 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:43:55.943 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:43:55.943 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:43:55.944 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.bf85e698.js[0m
+2022-01-14 13:43:55.944 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.bf85e698.js[0m
+2022-01-14 13:43:55.945 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:43:55.956 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:43:56.927 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 13:43:56.947 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:43:56.949 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:43:56.965 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:43:56.966 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:43:56.967 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:43:56.986 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:43:56.995 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.bf85e698.js[0m
+2022-01-14 13:43:56.995 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.bf85e698.js[0m
+2022-01-14 13:43:56.996 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:43:56.996 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:43:56.999 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:43:57.010 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:43:57.020 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.bf85e698.js[0m
+2022-01-14 13:43:57.021 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.bf85e698.js[0m
+2022-01-14 13:56:48.666 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:56:48.668 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.95a52ca4.js.map"}" to all listeners.[0m
+2022-01-14 13:56:48.670 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.95a52ca4.js"}" to all listeners.[0m
+2022-01-14 13:56:48.671 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.95a52ca4.js.map"}" to all listeners.[0m
+2022-01-14 13:56:48.672 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.95a52ca4.js"}" to all listeners.[0m
+2022-01-14 13:56:49.184 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:56:49.186 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.95a52ca4.js"}" to all listeners.[0m
+2022-01-14 13:56:49.187 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.95a52ca4.js.map"}" to all listeners.[0m
+2022-01-14 13:56:49.191 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.bf85e698.js"}" to all listeners.[0m
+2022-01-14 13:56:49.197 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:56:49.200 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:56:49.201 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:56:49.203 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:56:49.204 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:56:49.205 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:56:49.205 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:56:49.206 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:56:49.207 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:56:49.209 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:56:49.227 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:56:49.228 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:56:49.234 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:56:49.247 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:56:49.255 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.95a52ca4.js[0m
+2022-01-14 13:56:49.255 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.95a52ca4.js[0m
+2022-01-14 13:56:49.256 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:56:49.257 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:56:49.259 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:56:49.279 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:56:49.289 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.95a52ca4.js[0m
+2022-01-14 13:56:49.290 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.95a52ca4.js[0m
+2022-01-14 13:56:50.246 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 13:56:50.251 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:56:50.253 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:56:50.270 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:56:50.271 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:56:50.272 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:56:50.283 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:56:50.294 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.95a52ca4.js[0m
+2022-01-14 13:56:50.295 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.95a52ca4.js[0m
+2022-01-14 13:56:50.297 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:56:50.298 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:56:50.299 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:56:50.310 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:56:50.318 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.95a52ca4.js[0m
+2022-01-14 13:56:50.319 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.95a52ca4.js[0m
+2022-01-14 13:57:23.987 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:57:23.989 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.52a68909.js"}" to all listeners.[0m
+2022-01-14 13:57:23.991 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.52a68909.js.map"}" to all listeners.[0m
+2022-01-14 13:57:23.994 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.52a68909.js"}" to all listeners.[0m
+2022-01-14 13:57:23.995 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.52a68909.js.map"}" to all listeners.[0m
+2022-01-14 13:57:24.545 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:57:24.546 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.52a68909.js.map"}" to all listeners.[0m
+2022-01-14 13:57:24.547 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.52a68909.js"}" to all listeners.[0m
+2022-01-14 13:57:24.550 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.95a52ca4.js"}" to all listeners.[0m
+2022-01-14 13:57:24.551 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:57:24.553 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:57:24.555 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:57:24.556 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:57:24.558 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:57:24.561 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:57:24.562 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:57:24.564 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:57:24.565 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:57:24.581 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:57:24.582 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:57:24.586 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:57:24.602 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:57:24.612 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.52a68909.js[0m
+2022-01-14 13:57:24.613 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.52a68909.js[0m
+2022-01-14 13:57:24.615 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:57:24.616 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:57:24.617 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:57:24.630 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:57:24.638 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.52a68909.js[0m
+2022-01-14 13:57:24.639 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.52a68909.js[0m
+2022-01-14 13:57:25.647 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 13:57:25.652 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:57:25.653 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:57:25.671 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:57:25.671 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:57:25.673 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:57:25.690 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:57:25.701 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.52a68909.js[0m
+2022-01-14 13:57:25.701 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.52a68909.js[0m
+2022-01-14 13:57:25.703 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:57:25.703 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:57:25.704 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:57:25.717 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:57:25.727 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.52a68909.js[0m
+2022-01-14 13:57:25.728 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.52a68909.js[0m
+2022-01-14 13:57:53.912 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.3502b24f.js"}" to all listeners.[0m
+2022-01-14 13:57:53.914 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:57:53.914 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.3502b24f.js.map"}" to all listeners.[0m
+2022-01-14 13:57:53.915 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:57:53.916 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.3502b24f.js.map"}" to all listeners.[0m
+2022-01-14 13:57:54.361 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.3502b24f.js.map"}" to all listeners.[0m
+2022-01-14 13:57:54.362 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.3502b24f.js"}" to all listeners.[0m
+2022-01-14 13:57:54.363 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:57:54.371 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.52a68909.js"}" to all listeners.[0m
+2022-01-14 13:57:54.371 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:57:54.377 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:57:54.379 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:57:54.380 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:57:54.380 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:57:54.381 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:57:54.382 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:57:54.383 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:57:54.404 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:57:54.405 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:57:54.409 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:57:54.420 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:57:54.427 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.3502b24f.js[0m
+2022-01-14 13:57:54.427 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.3502b24f.js[0m
+2022-01-14 13:57:54.428 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:57:54.428 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:57:54.430 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:57:54.444 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:57:54.451 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.3502b24f.js[0m
+2022-01-14 13:57:54.452 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.3502b24f.js[0m
+2022-01-14 13:57:55.426 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 13:57:55.430 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:57:55.432 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:57:55.452 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:57:55.453 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:57:55.463 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:57:55.476 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:57:55.484 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.3502b24f.js[0m
+2022-01-14 13:57:55.485 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.3502b24f.js[0m
+2022-01-14 13:57:55.487 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:57:55.487 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:57:55.489 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:57:55.500 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:57:55.508 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.3502b24f.js[0m
+2022-01-14 13:57:55.509 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.3502b24f.js[0m
+2022-01-14 13:58:17.672 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:58:17.672 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 13:58:18.029 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:58:18.042 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:58:18.042 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:58:18.044 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:58:18.057 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:58:18.067 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.3502b24f.js[0m
+2022-01-14 13:58:18.068 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.3502b24f.js[0m
+2022-01-14 13:58:27.388 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 13:58:27.397 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:58:27.397 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 13:58:27.398 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 13:58:27.409 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 13:58:27.428 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.3502b24f.js[0m
+2022-01-14 13:58:27.428 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.3502b24f.js[0m
+2022-01-14 14:02:38.326 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 14:02:38.381 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 14:02:38.384 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 14:02:38.384 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:02:38.435 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 14:02:38.437 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 14:02:38.437 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:02:38.438 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:02:38.439 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:02:38.480 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 14:02:38.504 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:02:38.505 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:02:38.505 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:02:38.506 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 14:02:38.515 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:02:38.516 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:02:38.528 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 14:02:38.529 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:02:38.531 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:02:38.533 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:02:38.535 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:02:38.553 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:02:38.554 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:02:38.555 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 14:02:38.569 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 14:02:38.588 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 14:02:38.588 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:02:38.588 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:02:38.590 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.3502b24f.js[0m
+2022-01-14 14:02:38.590 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.3502b24f.js[0m
+2022-01-14 14:02:38.591 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 14:02:38.605 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 14:02:38.620 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 14:02:38.620 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:02:38.622 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.3502b24f.js[0m
+2022-01-14 14:02:38.623 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.3502b24f.js[0m
+2022-01-14 14:02:38.624 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:02:38.688 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:02:38.688 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:02:38.689 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 14:02:38.701 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 14:02:38.713 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 14:02:38.747 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.3502b24f.js[0m
+2022-01-14 14:02:38.748 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.3502b24f.js[0m
+2022-01-14 14:02:38.752 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:02:38.759 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:02:38.778 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:02:38.778 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:02:38.780 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 14:02:38.798 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 14:02:38.807 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 14:02:38.808 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:02:38.808 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:02:38.809 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.3502b24f.js[0m
+2022-01-14 14:02:38.810 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.3502b24f.js[0m
+2022-01-14 14:02:38.812 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 14:02:38.827 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 14:02:38.845 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 14:02:38.845 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.3502b24f.js[0m
+2022-01-14 14:02:38.846 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.3502b24f.js[0m
+2022-01-14 14:02:38.849 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:02:38.864 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:02:38.864 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:02:38.865 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 14:02:38.881 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 14:02:38.901 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.3502b24f.js[0m
+2022-01-14 14:02:38.902 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.3502b24f.js[0m
+2022-01-14 14:05:33.983 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.3835eaec.js"}" to all listeners.[0m
+2022-01-14 14:05:33.985 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 14:05:33.986 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.3835eaec.js.map"}" to all listeners.[0m
+2022-01-14 14:05:33.987 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 14:05:33.988 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.3835eaec.js.map"}" to all listeners.[0m
+2022-01-14 14:05:33.990 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.3835eaec.js.map"}" to all listeners.[0m
+2022-01-14 14:05:34.497 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.3835eaec.js"}" to all listeners.[0m
+2022-01-14 14:05:34.497 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 14:05:34.501 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.3502b24f.js"}" to all listeners.[0m
+2022-01-14 14:05:34.502 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:05:34.504 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:05:34.504 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:05:34.505 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:05:34.506 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:05:34.506 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:05:34.508 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:05:34.509 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:05:34.511 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:05:34.513 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:05:34.515 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:05:34.530 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:05:34.531 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:05:34.532 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 14:05:34.544 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 14:05:34.553 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.3835eaec.js[0m
+2022-01-14 14:05:34.553 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.3835eaec.js[0m
+2022-01-14 14:05:34.554 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:05:34.554 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:05:34.555 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 14:05:34.563 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 14:05:34.577 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.3835eaec.js[0m
+2022-01-14 14:05:34.577 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.3835eaec.js[0m
+2022-01-14 14:05:35.555 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 14:05:35.561 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:05:35.563 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:05:35.579 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:05:35.580 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:05:35.581 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 14:05:35.601 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 14:05:35.608 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.3835eaec.js[0m
+2022-01-14 14:05:35.609 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.3835eaec.js[0m
+2022-01-14 14:05:35.610 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:05:35.611 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:05:35.611 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 14:05:35.623 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 14:05:35.633 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.3835eaec.js[0m
+2022-01-14 14:05:35.634 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.3835eaec.js[0m
+2022-01-14 14:05:44.104 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.04c9ce25.js.map"}" to all listeners.[0m
+2022-01-14 14:05:44.105 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 14:05:44.106 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.04c9ce25.js"}" to all listeners.[0m
+2022-01-14 14:05:44.108 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 14:05:44.109 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.04c9ce25.js"}" to all listeners.[0m
+2022-01-14 14:05:44.525 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 14:05:44.526 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.04c9ce25.js"}" to all listeners.[0m
+2022-01-14 14:05:44.527 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.04c9ce25.js.map"}" to all listeners.[0m
+2022-01-14 14:05:44.532 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.3835eaec.js"}" to all listeners.[0m
+2022-01-14 14:05:44.533 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:05:44.542 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:05:44.544 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:05:44.546 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:05:44.548 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:05:44.588 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.04c9ce25.js[0m
+2022-01-14 14:05:44.589 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.04c9ce25.js[0m
+2022-01-14 14:05:44.590 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:05:44.591 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:05:44.592 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 14:05:44.607 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 14:05:44.621 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.04c9ce25.js[0m
+2022-01-14 14:05:44.623 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.04c9ce25.js[0m
+2022-01-14 14:05:44.623 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:05:44.624 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:05:44.631 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 14:05:44.661 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 14:05:45.575 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 14:05:45.583 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:05:45.585 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:05:45.602 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:05:45.602 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:05:45.603 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 14:05:45.616 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 14:05:45.628 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:05:45.628 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:05:45.629 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.04c9ce25.js[0m
+2022-01-14 14:05:45.629 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.04c9ce25.js[0m
+2022-01-14 14:05:45.631 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 14:05:45.643 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 14:05:45.653 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.04c9ce25.js[0m
+2022-01-14 14:05:45.654 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.04c9ce25.js[0m
+2022-01-14 14:06:28.625 -0500 [debug] ([34mlogger.js[0m) [31mStarting FDK in node v12.22.0 on win32[0m
+2022-01-14 14:06:29.145 -0500 [debug] ([34msequelize.js[0m) [31msetting up sqilite at "C:\Users\SamSwaringen\Desktop\clickup_integration/.fdk/store.sqlite"[0m
+2022-01-14 14:06:29.252 -0500 [debug] ([34mindex.js[0m) [31mRunning with args {"cmd":"run","gopts":{},"opts":{},"goptArg":{},"optArg":{},"args":[]}[0m
+2022-01-14 14:06:29.252 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.17","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.17.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1642185093373}}[0m
+2022-01-14 14:06:29.253 -0500 [debug] ([34mupdater.js[0m) [31mlast check less than an day ago, not looking for updates[0m
+2022-01-14 14:06:29.434 -0500 [debug] ([34mmanifest.js[0m) [31mReloading manifest with {"platform-version":"2.2","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"whitelisted-domains":["https://api.clickup.com","https://onerail.freshdesk.com"],"engines":{"node":"12.22.0","fdk":"7.3.0"}}.[0m
+2022-01-14 14:06:29.434 -0500 [debug] ([34mmanifest.js[0m) [31mInferred db as features.[0m
+2022-01-14 14:06:29.436 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.17","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.17.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1642185093373}}[0m
+2022-01-14 14:06:29.445 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.17","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.17.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1642185093373}}[0m
+2022-01-14 14:06:30.380 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.17","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.17.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1642185093373}}[0m
+2022-01-14 14:06:31.113 -0500 [debug] ([34mvalidate.js[0m) [31masked to skip the following validations, [0m
+2022-01-14 14:06:31.113 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator actions[0m
+2022-01-14 14:06:31.113 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator app-dir[0m
+2022-01-14 14:06:31.114 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator config-dir[0m
+2022-01-14 14:06:31.114 -0500 [debug] ([34mconfig-dir.js[0m) [31mChecking to see if C:\Users\SamSwaringen\Desktop\clickup_integration/config/ exists.[0m
+2022-01-14 14:06:31.114 -0500 [debug] ([34mconfig-dir.js[0m) [31mFetched the following config files iparams.json[0m
+2022-01-14 14:06:31.114 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator custom-objects[0m
+2022-01-14 14:06:31.114 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator event[0m
+2022-01-14 14:06:31.114 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator iparam[0m
+2022-01-14 14:06:31.116 -0500 [debug] ([34mvalidate.js[0m) [31mskipping validator lint[0m
+2022-01-14 14:06:31.116 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator manifest[0m
+2022-01-14 14:06:31.116 -0500 [debug] ([34mmanifest.js[0m) [31mrunning manifest validation with type run_validation[0m
+2022-01-14 14:06:31.116 -0500 [debug] ([34mvalidate.js[0m) [31mskipping validator manifest-dependency[0m
+2022-01-14 14:06:31.116 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator oauth[0m
+2022-01-14 14:06:31.116 -0500 [debug] ([34mvalidate.js[0m) [31mskipping validator pkgsize[0m
+2022-01-14 14:06:31.116 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator schema[0m
+2022-01-14 14:06:31.116 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator version-check[0m
+2022-01-14 14:06:31.118 -0500 [debug] ([34mwatcher.js[0m) [31mPreparing to watch the following files ./app,./config,./manifest.json[0m
+2022-01-14 14:06:31.198 -0500 [debug] ([34mcoverage-util.js[0m) [31mSnoozing coverage.[0m
+2022-01-14 14:06:31.198 -0500 [debug] ([34mfrontend_framework-util.js[0m) [31mMounting the default Webpack config[0m
+2022-01-14 14:06:31.756 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 14:06:31.756 -0500 [debug] ([34mcustom-objects.js[0m) [31mto force or not? false[0m
+2022-01-14 14:06:31.756 -0500 [debug] ([34mcustom-objects.js[0m) [31mbeginning to re-sync db[0m
+2022-01-14 14:06:32.370 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 14:06:32.370 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-14 14:06:32.374 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 14:06:32.386 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 14:06:32.386 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-14 14:06:32.654 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 14:06:32.654 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-14 14:06:32.693 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 14:06:32.693 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-14 14:06:33.834 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-01-14 14:06:36.115 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.04c9ce25.js"}" to all listeners.[0m
+2022-01-14 14:06:36.116 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.04c9ce25.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.116 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.05768cf0.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.116 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.08c5a2ab.js"}" to all listeners.[0m
+2022-01-14 14:06:36.116 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.08c5a2ab.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.116 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.0e93602b.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.116 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.0fec5d19.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.116 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.3502b24f.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.116 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.3835eaec.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.116 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.4f15e36f.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.116 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.52a68909.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.116 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.5cd15e6c.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.116 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.6f5830cf.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.116 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.7a05b3dc.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.116 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.7ddbfc7a.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.117 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.8c424a75.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.117 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.8f2563e8.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.117 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.95a52ca4.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.117 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.9916a2bf.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.117 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.bf85e698.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.117 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.7eec20e5.js"}" to all listeners.[0m
+2022-01-14 14:06:36.117 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.7eec20e5.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.117 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.c845aa59.js"}" to all listeners.[0m
+2022-01-14 14:06:36.117 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.c845aa59.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.117 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.2faff375.js"}" to all listeners.[0m
+2022-01-14 14:06:36.117 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.2faff375.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.117 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.d765308f.js"}" to all listeners.[0m
+2022-01-14 14:06:36.117 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.d765308f.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.142 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 14:06:36.144 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 14:06:36.145 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.04c9ce25.js"}" to all listeners.[0m
+2022-01-14 14:06:36.145 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.7eec20e5.js"}" to all listeners.[0m
+2022-01-14 14:06:36.146 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.d765308f.js"}" to all listeners.[0m
+2022-01-14 14:06:36.146 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.04c9ce25.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.147 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.7eec20e5.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.147 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.d765308f.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.148 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.04c9ce25.js"}" to all listeners.[0m
+2022-01-14 14:06:36.149 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.7eec20e5.js"}" to all listeners.[0m
+2022-01-14 14:06:36.149 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.d765308f.js"}" to all listeners.[0m
+2022-01-14 14:06:36.149 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.04c9ce25.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.150 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.7eec20e5.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.150 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.d765308f.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.749 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 14:06:36.749 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.7eec20e5.js"}" to all listeners.[0m
+2022-01-14 14:06:36.750 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.04c9ce25.js"}" to all listeners.[0m
+2022-01-14 14:06:36.751 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.04c9ce25.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.751 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.7eec20e5.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.752 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.d765308f.js"}" to all listeners.[0m
+2022-01-14 14:06:36.752 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.d765308f.js.map"}" to all listeners.[0m
+2022-01-14 14:06:36.881 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\bigint-pivot.js"[0m
+2022-01-14 14:06:36.882 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\entity-field-choice.js"[0m
+2022-01-14 14:06:36.883 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\entity-field.js"[0m
+2022-01-14 14:06:36.883 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\entity.js"[0m
+2022-01-14 14:06:36.884 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\record.js"[0m
+2022-01-14 14:06:36.885 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\string-pivot.js"[0m
+2022-01-14 14:06:36.897 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 14:06:36.898 -0500 [debug] ([34mcustom-objects.js[0m) [31mupdated local store with latest entity hash[0m
+2022-01-14 14:06:36.898 -0500 [info] Starting local testing server at http://*:10001/    
+Append 'dev=true' to your Freshdesk account URL to start testing    
+e.g. https://domain.freshdesk.com/a/tickets/1?dev=true    
+Quit the server with Control-C.
+2022-01-14 14:06:44.896 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 14:06:44.896 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-14 14:06:44.902 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 14:06:44.902 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-14 14:06:44.919 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 14:06:44.919 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-14 14:06:44.930 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 14:06:44.930 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-14 14:06:44.939 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 14:06:44.939 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-14 14:06:44.946 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 14:06:44.946 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-14 14:06:44.961 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:06:44.963 -0500 [debug] ([34mdata-util.js[0m) [31mRead {}[0m
+2022-01-14 14:06:44.963 -0500 [debug] ([34miframe.js[0m) [31mResponding to product with {"configs":{},"displayName":"clickup_integration","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"features":["db"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.2","v2":[]}[0m
+2022-01-14 14:06:44.982 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:06:44.983 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:06:44.984 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 14:06:45.001 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 14:06:45.015 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.04c9ce25.js[0m
+2022-01-14 14:06:45.016 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.04c9ce25.js[0m
+2022-01-14 14:06:47.207 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:06:47.220 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:06:47.220 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:06:47.222 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 14:06:47.237 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 14:06:47.249 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.04c9ce25.js[0m
+2022-01-14 14:06:47.249 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.04c9ce25.js[0m
+2022-01-14 14:06:55.014 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 14:06:55.019 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:06:55.021 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:06:55.051 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:06:55.052 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:06:55.053 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 14:06:55.075 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 14:06:55.088 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.04c9ce25.js[0m
+2022-01-14 14:06:55.088 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.04c9ce25.js[0m
+2022-01-14 14:06:55.088 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:06:55.089 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:06:55.090 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 14:06:55.110 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 14:06:55.120 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.04c9ce25.js[0m
+2022-01-14 14:06:55.120 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.04c9ce25.js[0m
+2022-01-14 14:07:33.114 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 14:07:33.116 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.44710300.js.map"}" to all listeners.[0m
+2022-01-14 14:07:33.117 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.44710300.js"}" to all listeners.[0m
+2022-01-14 14:07:33.118 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.44710300.js.map"}" to all listeners.[0m
+2022-01-14 14:07:33.119 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.44710300.js"}" to all listeners.[0m
+2022-01-14 14:07:33.798 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-01-14 14:07:33.799 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.44710300.js"}" to all listeners.[0m
+2022-01-14 14:07:33.800 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.44710300.js.map"}" to all listeners.[0m
+2022-01-14 14:07:33.804 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.04c9ce25.js"}" to all listeners.[0m
+2022-01-14 14:07:33.813 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:07:33.818 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:07:33.820 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:07:33.821 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:07:33.822 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:07:33.823 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:07:33.825 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:07:33.844 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:07:33.845 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:07:33.846 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 14:07:33.857 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 14:07:33.873 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.44710300.js[0m
+2022-01-14 14:07:33.874 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.44710300.js[0m
+2022-01-14 14:07:33.875 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:07:33.875 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:07:33.876 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 14:07:33.889 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 14:07:33.899 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.44710300.js[0m
+2022-01-14 14:07:33.909 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.44710300.js[0m
+2022-01-14 14:07:35.269 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-01-14 14:07:35.275 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:07:35.277 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /index.html[0m
+2022-01-14 14:07:35.294 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:07:35.295 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:07:35.296 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 14:07:35.308 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 14:07:35.319 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.44710300.js[0m
+2022-01-14 14:07:35.319 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.44710300.js[0m
+2022-01-14 14:07:35.321 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:07:35.322 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/runtime.7eec20e5.js[0m
+2022-01-14 14:07:35.323 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/vendors.d765308f.js[0m
+2022-01-14 14:07:35.337 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/vendors.d765308f.js[0m
+2022-01-14 14:07:35.346 -0500 [debug] ([34miframe.js[0m) [31mResponding with contents of /scripts/main.44710300.js[0m
+2022-01-14 14:07:35.346 -0500 [debug] ([34mcoverage-util.js[0m) [31mSkipped instrumenting ./app/scripts/main.44710300.js[0m

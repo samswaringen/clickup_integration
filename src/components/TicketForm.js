@@ -18,12 +18,12 @@ const TicketForm = (props) => {
   const [files,setFiles] = useState([])
 
   
-
+/* send attachments to clickup */
   const sendAttachments = (id, files)=>{
     files.map((file,i)=>{
       console.log("file",file.path)
       const form = new FormData()
-      form.append("attachment",file)
+      form.append("attachment",file.path)
       form.append("filename", file.name)
       let options = {
        headers:{ 'Authorization': '',
@@ -46,6 +46,7 @@ const TicketForm = (props) => {
 
   }
 
+/* get click up custom id after ticket creation */
   const getClickUpCustomID = (id)=>{
     var options = {
       headers:{
@@ -68,10 +69,10 @@ const TicketForm = (props) => {
       });
   }
 
+/* once clickup cutom id is recieved, update freshdesk ticket field with it */
   const updateFreshdeskWithClickup =(custom_id)=>{
     let data = {
       "custom_fields":{
-        /* figure out proper object property path for click up custom id looks like REQ-XXXX */
         "cf_clickup_ticket":custom_id
       }
     }
@@ -91,7 +92,7 @@ const TicketForm = (props) => {
       console.log(error);
     });
   }
-
+/* set priority level based on priority uuid. maybe find better way idk */
   const handlePriority = (priority)=>{
     let level = 0;
     switch(priority){
@@ -110,13 +111,14 @@ const TicketForm = (props) => {
     }
     return level
   }
-
+/* remove file from attachment array */
   const removeFile = (index)=>{
     let newFiles = [...files]
     newFiles.splice(index,1)
     setFiles(newFiles)
   }
 
+/* style elements for drag and drop. move to CSS file */
   const baseStyle = {
     flex: 1,
     display: 'flex',
@@ -163,8 +165,9 @@ const TicketForm = (props) => {
     width: 'auto',
     height: '100%'
   };
-  
+ /********************** */ 
 
+/* generate thumbnail previews of files */
   const thumbs = files.map((file,i) => (
     <div style={thumb} key={file.name} onClick={()=>removeFile(i)}>
       <div style={thumbInner}>
@@ -176,7 +179,7 @@ const TicketForm = (props) => {
     </div>
   ));
 
-
+/* creates payload from formik values and sends it to clickup */
   const onSubmit = (values)=>{
     const level = handlePriority(values.priority)
     let dueDate = `${values.reqDueDate}T00:00:00`
@@ -192,8 +195,8 @@ const TicketForm = (props) => {
       "priority": level,
       "due_date":  milliDate,
       "due_date_time": false,
-      "time_estimate": timeEst /* 2 weeks in milliseconds unless we want to have different times based on priority level */,
-      "start_date": Date.now() /* current dateTime in milliseconds */,
+      "time_estimate": timeEst,
+      "start_date": Date.now(),
       "start_date_time": false,
       "notify_all": true,
       "parent": null,
@@ -201,7 +204,6 @@ const TicketForm = (props) => {
       "check_required_custom_Textfields": true,
       "custom_fields": [
         {
-          /* requesting customer */
           "id":"693b7b05-8c30-4e7b-be39-295245333faf",
           "value": values.reqCustomer
         },
@@ -216,8 +218,7 @@ const TicketForm = (props) => {
       ]
     }
     setLoading(true)
-    sendAttachments(1,values.attachments)
-    console.log("payload",payload)
+
     
     var options = {
       headers: { 
@@ -227,12 +228,13 @@ const TicketForm = (props) => {
       },
       body : JSON.stringify(payload)
     };
-    sendAttachments(1,values.attachments)
     // client.request.post("https://api.clickup.com/api/v2/list/71601233/task", options).then(
     //   function(data){
     //     let response = JSON.parse(data.response)
     //     console.log("response form clickup:",response.id)
+    /* on successful ticket creation, send attachments */
     //     sendAttachments(response.id, values.attachments)
+    /* get custom id from clickup */
     //     setTimeout(
     //       ()=>{
     //         getClickUpCustomID(response.id)
@@ -248,6 +250,37 @@ const TicketForm = (props) => {
 
   const validate = (values)=>{
     const errors = {}
+    if(!values.ticketID){
+      errors.ticketID ="Ticket ID required"
+    }
+    if(!values.title){
+      errors.title="Title required"
+    }
+    if(!values.description){
+      errors.description="Description required"
+    }
+    if(!values.steps){
+      errors.steps="Steps required"
+    }
+    if(!values.acceptance){
+      errors.acceptance="Acceptance required"
+    }
+    if(!values.reqCustomer){
+      errors.reqCustomer="Requesting customer required"
+    }
+    if(values.assignees.length === 0){
+      errors.assignees="Assignees required"
+    }
+    if(values.tags.length === 0){
+      errors.tags="Tags required"
+    }
+    if(!values.priority){
+      errors.priority="Priority required"
+    }
+    if(!values.reqDueDate){
+      errors.reqDueDate="Requested date required"
+    }
+    return errors
   }
 
   const formik = useFormik({
@@ -275,13 +308,13 @@ const TicketForm = (props) => {
             <form onSubmit={formik.handleSubmit}>
               <div className="input-div">
                 <TextField 
-                  fullwidth
                   id="ticketID" 
                   name="ticketID" 
                   className="input-div"
                   label="TicketID:"
                   value={formik.values.ticketID}
                   onChange={formik.handleChange}
+                  error={Boolean(formik.errors.ticketID)}
                 />
               </div><br/>
               <div className="input-div">
@@ -293,23 +326,24 @@ const TicketForm = (props) => {
                   label="Title:"
                   value={formik.values.title}
                   onChange={formik.handleChange}
+                  error={Boolean(formik.errors.title)}
                 />
               </div><br/><br/>
               <div className="input-div">
-                {/* dropdown Textfield for Assignees. Need everyones clickup id number */}
                 <FormControl >
                   <InputLabel shrink htmlFor="assignees" style={{backgroundColor:"white", padding:"3px"}}>
                     Assignee:
                   </InputLabel>
                   <Select 
                     key="assignees"
-                    labelID="asignees"
+                    labelID="assignees"
                     id="assignees" 
                     name="assignees" 
                     multiple 
                     defaultValue="Assignee"
                     onChange={formik.handleChange}
                     value={formik.values.assignees} 
+                    error={Boolean(formik.errors.assignees)}
                     input={<OutlinedInput id="assignees" label="Chip" />}
                     renderValue={(selected) => (
                       <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
@@ -334,24 +368,24 @@ const TicketForm = (props) => {
               <div className="input-div">
                 <FormControl>
                   <InputLabel shrink htmlFor="description" style={{backgroundColor:"white", padding:"3px"}}>Description:</InputLabel>
-                  <TextareaAutosize
+                  <TextField
                     id="desription"
-                    label="Description"
                     aria-label="description"
                     name="description" 
                     className="textarea"
                     placeholder="Enter description of problem"
                     value={formik.values.description}
                     onChange={formik.handleChange}
+                    error={Boolean(formik.errors.description)}
+                    multiline
                     minRows={3}
-                    style={{padding:"10px"}}
                   />
                 </FormControl >
               </div><br/>
               <div className="input-div">
                 <FormControl>
                   <InputLabel shrink htmlFor="steps" style={{backgroundColor:"white", padding:"3px"}}>Steps to Reproduce:</InputLabel>
-                  <TextareaAutosize
+                  <TextField
                     id="steps"
                     aria-label="steps"
                     name="steps" 
@@ -359,15 +393,16 @@ const TicketForm = (props) => {
                     placeholder="Enter steps to reproduce problem"
                     value={formik.values.steps}
                     onChange={formik.handleChange}
+                    error={Boolean(formik.errors.steps)}
+                    multiline
                     minRows={3}
-                    style={{padding:"10px"}}
                   />
                 </FormControl>
               </div><br/>
               <div className="input-div">
-                <FormControl>
+                <FormControl >
                   <InputLabel shrink htmlFor="notes" style={{backgroundColor:"white", padding:"3px"}}>Acceptance Criteria:</InputLabel>
-                  <TextareaAutosize
+                  <TextField
                     id="acceptance"
                     aria-label="acceptance"
                     name="acceptance" 
@@ -375,13 +410,13 @@ const TicketForm = (props) => {
                     placeholder="Enter acceptance criteria for problem resolution"
                     value={formik.values.acceptance}
                     onChange={formik.handleChange}
+                    error={Boolean(formik.errors.acceptance)}
+                    multiline
                     minRows={3}
-                    style={{padding:"10px"}}
                   />
                 </FormControl>
               </div><br/>
               <div className="input-div">
-                {/* dropdown Textfield for requesting customer */}
                 <FormControl>
                   <InputLabel shrink htmlFor="date" style={{backgroundColor:"white", padding:"3px"}}>Requested Due Date:</InputLabel>
                   <TextField 
@@ -391,12 +426,12 @@ const TicketForm = (props) => {
                     className="input"
                     value={formik.values.reqDueDate} 
                     onChange={formik.handleChange}
+                    error={Boolean(formik.errors.reqDueDate)}
                   />
                 </FormControl>
               </div><br/><br/>
               <div className="input-div">
-                {/* dropdown Textfield for requesting customer */}
-                <FormControl>
+                <FormControl error={Boolean(formik.errors.reqCustomer)}>
                   <InputLabel shrink htmlFor="reqCustomer" style={{backgroundColor:"white", padding:"3px"}}>Requesting Customer:</InputLabel>
                   <Select 
                     id="reqCustomer"
@@ -404,6 +439,7 @@ const TicketForm = (props) => {
                     className="input"
                     value={formik.values.reqCustomer}
                     onChange={formik.handleChange}
+                    
                     input={<OutlinedInput id="reqCustomer" label="reqCustomer" />}
                     style={{height:"200%"}}
                   >
@@ -412,8 +448,7 @@ const TicketForm = (props) => {
                 </FormControl>
               </div><br/>
               <div className="input-div">
-                {/* dropdown Textfield for Priority */}
-                <FormControl>
+                <FormControl error={Boolean(formik.errors.priority)}>
                   <InputLabel shrink htmlFor="priority" style={{backgroundColor:"white", padding:"3px"}}>Priority:</InputLabel>
                   <Select 
                     id="priority" 
@@ -421,6 +456,7 @@ const TicketForm = (props) => {
                     className="input" 
                     value={formik.values.priority} 
                     onChange={formik.handleChange}
+                    
                     input={<OutlinedInput id="priority" label="Priority" />}
                     style={{height:"200%"}}
                   >
@@ -429,15 +465,16 @@ const TicketForm = (props) => {
                 </FormControl>
               </div><br/>
               <div className="input-div">
-                {/* multi-select input Textfield */}
-                <FormControl>
+                <FormControl >
                   <InputLabel shrink htmlFor="tags" style={{backgroundColor:"white", padding:"3px"}}>Tags:</InputLabel>
-                  <Select 
+                  <TextField
+                    select 
                     id="tags" 
                     name="tags"  
                     multiple
                     onChange={formik.handleChange}
                     value={formik.values.tags}
+                    error={Boolean(formik.errors.tags)}
                     renderValue={(selected) => (
                       <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
                         {selected.map((value) => (
@@ -454,7 +491,7 @@ const TicketForm = (props) => {
                         {tag.label}
                       </MenuItem>
                       ))}
-                  </Select>
+                  </TextField>
                 </FormControl>
               </div><br/>
               <div className='input-div'>

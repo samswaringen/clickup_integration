@@ -114,6 +114,11 @@
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		__webpack_require__.p = "./scripts";
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
 /******/ 	(() => {
 /******/ 		// no baseURI
@@ -172,4 +177,4 @@
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=runtime.ab95bbe9.js.map
+//# sourceMappingURL=runtime.d3a49ceb.js.map

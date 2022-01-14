@@ -18,6 +18,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ClickUpStatus__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/ClickUpStatus */ 39731);
 /* harmony import */ var _components_TicketForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/TicketForm */ 60282);
 /* harmony import */ var _components_formArrays__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/formArrays */ 7818);
+/* harmony import */ var _assets_clickUpIcon_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./assets/clickUpIcon.png */ 610);
+/* harmony import */ var _assets_clickUpIcon_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_clickUpIcon_png__WEBPACK_IMPORTED_MODULE_5__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -29,6 +31,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -62,15 +65,13 @@ var App = function App() {
       _useState10 = _slicedToArray(_useState9, 2),
       ticket = _useState10[0],
       setTicket = _useState10[1];
+  /* function that runs on ticket update to check contact company */
+
 
   var eventCallback = function eventCallback(event, client) {
-    //var event_data = event.helper.getData();
-    // console.log('contact in state', contact)
-    // console.log("ticket in state", ticket)
     client.data.get("ticket").then(function (data) {
+      /* if no company attached to contact and customer field has been updated  */
       if (data.ticket.custom_fields.cf_customer && ticket.custom_fields.cf_customer === null && contact.company_id === null) {
-        console.log("no company, setting company as", _data.ticket.custom_fields.cf_customer); //send contact update based off data.ticket.custom_fields.cf_customer result. create key/value array with customer and freshdesk ids
-
         var _data = {
           "company_id": _components_formArrays__WEBPACK_IMPORTED_MODULE_4__.companies[_data.ticket.custom_fields.cf_customer]
         };
@@ -84,10 +85,10 @@ var App = function App() {
         };
         client.request.put("https://onerail.freshdesk.com/api/v2/contacts/".concat(contact.id), options).then(function (data) {
           console.log(data);
-          console.log("success");
         })["catch"](function (error) {
           console.log(error);
         });
+        /* if contact company exists but customer ticket field has not been filled, fill it  */
       } else if (contact.company_id && ticket.custom_fields.cf_customer === null && data.ticket.custom_fields.cf_customer === null) {
         var companyKeys = Object.keys(_components_formArrays__WEBPACK_IMPORTED_MODULE_4__.companies);
         var companyID;
@@ -111,10 +112,10 @@ var App = function App() {
         };
         client.request.put("https://onerail.freshdesk.com/api/v2/tickets/".concat(ticket.id), options).then(function (data) {
           console.log(data);
-          console.log("success");
         })["catch"](function (error) {
           console.log(error);
         });
+        /* if company exists log it or log internal agent*/
       } else {
         contact.company_id ? console.log("customer belongs to ", contact.company_id) : console.log("ticket created by internal agent");
       }
@@ -123,18 +124,19 @@ var App = function App() {
       event.helper.fail('errorMessage');
     });
   };
+  /* function to run on status change. opens ticketform  modal */
 
-  var propertyChangeCallback = function propertyChangeCallback(event, client, ticket) // code to be executed when the status of the ticket is changed.
-  {
+
+  var propertyChangeCallback = function propertyChangeCallback(event, client, ticket) {
     var event_data = event.helper.getData();
     client.instance.close();
-    console.log(event.type + " changed from " + event_data.old + " to " + event_data["new"]);
-    console.log("ticket inside property change function", ticket.custom_fields.cf_clickup_ticket);
 
     if (event_data["new"] === 8 && ticket.custom_fields.cf_clickup_ticket === null) {
       setShowModal(true);
     }
   };
+  /* on load create script element to import freshdesk cdn */
+
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var script = document.createElement('script');
@@ -145,6 +147,8 @@ var App = function App() {
     script.defer = true;
     document.head.appendChild(script);
   }, []);
+  /* enable eventcallback after ticket and contact stored in state */
+
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (ticket && contact) {
       app.initialized().then(function (client) {
@@ -156,12 +160,13 @@ var App = function App() {
       });
     }
   }, [ticket, contact]);
+  /* load components after freshdesk cdn loaded*/
+
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (!loaded && !showModal) return;
     app.initialized().then(function (client) {
       client.data.get('contact').then(function (data) {
         setContact(data.contact);
-        console.log("contact set");
       });
       client.data.get('ticket').then(function (data) {
         /* set initial component to clickup ticket maker */
@@ -178,7 +183,6 @@ var App = function App() {
         }
 
         setTicket(data.ticket);
-        console.log("ticket set");
         client.events.on("ticket.statusChanged", function (event) {
           return propertyChangeCallback(event, client, data.ticket);
         });
@@ -192,14 +196,14 @@ var App = function App() {
       /*initialize client to pull modal */
       app.initialized().then(function (client) {
         client["interface"].trigger("showModal", {
-          title: "Click up Integration",
+          title: "ClickUp Integration",
           template: "index.html"
-        }).then(function (data) {// data - success message
-        })["catch"](function (error) {// error - error object
-        });
+        }).then(function (data) {})["catch"](function (error) {});
       });
     }
-  }, [loaded, showModal]); // const onAppActivated =(ticket, client)=>{
+  }, [loaded, showModal]);
+  /* on app activate and deactivate event callbacks. not needed but maybe in future */
+  // const onAppActivated =(ticket, client)=>{
   //     setChild((<ClickUpStatus ticket={ticket} client={client} />))
   // }
   // const onAppDeactivated = (ticket, client)=>{
@@ -379,8 +383,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 67294);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! prop-types */ 45697);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! prop-types */ 45697);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_16__);
 /* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! formik */ 62598);
 /* harmony import */ var _formArrays__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./formArrays */ 7818);
 /* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../App */ 48187);
@@ -393,11 +397,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mui/material */ 99226);
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @mui/material */ 58308);
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @mui/material */ 63931);
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @mui/material */ 37598);
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @mui/material */ 69397);
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @mui/material */ 69397);
 /* harmony import */ var form_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! form-data */ 6230);
 /* harmony import */ var form_data__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(form_data__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var react_dropzone__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-dropzone */ 65012);
+/* harmony import */ var react_dropzone__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-dropzone */ 65012);
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -445,12 +448,14 @@ var TicketForm = function TicketForm(props) {
       _useState4 = _slicedToArray(_useState3, 2),
       files = _useState4[0],
       setFiles = _useState4[1];
+  /* send attachments to clickup */
+
 
   var sendAttachments = function sendAttachments(id, files) {
     files.map(function (file, i) {
       console.log("file", file.path);
       var form = new (form_data__WEBPACK_IMPORTED_MODULE_5___default())();
-      form.append("attachment", file);
+      form.append("attachment", file.path);
       form.append("filename", file.name);
       var options = {
         headers: {
@@ -483,6 +488,8 @@ var TicketForm = function TicketForm(props) {
       }
     });
   };
+  /* get click up custom id after ticket creation */
+
 
   var getClickUpCustomID = function getClickUpCustomID(id) {
     var options = {
@@ -504,11 +511,12 @@ var TicketForm = function TicketForm(props) {
       console.log(error);
     });
   };
+  /* once clickup cutom id is recieved, update freshdesk ticket field with it */
+
 
   var updateFreshdeskWithClickup = function updateFreshdeskWithClickup(custom_id) {
     var data = {
       "custom_fields": {
-        /* figure out proper object property path for click up custom id looks like REQ-XXXX */
         "cf_clickup_ticket": custom_id
       }
     };
@@ -529,6 +537,8 @@ var TicketForm = function TicketForm(props) {
       console.log(error);
     });
   };
+  /* set priority level based on priority uuid. maybe find better way idk */
+
 
   var handlePriority = function handlePriority(priority) {
     var level = 0;
@@ -553,6 +563,8 @@ var TicketForm = function TicketForm(props) {
 
     return level;
   };
+  /* remove file from attachment array */
+
 
   var removeFile = function removeFile(index) {
     var newFiles = _toConsumableArray(files);
@@ -560,6 +572,8 @@ var TicketForm = function TicketForm(props) {
     newFiles.splice(index, 1);
     setFiles(newFiles);
   };
+  /* style elements for drag and drop. move to CSS file */
+
 
   var baseStyle = {
     flex: 1,
@@ -603,6 +617,10 @@ var TicketForm = function TicketForm(props) {
     width: 'auto',
     height: '100%'
   };
+  /********************** */
+
+  /* generate thumbnail previews of files */
+
   var thumbs = files.map(function (file, i) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       style: thumb,
@@ -617,6 +635,7 @@ var TicketForm = function TicketForm(props) {
       style: img
     })));
   });
+  /* creates payload from formik values and sends it to clickup */
 
   var onSubmit = function onSubmit(values) {
     var level = handlePriority(values.priority);
@@ -632,19 +651,14 @@ var TicketForm = function TicketForm(props) {
       "priority": level,
       "due_date": milliDate,
       "due_date_time": false,
-      "time_estimate": timeEst
-      /* 2 weeks in milliseconds unless we want to have different times based on priority level */
-      ,
-      "start_date": Date.now()
-      /* current dateTime in milliseconds */
-      ,
+      "time_estimate": timeEst,
+      "start_date": Date.now(),
       "start_date_time": false,
       "notify_all": true,
       "parent": null,
       "links_to": null,
       "check_required_custom_Textfields": true,
       "custom_fields": [{
-        /* requesting customer */
         "id": "693b7b05-8c30-4e7b-be39-295245333faf",
         "value": values.reqCustomer
       }, {
@@ -656,8 +670,6 @@ var TicketForm = function TicketForm(props) {
       }]
     };
     setLoading(true);
-    sendAttachments(1, values.attachments);
-    console.log("payload", payload);
     var options = {
       headers: {
         /*GET API KEY*/
@@ -665,12 +677,15 @@ var TicketForm = function TicketForm(props) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(payload)
-    };
-    sendAttachments(1, values.attachments); // client.request.post("https://api.clickup.com/api/v2/list/71601233/task", options).then(
+    }; // client.request.post("https://api.clickup.com/api/v2/list/71601233/task", options).then(
     //   function(data){
     //     let response = JSON.parse(data.response)
     //     console.log("response form clickup:",response.id)
+
+    /* on successful ticket creation, send attachments */
     //     sendAttachments(response.id, values.attachments)
+
+    /* get custom id from clickup */
     //     setTimeout(
     //       ()=>{
     //         getClickUpCustomID(response.id)
@@ -684,6 +699,48 @@ var TicketForm = function TicketForm(props) {
 
   var validate = function validate(values) {
     var errors = {};
+
+    if (!values.ticketID) {
+      errors.ticketID = "Ticket ID required";
+    }
+
+    if (!values.title) {
+      errors.title = "Title required";
+    }
+
+    if (!values.description) {
+      errors.description = "Description required";
+    }
+
+    if (!values.steps) {
+      errors.steps = "Steps required";
+    }
+
+    if (!values.acceptance) {
+      errors.acceptance = "Acceptance required";
+    }
+
+    if (!values.reqCustomer) {
+      errors.reqCustomer = "Requesting customer required";
+    }
+
+    if (values.assignees.length === 0) {
+      errors.assignees = "Assignees required";
+    }
+
+    if (values.tags.length === 0) {
+      errors.tags = "Tags required";
+    }
+
+    if (!values.priority) {
+      errors.priority = "Priority required";
+    }
+
+    if (!values.reqDueDate) {
+      errors.reqDueDate = "Requested date required";
+    }
+
+    return errors;
   };
 
   var formik = (0,formik__WEBPACK_IMPORTED_MODULE_1__.useFormik)({
@@ -712,13 +769,13 @@ var TicketForm = function TicketForm(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "input-div"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    fullwidth: true,
     id: "ticketID",
     name: "ticketID",
     className: "input-div",
     label: "TicketID:",
     value: formik.values.ticketID,
-    onChange: formik.handleChange
+    onChange: formik.handleChange,
+    error: Boolean(formik.errors.ticketID)
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "input-div"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -728,7 +785,8 @@ var TicketForm = function TicketForm(props) {
     className: "input",
     label: "Title:",
     value: formik.values.title,
-    onChange: formik.handleChange
+    onChange: formik.handleChange,
+    error: Boolean(formik.errors.title)
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "input-div"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -740,13 +798,14 @@ var TicketForm = function TicketForm(props) {
     }
   }, "Assignee:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], {
     key: "assignees",
-    labelID: "asignees",
+    labelID: "assignees",
     id: "assignees",
     name: "assignees",
     multiple: true,
     defaultValue: "Assignee",
     onChange: formik.handleChange,
     value: formik.values.assignees,
+    error: Boolean(formik.errors.assignees),
     input: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
       id: "assignees",
       label: "Chip"
@@ -781,19 +840,17 @@ var TicketForm = function TicketForm(props) {
       backgroundColor: "white",
       padding: "3px"
     }
-  }, "Description:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
+  }, "Description:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], {
     id: "desription",
-    label: "Description",
     "aria-label": "description",
     name: "description",
     className: "textarea",
     placeholder: "Enter description of problem",
     value: formik.values.description,
     onChange: formik.handleChange,
-    minRows: 3,
-    style: {
-      padding: "10px"
-    }
+    error: Boolean(formik.errors.description),
+    multiline: true,
+    minRows: 3
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "input-div"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -803,7 +860,7 @@ var TicketForm = function TicketForm(props) {
       backgroundColor: "white",
       padding: "3px"
     }
-  }, "Steps to Reproduce:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
+  }, "Steps to Reproduce:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], {
     id: "steps",
     "aria-label": "steps",
     name: "steps",
@@ -811,10 +868,9 @@ var TicketForm = function TicketForm(props) {
     placeholder: "Enter steps to reproduce problem",
     value: formik.values.steps,
     onChange: formik.handleChange,
-    minRows: 3,
-    style: {
-      padding: "10px"
-    }
+    error: Boolean(formik.errors.steps),
+    multiline: true,
+    minRows: 3
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "input-div"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -824,7 +880,7 @@ var TicketForm = function TicketForm(props) {
       backgroundColor: "white",
       padding: "3px"
     }
-  }, "Acceptance Criteria:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
+  }, "Acceptance Criteria:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], {
     id: "acceptance",
     "aria-label": "acceptance",
     name: "acceptance",
@@ -832,10 +888,9 @@ var TicketForm = function TicketForm(props) {
     placeholder: "Enter acceptance criteria for problem resolution",
     value: formik.values.acceptance,
     onChange: formik.handleChange,
-    minRows: 3,
-    style: {
-      padding: "10px"
-    }
+    error: Boolean(formik.errors.acceptance),
+    multiline: true,
+    minRows: 3
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "input-div"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -851,10 +906,13 @@ var TicketForm = function TicketForm(props) {
     name: "reqDueDate",
     className: "input",
     value: formik.values.reqDueDate,
-    onChange: formik.handleChange
+    onChange: formik.handleChange,
+    error: Boolean(formik.errors.reqDueDate)
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "input-div"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    error: Boolean(formik.errors.reqCustomer)
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
     shrink: true,
     htmlFor: "reqCustomer",
     style: {
@@ -881,7 +939,9 @@ var TicketForm = function TicketForm(props) {
     }, item.label);
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "input-div"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    error: Boolean(formik.errors.priority)
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
     shrink: true,
     htmlFor: "priority",
     style: {
@@ -915,12 +975,14 @@ var TicketForm = function TicketForm(props) {
       backgroundColor: "white",
       padding: "3px"
     }
-  }, "Tags:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, "Tags:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    select: true,
     id: "tags",
     name: "tags",
     multiple: true,
     onChange: formik.handleChange,
     value: formik.values.tags,
+    error: Boolean(formik.errors.tags),
     renderValue: function renderValue(selected) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], {
         sx: {
@@ -942,7 +1004,7 @@ var TicketForm = function TicketForm(props) {
     }, tag.label);
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "input-div"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_dropzone__WEBPACK_IMPORTED_MODULE_15__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_dropzone__WEBPACK_IMPORTED_MODULE_14__["default"], {
     onDrop: function onDrop(fileObjects) {
       formik.setFieldValue("attachments", fileObjects);
       setFiles(fileObjects.map(function (file) {
@@ -958,13 +1020,13 @@ var TicketForm = function TicketForm(props) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", getRootProps({
       style: baseStyle
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", getInputProps()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Drag 'n' drop some files here, or click to select files")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("aside", null, thumbs));
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_16__["default"], {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_15__["default"], {
     type: "submit"
   }, "Make Click-up Ticket"))), loading && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Sending..."));
 };
 
 TicketForm.propTypes = {
-  client: (prop_types__WEBPACK_IMPORTED_MODULE_17___default().object)
+  client: (prop_types__WEBPACK_IMPORTED_MODULE_16___default().object)
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TicketForm);
 
@@ -1410,6 +1472,16 @@ ___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n\tmargin: 0;\r\n\tfont-famil
 
 /***/ }),
 
+/***/ 610:
+/*!************************************!*\
+  !*** ./src/assets/clickUpIcon.png ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "/assets/img/clickUpIcon76c2386d.png";
+
+/***/ }),
+
 /***/ 95722:
 /*!*********************!*\
   !*** ./src/App.css ***!
@@ -1473,4 +1545,4 @@ module.exports = content.locals || {};
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.169a97ca.js.map
+//# sourceMappingURL=main.4d25db85.js.map
