@@ -4,7 +4,7 @@ import { useFormik } from 'formik';
 import { tagList, requestingArr, priorityArr, assigneeArr } from './formArrays';
 import {TicketObj} from '../App'
 import Success from './Success'
-import { Select, Button, TextField, MenuItem, InputLabel, OutlinedInput, Box, Chip, TextareaAutosize, FormControl} from '@mui/material';
+import { Select, Button, TextField, MenuItem, InputLabel, OutlinedInput, Box, Chip, FormControl} from '@mui/material';
 import FormData from 'form-data'
 import Dropzone from 'react-dropzone'
 
@@ -314,7 +314,7 @@ const TicketForm = (props) => {
                   label="TicketID:"
                   value={formik.values.ticketID}
                   onChange={formik.handleChange}
-                  error={Boolean(formik.errors.ticketID)}
+                  error={formik.touched.ticketID && Boolean(formik.errors.ticketID)}
                 />
               </div><br/>
               <div className="input-div">
@@ -326,7 +326,7 @@ const TicketForm = (props) => {
                   label="Title:"
                   value={formik.values.title}
                   onChange={formik.handleChange}
-                  error={Boolean(formik.errors.title)}
+                  error={formik.touched.title && Boolean(formik.errors.title)}
                 />
               </div><br/><br/>
               <div className="input-div">
@@ -343,7 +343,7 @@ const TicketForm = (props) => {
                     defaultValue="Assignee"
                     onChange={formik.handleChange}
                     value={formik.values.assignees} 
-                    error={Boolean(formik.errors.assignees)}
+                    error={formik.touched.assignees && Boolean(formik.errors.assignees)}
                     input={<OutlinedInput id="assignees" label="Chip" />}
                     renderValue={(selected) => (
                       <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
@@ -376,7 +376,7 @@ const TicketForm = (props) => {
                     placeholder="Enter description of problem"
                     value={formik.values.description}
                     onChange={formik.handleChange}
-                    error={Boolean(formik.errors.description)}
+                    error={formik.touched.description && Boolean(formik.errors.description)}
                     multiline
                     minRows={3}
                   />
@@ -393,7 +393,7 @@ const TicketForm = (props) => {
                     placeholder="Enter steps to reproduce problem"
                     value={formik.values.steps}
                     onChange={formik.handleChange}
-                    error={Boolean(formik.errors.steps)}
+                    error={formik.touched.steps && Boolean(formik.errors.steps)}
                     multiline
                     minRows={3}
                   />
@@ -410,7 +410,7 @@ const TicketForm = (props) => {
                     placeholder="Enter acceptance criteria for problem resolution"
                     value={formik.values.acceptance}
                     onChange={formik.handleChange}
-                    error={Boolean(formik.errors.acceptance)}
+                    error={formik.touched.acceptance && Boolean(formik.errors.acceptance)}
                     multiline
                     minRows={3}
                   />
@@ -426,12 +426,12 @@ const TicketForm = (props) => {
                     className="input"
                     value={formik.values.reqDueDate} 
                     onChange={formik.handleChange}
-                    error={Boolean(formik.errors.reqDueDate)}
+                    error={formik.touched.reqDueDate && Boolean(formik.errors.reqDueDate)}
                   />
                 </FormControl>
               </div><br/><br/>
               <div className="input-div">
-                <FormControl error={Boolean(formik.errors.reqCustomer)}>
+                <FormControl error={formik.touched.reqCustomer && Boolean(formik.errors.reqCustomer)}>
                   <InputLabel shrink htmlFor="reqCustomer" style={{backgroundColor:"white", padding:"3px"}}>Requesting Customer:</InputLabel>
                   <Select 
                     id="reqCustomer"
@@ -439,7 +439,6 @@ const TicketForm = (props) => {
                     className="input"
                     value={formik.values.reqCustomer}
                     onChange={formik.handleChange}
-                    
                     input={<OutlinedInput id="reqCustomer" label="reqCustomer" />}
                     style={{height:"200%"}}
                   >
@@ -448,7 +447,7 @@ const TicketForm = (props) => {
                 </FormControl>
               </div><br/>
               <div className="input-div">
-                <FormControl error={Boolean(formik.errors.priority)}>
+                <FormControl error={formik.touched.priority && Boolean(formik.errors.priority)}>
                   <InputLabel shrink htmlFor="priority" style={{backgroundColor:"white", padding:"3px"}}>Priority:</InputLabel>
                   <Select 
                     id="priority" 
@@ -456,7 +455,6 @@ const TicketForm = (props) => {
                     className="input" 
                     value={formik.values.priority} 
                     onChange={formik.handleChange}
-                    
                     input={<OutlinedInput id="priority" label="Priority" />}
                     style={{height:"200%"}}
                   >
@@ -474,7 +472,7 @@ const TicketForm = (props) => {
                     multiple
                     onChange={formik.handleChange}
                     value={formik.values.tags}
-                    error={Boolean(formik.errors.tags)}
+                    error={formik.touched.tags && Boolean(formik.errors.tags)}
                     renderValue={(selected) => (
                       <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
                         {selected.map((value) => (

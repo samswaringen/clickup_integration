@@ -775,7 +775,7 @@ var TicketForm = function TicketForm(props) {
     label: "TicketID:",
     value: formik.values.ticketID,
     onChange: formik.handleChange,
-    error: Boolean(formik.errors.ticketID)
+    error: formik.touched.ticketID && Boolean(formik.errors.ticketID)
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "input-div"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -786,7 +786,7 @@ var TicketForm = function TicketForm(props) {
     label: "Title:",
     value: formik.values.title,
     onChange: formik.handleChange,
-    error: Boolean(formik.errors.title)
+    error: formik.touched.title && Boolean(formik.errors.title)
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "input-div"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -805,7 +805,7 @@ var TicketForm = function TicketForm(props) {
     defaultValue: "Assignee",
     onChange: formik.handleChange,
     value: formik.values.assignees,
-    error: Boolean(formik.errors.assignees),
+    error: formik.touched.assignees && Boolean(formik.errors.assignees),
     input: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
       id: "assignees",
       label: "Chip"
@@ -848,7 +848,7 @@ var TicketForm = function TicketForm(props) {
     placeholder: "Enter description of problem",
     value: formik.values.description,
     onChange: formik.handleChange,
-    error: Boolean(formik.errors.description),
+    error: formik.touched.description && Boolean(formik.errors.description),
     multiline: true,
     minRows: 3
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -868,7 +868,7 @@ var TicketForm = function TicketForm(props) {
     placeholder: "Enter steps to reproduce problem",
     value: formik.values.steps,
     onChange: formik.handleChange,
-    error: Boolean(formik.errors.steps),
+    error: formik.touched.steps && Boolean(formik.errors.steps),
     multiline: true,
     minRows: 3
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -888,7 +888,7 @@ var TicketForm = function TicketForm(props) {
     placeholder: "Enter acceptance criteria for problem resolution",
     value: formik.values.acceptance,
     onChange: formik.handleChange,
-    error: Boolean(formik.errors.acceptance),
+    error: formik.touched.acceptance && Boolean(formik.errors.acceptance),
     multiline: true,
     minRows: 3
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -907,11 +907,11 @@ var TicketForm = function TicketForm(props) {
     className: "input",
     value: formik.values.reqDueDate,
     onChange: formik.handleChange,
-    error: Boolean(formik.errors.reqDueDate)
+    error: formik.touched.reqDueDate && Boolean(formik.errors.reqDueDate)
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "input-div"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    error: Boolean(formik.errors.reqCustomer)
+    error: formik.touched.reqCustomer && Boolean(formik.errors.reqCustomer)
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
     shrink: true,
     htmlFor: "reqCustomer",
@@ -940,7 +940,7 @@ var TicketForm = function TicketForm(props) {
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "input-div"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    error: Boolean(formik.errors.priority)
+    error: formik.touched.priority && Boolean(formik.errors.priority)
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
     shrink: true,
     htmlFor: "priority",
@@ -982,7 +982,7 @@ var TicketForm = function TicketForm(props) {
     multiple: true,
     onChange: formik.handleChange,
     value: formik.values.tags,
-    error: Boolean(formik.errors.tags),
+    error: formik.touched.tags && Boolean(formik.errors.tags),
     renderValue: function renderValue(selected) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], {
         sx: {
@@ -1545,4 +1545,4 @@ module.exports = content.locals || {};
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.4d25db85.js.map
+//# sourceMappingURL=main.aa439581.js.map
