@@ -3,7 +3,6 @@ import './App.css';
 import ClickUpStatus from './components/ClickUpStatus';
 import TicketForm from './components/TicketForm';
 import { companies } from './components/formArrays';
-import clickUpIcon from "./assets/clickUpIcon.png"
 
 
 
@@ -43,15 +42,10 @@ const App = () => {
       /* if contact company exists but customer ticket field has not been filled, fill it  */
       }else if(contact.company_id && ticket.custom_fields.cf_customer === null && data.ticket.custom_fields.cf_customer === null){
         let companyKeys = Object.keys(companies)
-        let companyID;
-        companyKeys.map((key,i)=>{
-          if(companies[key] === contact.company_id){
-            companyID = key
-          }
-        })
+        let companyID = companyKeys.filter((key)=>companies[key] === contact.company_id)
         let data = {
           "custom_fields":{
-            "cf_customer": companyID
+            "cf_customer": companyID[0]
           } 
         }
         var options = {
