@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import PropTypes from 'prop-types'
 import { useFormik } from 'formik';
 import { tagList, requestingArr, priorityArr, assigneeArr } from './formArrays';
@@ -228,22 +228,22 @@ const TicketForm = (props) => {
       },
       body : JSON.stringify(payload)
     };
-    // client.request.post("https://api.clickup.com/api/v2/list/71601233/task", options).then(
-    //   function(data){
-    //     let response = JSON.parse(data.response)
-    //     console.log("response form clickup:",response.id)
+    client.request.post("https://api.clickup.com/api/v2/list/71601233/task", options).then(
+      function(data){
+        let response = JSON.parse(data.response)
+        console.log("response form clickup:",response.id)
     /* on successful ticket creation, send attachments */
-    //     sendAttachments(response.id, values.attachments)
+        sendAttachments(response.id, values.attachments)
     /* get custom id from clickup */
-    //     setTimeout(
-    //       ()=>{
-    //         getClickUpCustomID(response.id)
-    //       }, 500)
-    //   },
-    //   function(error){
-    //     console.log(error)
-    //   }
-    // )
+        setTimeout(
+          ()=>{
+            getClickUpCustomID(response.id)
+          }, 500)
+      },
+      function(error){
+        console.log(error)
+      }
+    )
 
 
   }

@@ -10,7 +10,7 @@
       }
     }
   },
-  "whitelisted-domains": ["https://api.clickup.com", "https://onerail.freshdesk.com"],
+  "whitelisted-domains": ["https://api.clickup.com", "https://onerail.freshdesk.com", "https://mui.com", "https://static.freshdev.io"],
   "engines": {
     "node": "12.22.0",
     "fdk": "7.3.0"
