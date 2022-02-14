@@ -3,6 +3,8 @@ import './App.css';
 import ClickUpStatus from './components/ClickUpStatus';
 import TicketForm from './components/TicketForm';
 import { companies } from './components/formArrays';
+import { ApolloProvider } from '@apollo/client'
+import { client} from "./ApolloClient/client"
 
 
 
@@ -150,11 +152,13 @@ const App = () => {
 
 
   return (
+    <ApolloProvider client = {client}>
     <TicketObj.Provider value={{setChild:setChild}}>
       <div>
           {child}
       </div>
     </TicketObj.Provider>
+    </ApolloProvider>
   )
 }
 

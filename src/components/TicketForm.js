@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useFormik } from 'formik';
 import { tagList, requestingArr, priorityArr, assigneeArr } from './formArrays';
@@ -7,6 +7,8 @@ import Success from './Success'
 import { Select, Button, TextField, MenuItem, InputLabel, OutlinedInput, Box, Chip, FormControl} from '@mui/material';
 import FormData from 'form-data'
 import Dropzone from 'react-dropzone'
+import { useLazyQuery } from "@apollo/client";
+import { GET_TAGS, GET_ASSIGNEES, GET_COMPANIES, GET_PRIORITIES, GET_REQUESTERS } from './graphql';
 
 
 const TicketForm = (props) => {
@@ -17,6 +19,59 @@ const TicketForm = (props) => {
   const [loading, setLoading] = useState(false)
   const [files,setFiles] = useState([])
 
+  const [tags, {loading:tagLoad, error:tagError, data:tagData}] = useLazyQuery(GET_TAGS, {
+    fetchPolicy: "no-cache"
+  })
+  const [assignees, {loading:assignLoad, error:assignError, data:assignData}] = useLazyQuery(GET_ASSIGNEES, {
+    fetchPolicy: "no-cache"
+  })
+  const [companies, {loading:compLoad, error:compError, data:compData}] = useLazyQuery(GET_COMPANIES, {
+    fetchPolicy: "no-cache"
+  })
+  const [priorities, {loading:priorLoad, error:priorError, data:priorData}] = useLazyQuery(GET_PRIORITIES, {
+    fetchPolicy: "no-cache"
+  })
+  const [requesters, {loading:reqLoad, error:reqError, data:reqData}] = useLazyQuery(GET_REQUESTERS, {
+    fetchPolicy: "no-cache"
+  })
+
+  useEffect(()=>{
+    tags()
+    assignees()
+    companies()
+    priorities()
+    requesters()
+  },[])
+
+  useEffect(()=>{
+    if(!tagLoad && tagData){
+      console.log("got tag data via graphql", tagData)
+    }
+  },[tagData])
+
+  useEffect(()=>{
+    if(!assignLoad && assignData){
+      console.log("got assignee data via graphql", assignData)
+    }
+  },[assignData])
+
+  useEffect(()=>{
+    if(!compLoad && compData){
+      console.log("got company data via graphql", compData)
+    }
+  },[compData])
+
+  useEffect(()=>{
+    if(!priorLoad && priorData){
+      console.log("got priority data via graphql", priorData)
+    }
+  },[priorData])
+
+  useEffect(()=>{
+    if(!reqLoad && reqData){
+      console.log("got requester data via graphql", reqData)
+    }
+  },[reqData])
   
 /* send attachments to clickup */
   const sendAttachments = (id, files)=>{

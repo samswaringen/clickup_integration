@@ -28895,3 +28895,127 @@ Quit the server with Control-C.
 2022-02-04 10:59:14.263 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.20","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.20.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1643988364096}}[0m
 2022-02-04 10:59:15.191 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.20","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.20.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1643988364096}}[0m
 2022-02-04 10:59:24.449 -0500 [debug] ([34mpack.js[0m) [31m'pack' called with {}[0m
+2022-02-08 15:06:14.635 -0500 [debug] ([34mlogger.js[0m) [31mStarting FDK in node v12.22.0 on win32[0m
+2022-02-08 15:06:15.730 -0500 [debug] ([34msequelize.js[0m) [31msetting up sqilite at "C:\Users\SamSwaringen\Desktop\clickup_integration/.fdk/store.sqlite"[0m
+2022-02-08 15:06:15.907 -0500 [debug] ([34mindex.js[0m) [31mRunning with args {"cmd":"run","gopts":{},"opts":{},"goptArg":{},"optArg":{},"args":[]}[0m
+2022-02-08 15:06:15.907 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.20","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.20.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1643988364096}}[0m
+2022-02-08 15:06:15.907 -0500 [debug] ([34mupdater.js[0m) [31mlast check more than an day ago, looking for updates again[0m
+2022-02-08 15:06:16.234 -0500 [debug] ([34mupdater.js[0m) [31mremote fdk - 7.3.0, local fdk - 7.3.0[0m
+2022-02-08 15:06:16.235 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.20","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.20.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1643988364096}}[0m
+2022-02-08 15:06:16.235 -0500 [debug] ([34mupdater.js[0m) [31mremote addon - 1.9.20, local addon - 1.9.20[0m
+2022-02-08 15:06:16.236 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.20","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.20.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1643988364096}}[0m
+2022-02-08 15:06:16.237 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.20","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.20.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1643988364096}}[0m
+2022-02-08 15:06:16.528 -0500 [debug] ([34mmanifest.js[0m) [31mReloading manifest with {"platform-version":"2.2","product":{"freshdesk":{"location":{"ticket_requester_info":{"url":"index.html","icon":"icon.svg"}}}},"whitelisted-domains":["https://api.clickup.com","https://onerail.freshdesk.com","https://mui.com","https://static.freshdev.io"],"engines":{"node":"12.22.0","fdk":"7.3.0"}}.[0m
+2022-02-08 15:06:16.528 -0500 [debug] ([34mmanifest.js[0m) [31mInferred db as features.[0m
+2022-02-08 15:06:16.531 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.20","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.20.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1644350776237}}[0m
+2022-02-08 15:06:16.546 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.20","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.20.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1644350776237}}[0m
+2022-02-08 15:06:18.177 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.20","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.20.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1644350776237}}[0m
+2022-02-08 15:06:19.954 -0500 [debug] ([34mvalidate.js[0m) [31masked to skip the following validations, [0m
+2022-02-08 15:06:19.954 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator actions[0m
+2022-02-08 15:06:19.954 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator app-dir[0m
+2022-02-08 15:06:19.955 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator config-dir[0m
+2022-02-08 15:06:19.955 -0500 [debug] ([34mconfig-dir.js[0m) [31mChecking to see if C:\Users\SamSwaringen\Desktop\clickup_integration/config/ exists.[0m
+2022-02-08 15:06:19.955 -0500 [debug] ([34mconfig-dir.js[0m) [31mFetched the following config files iparams.json[0m
+2022-02-08 15:06:19.955 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator custom-objects[0m
+2022-02-08 15:06:19.955 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator event[0m
+2022-02-08 15:06:19.956 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator iparam[0m
+2022-02-08 15:06:19.957 -0500 [debug] ([34mvalidate.js[0m) [31mskipping validator lint[0m
+2022-02-08 15:06:19.957 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator manifest[0m
+2022-02-08 15:06:19.957 -0500 [debug] ([34mmanifest.js[0m) [31mrunning manifest validation with type run_validation[0m
+2022-02-08 15:06:19.957 -0500 [debug] ([34mvalidate.js[0m) [31mskipping validator manifest-dependency[0m
+2022-02-08 15:06:19.957 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator oauth[0m
+2022-02-08 15:06:19.957 -0500 [debug] ([34mvalidate.js[0m) [31mskipping validator pkgsize[0m
+2022-02-08 15:06:19.958 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator schema[0m
+2022-02-08 15:06:19.958 -0500 [debug] ([34mvalidate.js[0m) [31mrunning validator version-check[0m
+2022-02-08 15:06:19.959 -0500 [debug] ([34mwatcher.js[0m) [31mPreparing to watch the following files ./app,./config,./manifest.json[0m
+2022-02-08 15:06:20.105 -0500 [debug] ([34mcoverage-util.js[0m) [31mSnoozing coverage.[0m
+2022-02-08 15:06:20.105 -0500 [debug] ([34mfrontend_framework-util.js[0m) [31mMounting the default Webpack config[0m
+2022-02-08 15:06:21.126 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"clicku_101_101_freshdesk":{"clicku_101_101_custom_iparams":{},"isLocalAppInstalled":true,"isLocalAppEnabled":true}}[0m
+2022-02-08 15:06:21.127 -0500 [debug] ([34mcustom-objects.js[0m) [31mto force or not? false[0m
+2022-02-08 15:06:21.127 -0500 [debug] ([34mcustom-objects.js[0m) [31mbeginning to re-sync db[0m
+2022-02-08 15:06:21.458 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-02-08 15:06:22.026 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-02-08 15:06:22.385 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-02-08 15:06:22.606 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-02-08 15:06:23.361 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-02-08 15:06:23.446 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-02-08 15:06:24.246 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-02-08 15:06:24.477 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-02-08 15:06:24.671 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-02-08 15:06:24.805 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-02-08 15:06:24.896 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-02-08 15:06:24.983 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-02-08 15:06:25.703 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\assets\\img\\clickUpIcon76c2386d.png"}" to all listeners.[0m
+2022-02-08 15:06:25.703 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\assets\\img\\clickUpIcon76c2386d.png"}" to all listeners.[0m
+2022-02-08 15:06:25.703 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\assets\\img"}" to all listeners.[0m
+2022-02-08 15:06:25.703 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\assets"}" to all listeners.[0m
+2022-02-08 15:06:25.704 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-02-08 15:06:25.704 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.7fd3015c.js"}" to all listeners.[0m
+2022-02-08 15:06:25.704 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-02-08 15:06:25.704 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.7fd3015c.js.map"}" to all listeners.[0m
+2022-02-08 15:06:25.704 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-02-08 15:06:25.705 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.22af0f95.js"}" to all listeners.[0m
+2022-02-08 15:06:25.705 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-02-08 15:06:25.705 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.22af0f95.js.map"}" to all listeners.[0m
+2022-02-08 15:06:25.705 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-02-08 15:06:25.705 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.845c67c0.js"}" to all listeners.[0m
+2022-02-08 15:06:25.706 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-02-08 15:06:25.706 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.845c67c0.js.LICENSE.txt"}" to all listeners.[0m
+2022-02-08 15:06:25.706 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-02-08 15:06:25.706 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.845c67c0.js.map"}" to all listeners.[0m
+2022-02-08 15:06:25.706 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-02-08 15:06:25.730 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js"}" to all listeners.[0m
+2022-02-08 15:06:25.731 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.368fab16.js"}" to all listeners.[0m
+2022-02-08 15:06:25.732 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-02-08 15:06:25.732 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.67890dd2.js"}" to all listeners.[0m
+2022-02-08 15:06:25.732 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.368fab16.js.map"}" to all listeners.[0m
+2022-02-08 15:06:25.733 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-02-08 15:06:25.733 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js.map"}" to all listeners.[0m
+2022-02-08 15:06:25.734 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.67890dd2.js.map"}" to all listeners.[0m
+2022-02-08 15:06:25.735 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-02-08 15:06:25.735 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.368fab16.js"}" to all listeners.[0m
+2022-02-08 15:06:25.735 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.368fab16.js.map"}" to all listeners.[0m
+2022-02-08 15:06:25.736 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-02-08 15:06:25.736 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.67890dd2.js"}" to all listeners.[0m
+2022-02-08 15:06:25.737 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js"}" to all listeners.[0m
+2022-02-08 15:06:25.737 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js.map"}" to all listeners.[0m
+2022-02-08 15:06:25.738 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.368fab16.js.map"}" to all listeners.[0m
+2022-02-08 15:06:25.738 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\main.368fab16.js"}" to all listeners.[0m
+2022-02-08 15:06:25.738 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.67890dd2.js"}" to all listeners.[0m
+2022-02-08 15:06:25.739 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.67890dd2.js.map"}" to all listeners.[0m
+2022-02-08 15:06:25.739 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-02-08 15:06:26.270 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\runtime.ab95bbe9.js.map"}" to all listeners.[0m
+2022-02-08 15:06:26.271 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts\\vendors.67890dd2.js.map"}" to all listeners.[0m
+2022-02-08 15:06:26.272 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"index.html"}" to all listeners.[0m
+2022-02-08 15:06:26.381 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-02-08 15:06:26.447 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\bigint-pivot.js"[0m
+2022-02-08 15:06:26.450 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\entity-field-choice.js"[0m
+2022-02-08 15:06:26.451 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\entity-field.js"[0m
+2022-02-08 15:06:26.453 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\entity.js"[0m
+2022-02-08 15:06:26.454 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\record.js"[0m
+2022-02-08 15:06:26.455 -0500 [debug] ([34mindex.js[0m) [31mloading model at "C:\Users\SamSwaringen\AppData\Roaming\nvm\v12.22.0\node_modules\fdk\lib\models\string-pivot.js"[0m
+2022-02-08 15:06:26.469 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"clicku_101_101_freshdesk":{"clicku_101_101_custom_iparams":{},"isLocalAppInstalled":true,"isLocalAppEnabled":true}}[0m
+2022-02-08 15:06:26.469 -0500 [debug] ([34mcustom-objects.js[0m) [31mupdated local store with latest entity hash[0m
+2022-02-08 15:06:26.470 -0500 [info] Starting local testing server at http://*:10001/    
+Append 'dev=true' to your Freshdesk account URL to start testing    
+e.g. https://domain.freshdesk.com/a/tickets/1?dev=true    
+Quit the server with Control-C.
+2022-02-08 21:03:34.000 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-02-09 08:49:29.071 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":"scripts"}" to all listeners.[0m
+2022-02-09 08:49:29.080 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-02-09 08:49:30.977 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-02-09 08:49:30.991 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-02-09 08:49:30.992 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-02-09 08:49:31.089 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-02-09 08:49:31.100 -0500 [debug] ([34mwatcher.js[0m) [31mBroadcasted "{"file":null}" to all listeners.[0m
+2022-02-14 16:07:42.339 -0500 [debug] ([34mlogger.js[0m) [31mStarting FDK in node v12.22.0 on win32[0m
+2022-02-14 16:07:43.285 -0500 [debug] ([34msequelize.js[0m) [31msetting up sqilite at "C:\Users\SamSwaringen\Desktop\Projects\clickup_integration/.fdk/store.sqlite"[0m
+2022-02-14 16:07:43.438 -0500 [debug] ([34mindex.js[0m) [31mRunning with args {"cmd":"run","gopts":{},"opts":{},"goptArg":{},"optArg":{},"args":[]}[0m
+2022-02-14 16:07:43.439 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.20","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.20.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1644350776237}}[0m
+2022-02-14 16:07:43.439 -0500 [debug] ([34mupdater.js[0m) [31mlast check more than an day ago, looking for updates again[0m
+2022-02-14 16:07:44.170 -0500 [debug] ([34mupdater.js[0m) [31mremote fdk - 7.4.0, local fdk - 7.3.0[0m
+2022-02-14 16:07:44.170 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.20","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.20.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1644350776237}}[0m
+2022-02-14 16:07:44.170 -0500 [debug] ([34mupdater.js[0m) [31mremote addon - 1.9.20, local addon - 1.9.20[0m
+2022-02-14 16:07:44.171 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.3.0","dl":"https://dl.freshdev.io/cli/fdk-7.3.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.3.0.tgz -g"},"addon":{"version":"1.9.20","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.20.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1644350776237}}[0m
+2022-02-14 16:07:44.171 -0500 [debug] ([34mdata-util.js[0m) [31mRead {"version_details":{"fdkCli":{"version":"7.4.0","dl":"https://dl.freshdev.io/cli/fdk-7.4.0.tgz","cmd":"npm install https://dl.freshdev.io/cli/fdk-7.4.0.tgz -g"},"addon":{"version":"1.9.20","dl":"https://dl.freshdev.io/cli-addon/addon-1.9.20.zip"},"forced_versions":["4.3.6"]},"last_updated":{"time_stamp":1644350776237}}[0m
+2022-02-14 16:07:47.344 -0500 [debug] ([34mupdater.js[0m) [31muser responded to update prompt with "true"[0m
