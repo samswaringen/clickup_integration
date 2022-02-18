@@ -20,7 +20,7 @@ function ClickUpTicket(props) {
       linked.map((link)=>{
         var options = {
           headers: { 
-            'Authorization': process.env.CLICKUP_KEY
+            'Authorization': process.env.REACT_APP_CLICKUP_KEY
           }
         };
         client.request.get(`https://api.clickup.com/api/v2/task/${link.link_id}/`, options)

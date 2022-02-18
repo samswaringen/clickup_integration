@@ -81,7 +81,7 @@ const TicketForm = (props) => {
       form.append("attachment",file.path)
       form.append("filename", file.name)
       let options = {
-       headers:{ 'Authorization': process.env.CLICKUP_KEY,
+       headers:{ 'Authorization': process.env.REACT_APP_CLICKUP_KEY,
         'Content-Type': 'multipart/form-data'},
         body: form
       }
@@ -106,7 +106,7 @@ const TicketForm = (props) => {
     var options = {
       headers:{
         //need clickup api key
-        'Authorization': process.env.CLICKUP_KEY
+        'Authorization': process.env.REACT_APP_CLICKUP_KEY
       }
     }
     client.request.get(`https://api.clickup.com/api/v2/task/${id}`,options)
@@ -133,7 +133,7 @@ const TicketForm = (props) => {
     }
     var options = {
       headers: { 
-        'Authorization': `Basic ${process.env.FRESHDESK_KEY}`,
+        'Authorization': `Basic ${process.env.REACT_APP_FRESHDESK_KEY}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify(data)
@@ -277,7 +277,7 @@ const TicketForm = (props) => {
     var options = {
       headers: { 
         /*GET API KEY*/
-        'Authorization': process.env.CLICKUP_KEY,
+        'Authorization': process.env.REACT_APP_CLICKUP_KEY,
         'Content-Type': 'application/json'
       },
       body : JSON.stringify(payload)

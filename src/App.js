@@ -33,7 +33,7 @@ const App = () => {
         var options = {
           //put in API key
           headers: { 
-            'Authorization': `Basic ${process.env.FRESHDESK_KEY}`,
+            'Authorization': `Basic ${process.env.REACT_APP_FRESHDESK_KEY}`,
             "Content-Type": "application/json"
           },
           body: JSON.stringify(data)
@@ -57,7 +57,7 @@ const App = () => {
         var options = {
           //put in API key
           headers: { 
-            'Authorization': `Basic ${process.env.FRESHDESK_KEY}`,
+            'Authorization': `Basic ${process.env.REACT_APP_FRESHDESK_KEY}`,
             "Content-Type": "application/json"
           },
           body: JSON.stringify(data)
@@ -80,7 +80,7 @@ const App = () => {
   const getClickTick = (client, customID)=>{
     var options = {
       headers: { 
-        'Authorization': process.env.CLICKUP_KEY
+        'Authorization': process.env.REACT_APP_CLICKUP_KEY
       }
     };
     client.request.get(`https://api.clickup.com/api/v2/task/${customID}/?custom_task_ids=true&team_id=2224044`, options)
