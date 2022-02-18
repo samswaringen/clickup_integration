@@ -4,7 +4,7 @@ import { useFormik } from 'formik';
 import { tagList, requestingArr, priorityArr, assigneeArr } from './formArrays';
 import {TicketObj} from '../App'
 import Success from './Success'
-import { Select, Button, TextField, MenuItem, InputLabel, OutlinedInput, Box, Chip, FormControl} from '@mui/material';
+import { Select, Button, TextField, MenuItem, InputLabel, OutlinedInput, Box, Chip, FormControl, Autocomplete} from '@mui/material';
 import FormData from 'form-data'
 import Dropzone from 'react-dropzone'
 import { useLazyQuery } from "@apollo/client";
@@ -81,7 +81,7 @@ const TicketForm = (props) => {
       form.append("attachment",file.path)
       form.append("filename", file.name)
       let options = {
-       headers:{ 'Authorization': '',
+       headers:{ 'Authorization': process.env.CLICKUP_KEY,
         'Content-Type': 'multipart/form-data'},
         body: form
       }
@@ -106,7 +106,7 @@ const TicketForm = (props) => {
     var options = {
       headers:{
         //need clickup api key
-        'Authorization': ''
+        'Authorization': process.env.CLICKUP_KEY
       }
     }
     client.request.get(`https://api.clickup.com/api/v2/task/${id}`,options)
@@ -133,14 +133,13 @@ const TicketForm = (props) => {
     }
     var options = {
       headers: { 
-        'Authorization': `Basic `,
+        'Authorization': `Basic ${process.env.FRESHDESK_KEY}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify(data)
     };
     client.request.put(`https://onerail.freshdesk.com/api/v2/tickets/${ticket.id}`,options)
     .then(function (data) {
-      console.log(data);
       setChild((<Success client={client} clickCustID={custom_id}/>))
     })
     .catch(function (error) {
@@ -242,7 +241,7 @@ const TicketForm = (props) => {
     let timeEst = milliDate - Date.now() 
 
     const payload = {
-      "name": values.title,
+      "name": values.userStory,
       "markdown_description": `### Problem Description: \n ${values.description} \n ### Steps to Reproduce: \n ${values.steps} \n ### Acceptance Criteria: \n ${values.acceptance}`,
       "assignees": values.assignees,
       "tags": values.tags,
@@ -278,7 +277,7 @@ const TicketForm = (props) => {
     var options = {
       headers: { 
         /*GET API KEY*/
-        'Authorization': '',
+        'Authorization': process.env.CLICKUP_KEY,
         'Content-Type': 'application/json'
       },
       body : JSON.stringify(payload)
@@ -305,11 +304,8 @@ const TicketForm = (props) => {
 
   const validate = (values)=>{
     const errors = {}
-    if(!values.ticketID){
-      errors.ticketID ="Ticket ID required"
-    }
-    if(!values.title){
-      errors.title="Title required"
+    if(!values.userStory){
+      errors.userStory="User Story required"
     }
     if(!values.description){
       errors.description="Description required"
@@ -340,8 +336,7 @@ const TicketForm = (props) => {
 
   const formik = useFormik({
     initialValues : { 
-      ticketID: ticket.id,
-      title: ticket.subject,
+      userStory: "",
       description: "",
       steps: "",
       acceptance:"",
@@ -362,27 +357,21 @@ const TicketForm = (props) => {
           <div style={{marginTop:"2vh"}}>
             <form onSubmit={formik.handleSubmit}>
               <div className="input-div">
-                <TextField 
-                  id="ticketID" 
-                  name="ticketID" 
-                  className="input-div"
-                  label="TicketID:"
-                  value={formik.values.ticketID}
-                  onChange={formik.handleChange}
-                  error={formik.touched.ticketID && Boolean(formik.errors.ticketID)}
-                />
-              </div><br/>
-              <div className="input-div">
-                <TextField 
-                  id="title"
-                  name="title" 
-                  type="text" 
-                  className="input" 
-                  label="Title:"
-                  value={formik.values.title}
-                  onChange={formik.handleChange}
-                  error={formik.touched.title && Boolean(formik.errors.title)}
-                />
+                <FormControl>
+                <InputLabel shrink htmlFor="assignees" style={{backgroundColor:"white", padding:"3px"}}>
+                    User Story:
+                  </InputLabel>
+                  <TextField 
+                    id="userStory"
+                    name="userStory" 
+                    type="text" 
+                    className="input" 
+
+                    value={formik.values.userStory}
+                    onChange={formik.handleChange}
+                    error={formik.touched.userStory && Boolean(formik.errors.userStory)}
+                  />
+                </FormControl>
               </div><br/><br/>
               <div className="input-div">
                 <FormControl >
@@ -520,11 +509,11 @@ const TicketForm = (props) => {
               <div className="input-div">
                 <FormControl >
                   <InputLabel shrink htmlFor="tags" style={{backgroundColor:"white", padding:"3px"}}>Tags:</InputLabel>
-                  <TextField
+                  <Select
                     select 
                     id="tags" 
-                    name="tags"  
-                    multiple
+                    name="tags" 
+                    multiple 
                     onChange={formik.handleChange}
                     value={formik.values.tags}
                     error={formik.touched.tags && Boolean(formik.errors.tags)}
@@ -538,13 +527,13 @@ const TicketForm = (props) => {
                   >
                     {tagList.map((tag) => (
                       <MenuItem
-                        key={tag}
+                        key={tag.value}
                         value={tag.value}
                       >
                         {tag.label}
                       </MenuItem>
                       ))}
-                  </TextField>
+                  </Select>
                 </FormControl>
               </div><br/>
               <div className='input-div'>

@@ -1,16 +1,15 @@
 import React, {useEffect, useState, useContext} from 'react'
-import axios from 'axios'
 import {TicketObj} from '../App'
+import { Button} from '@mui/material';
 
 function ClickUpStatus(props) {
   const {ticket, client} = props
   const ticketContext = useContext(TicketObj)
-  const {setChild} = ticketContext
-  console.log("context",ticketContext)
+  const {setChild, setShowModal, clickTick} = ticketContext
 
   const [customID, setCustomID] = useState("")
   const [clickUpExists, setClickUpExists] = useState(true)
-  const [clickTick, setClickTick] = useState({})
+
 
   useEffect(()=>{
     setCustomID(ticket.custom_fields.cf_clickup_ticket)
@@ -18,54 +17,33 @@ function ClickUpStatus(props) {
   },[])
 
   useEffect(()=>{
-    console.log(customID)
-    if(customID === null){
+    if(customID === null ){
       setClickUpExists(false)
-    }else{
-      // var config = {
-      //   method: 'get',
-      //   url: `https://api.clickup.com/api/v2/task/${customID}/?custom_task_ids=true`,
-      //   headers: { 
-      //     'Authorization': '"access_token"'
-      //   }
-      // };
-      
-      // axios(config)
-      // .then(function (response) {
-      //   console.log(JSON.stringify(response.data));
-      //   setClickTick(response.data)
-      // })
-      // .catch(function (error) {
-      //   console.log(error);
-      // });
     }
   },[customID])
 
-  const openClickUpModal = ()=>{
-    client.interface.trigger("showModal", {
-      title: "Click up Integration",
-      template: "clickup.html",
-      data: ticket
-    }).then(function(data) {
-    // data - success message
-    }).catch(function(error) {
-    // error - error object
-    });
-  }
 
   return (
     <div>
+
       {clickUpExists &&
-        <div style={{border:'1px solid lightgrey', display:"flex",justifyContent:"center",alignItems:"center", textAlign:"center", flexDirection:"column", paddingTop:'2vh', width:'98vw', borderRadius:"4px", height:"95vh"}}>
-          click up ticket number is {customID}<br/>
+        <div style={{border:'1px solid lightgrey', display:"flex",justifyContent:"center",alignItems:"center", textAlign:"center", flexDirection:"column", paddingTop:'1vh', padding:'4px', maxWidth:'98vw', borderRadius:"4px", height:"95vh", overflowY:'hidden'}}>
+          <img src='https://dcbeer.com/wp-content/uploads/2012/05/samadamsbanner.jpg' width='100px'/>
+          <div>This ticket has Click Up ticket <strong>{customID}</strong> associated</div><br/>
+          {clickTick && <>
+              <strong>Click Up Status:</strong>
+              <p style={{backgroundColor:`${clickTick.status.color}`, borderRadius:'2px', padding:'2px'}}>{clickTick.status.status.toUpperCase()}</p>
+            </>
+          }
           {/*here we will get click up ticket and post pertanent information*/}
-          <button onClick={openClickUpModal}>More Detailed View</button>
+          <Button variant="outlined" onClick={()=>setShowModal(true)}>More Detailed View</Button>
         </div>
       }
       {!clickUpExists &&
-        <div style={{border:'1px solid lightgrey', display:"flex",justifyContent:"center", textAlign:"center", flexDirection:"column", padding:'1vh', width:'94vw', borderRadius:"4px", height:"94vh"}}>
+        <div style={{border:'1px solid lightgrey', display:"flex",justifyContent:"center", alignItems:'center',textAlign:"center", flexDirection:"column", padding:'1vh', width:'94vw', borderRadius:"4px", height:"94vh"}}>
+          <img src='https://dcbeer.com/wp-content/uploads/2012/05/samadamsbanner.jpg' width='100px'/>
           <h4>Click up ticket doesn't exist</h4>
-          <p>To make one, switch status to 'In Development'</p>
+          <Button variant="outlined" onClick={()=>setShowModal(true)}>Make Click Up Ticket</Button>
         </div>}
     </div>
   )
